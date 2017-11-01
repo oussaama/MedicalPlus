@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('css/template.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/updates.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/>
+<table>
+    <tbody>
+        {% for promo in promo %}
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.nm'|trans }}</th>
+                <td class="day-depointment-patient">{{ promo.nomPr }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.cat'|trans }}</th>
+                <td class="day-depointment-patient">{{ promo.categoriePr }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.des'|trans }}</th>
+                <td class="day-depointment-patient">{{ promo.descreptionPr }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{'header.menu.prod.prix'|trans }}</th>
+                <td class="day-depointment-patient">{{ promo.prixPr }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">Date</th>
+                <td class="day-depointment-patient">{{ promo.datefinPr|date('Y-m-d') }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.pho'|trans }}</th>
+                <td class="day-depointment-patient"><img src="{{ asset('uploads/promo/'~promo.photoPr) }}" width="250" height="250"/></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+{% extends 'Layout/base.html.twig' %}
+{% block title %} Contact {% endblock %}
+{% block styleshet %}{% endblock %}
+{% block body %}
+    <div class="kl-slideshow static-content__slideshow scontent__maps">
+        <div style="height:1080px">
+            {% include "::module/map.html.twig" %}
+        </div>
+    </div>
+    <section class="hg_section ptop-80 pbottom-80" style="margin-top:-400px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-md-offset-6">
+                    <div class="fancy_register_form">
+                        <form action="{{ path('contact_new') }}" method="POST" class="contact_form row" {{ form_widget(form) }}>
+                            <div class="cf_response"></div>
+                            {{ form_start(form) }}
+                            <p class="kl-fancy-form">
+                                {{form_label(form.firstnameCont)}}
+                                <label class="control-label" style="margin:-385px 0 0 35px">{{ 'header.menu.contact.fn'|trans }}</label>
+                            </p>
+                            <p class="kl-fancy-form">
+                                {{form_label(form.lastnameCont)}}
+                                <label class="control-label" style="margin:-407px 0 0 230px">{{ 'header.menu.contact.ln'|trans }}</label>
+                            </p>
+                            <p class="kl-fancy-form">
+                                {{form_label(form.emailCont)}}
+                                <label class="control-label" style="margin:-330px 0 0 35px">EMAIL</label>
+                            </p>
+                            <p class="kl-fancy-form">
+                                {{form_label(form.subjectCont)}}
+                                <label class="control-label" style="margin:-250px 0 0 35px">{{ 'header.menu.contact.s'|trans }}</label>
+                            </p>
+                            <p class="kl-fancy-form">
+                                {{form_label(form.contenuCont)}}
+                                <label class="control-label" style="margin:-175px 0 0 35px">MESSAGE</label>
+                            </p>
+                            {{ form_end(form) }}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps.js') }}"></script>
+    <script>
+        $("#contact").addClass("activeItem");
+        $(".main-menu li#contact").css("background", "#2980b8");
+    </script>
+{% endblock %}

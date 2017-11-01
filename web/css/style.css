@@ -1,0 +1,515 @@
+a:hover,
+.cart-container > .widget_shopping_cart_content .checkout,
+.sc-infopop__btn,
+.m_title,
+.smallm_title,
+.circle_title,
+.zn_text_box-title--style1,
+.feature_box .title,
+.services_box--classic .services_box__title,
+.latest_posts.default-style .hoverBorder:hover h6,
+.latest_posts.style2 ul.posts .title,
+.recentwork_carousel--1 .recentwork_carousel__crsl-title,
+.acc--default-style .acc-tgg-button,
+.acc--style3 .acc-tgg-button:after,
+.screenshot-box .left-side h3.title,
+.vertical_tabs.kl-style-1 .tabbable .nav>li.active>a,
+.services_box_element .box .list li,
+.shop-latest .tabbable .nav li.active a,
+.product-list-item:hover .details h3,
+.product-category .product-list-item:hover h3,
+.eBlog .itemContainer:not(.featured-post) .post_details .catItemAuthor a,
+.theHoverBorder:hover,
+.text-custom,
+.text-custom-hover:hover,
+.statbox h4,
+#bbpress-forums .bbp-topics li.bbp-body .bbp-topic-title > a,
+.ib2-text-color-light-theme .ib2-info-message:before,
+.tbk--color-theme.tbk-symbol--icon .tbk__icon,
+.pricing-table-element .plan-column .plan-title,
+.process_steps--style2 .process_steps__step-icon,
+.vertical_tabs.kl-style-2 .tabbable .nav>li>a:hover,
+.vertical_tabs.kl-style-2 .tabbable .nav>li.active>a [data-zn_icon]:before,
+.vertical_tabs.kl-style-2 .tabbable .nav>li>a:hover [data-zn_icon]:before,
+.services_box--boxed .services_box__fonticon,
+.services_box--boxed .services_box__list li,
+.woocommerce ul.product_list_widget li .star-rating,
+.woocommerce .woocommerce-product-rating .star-rating,
+body .static-content__infopop .sc-infopop__btn {
+    color: #2980b9;
+}
+.acc--style4,
+#page-loading:after,
+.ib2-text-color-light-theme .ib2-info-message:before,
+.itemThumbnail .overlay__inner a:hover,
+.acc--style4 .acc-tgg-button .acc-icon {
+    border-color: #2980b9;
+}
+.acc--style3 .acc-tgg-button:hover,
+.acc--style3 .acc-tgg-button:hover:after,
+.acc--default-style .acc-tgg-button,
+.acc--style2 .acc-tgg-button,
+.acc--style3 .acc-tgg-button,
+.acc--style4 .acc-tgg-button {
+    color: #2980b9;
+}
+.tabs_style5 > ul.nav > li.active > a {
+    border-bottom: 2px solid #2980b9;
+}
+header.style1,
+header.style2 .site-logo a,
+header.style3 .site-logo a {
+    border-top: 3px solid #2980b9;
+}
+.tabs_style1 > ul.nav > li.active > a {
+    box-shadow: inset 0 3px 0 #2980b9;
+}
+.main-nav > ul > li > a:before,
+.main-nav .zn_mega_container li a:not(.zn_mega_title):before,
+.social-icons.sc--normal li a:hover,
+.action_box,
+body .circlehover,
+body .kl-flex--classic .zn_general_carousel-arr:hover,
+body .kl-ioscaption--style1 .more:before,
+body .kl-ioscaption--style1 .more:after,
+body .kl-ioscaption--style2 .more,
+body .nivo-directionNav a:hover,
+body .th-wowslider a.ws_next:hover,
+body .th-wowslider a.ws_prev:hover,
+body .ca-more,
+body .title_circle,
+body .title_circle:before,
+body ul.links li a,
+.hg-portfolio-sortable #portfolio-nav li a:hover,
+.hg-portfolio-sortable #portfolio-nav li.current a,
+.kl-ioscaption--style1 .more:before,
+.kl-ioscaption--style1 .more:after,
+.btn-flat,
+.zn_limited_offers li:after,
+.login-panel .login_facebook,
+.imgboxes_style1 .hoverBorder h6,
+.circlehover:before,
+.kl-cta-ribbon,
+.newsletter-signup input[type=submit],
+.recentwork_carousel--1 .recentwork_carousel__bg,
+.zn-acc--style4 .acc-title,
+.zn-acc--style3 .acc-tgg-button:before,
+.process_box .content:before,
+#bbpress-forums div.bbp-search-form input[type=submit],
+#bbpress-forums .bbp-submit-wrapper button,
+#bbpress-forums #bbp-your-profile fieldset.submit button,
+.bg-custom,
+.bg-custom-hover:hover,
+.site-header.style8 .kl-main-header .kl-cta-lined,
+.site-header.style9 .kl-cta-lined,
+.latest_posts.default-style.kl-style-2 .lp-title,
+.latest_posts.default-style.kl-style-2 .post:not(.lp-title) .m_title:after,
+.latest_posts.default-style .hoverBorder h6,
+.itemThumbnail .overlay__inner a:hover,
+.elm-searchbox--normal .elm-searchbox__submit,
+.elm-searchbox--transparent .elm-searchbox__submit,
+.itemThumbnail .overlay__inner a:hover,
+.zn-acc--style4 .acc-tgg-button .acc-icon:before,
+span.zn_badge_sale,
+span.zn_badge_sale:after,
+.zn_limited_offers li:before,
+.style3 .action_box_inner,
+.style3 .action_box_inner:before,
+.action_box.style3:before,
+.circlehover.style2,
+.circlehover.style2:before,
+body .kl-flex--classic .zn_simple_carousel-arr:hover {
+    background-color: #2980b9;
+}
+.breadcrumbs li:after,
+.ib2-text-color-light-theme .ib2-inner {
+    border-left-color: #2980b9;
+}
+.kl-cta-ribbon .trisvg path,
+.kl-bottommask .bmask-customfill,
+.kl-slideshow .kl-loader svg path,
+.kl-slideshow.kl-loadersvg rect,
+.kl-diagram circle {
+    fill: #2980b9;
+}
+.how_to_shop .number,
+.newsletter-signup input[type=submit],
+.th-map_controls,
+.hg-portfolio-sortable #portfolio-nav li.current a,
+.ptcarousel .controls > a:hover,
+.itemLinks span a:hover,
+.product-list-item .kw-actions a,
+.woocommerce ul.products li.product .product-list-item .kw-actions a,
+.shop-features .shop-feature:hover,
+.btn-flat,
+.redbtn,
+.imgboxes_style1 .hoverBorder h6,
+.feature_box.style3 .box:hover,
+.services_box--classic:hover .services_box__icon,
+services_box_element:hover .box .icon,
+.latest_posts.default-style .hoverBorder h6,
+.process_steps--style1 .process_steps__intro,
+.process_steps--style2 .process_steps__intro,
+.recentwork_carousel.style2 li a .details .plus,
+.gobox.ok:before,
+.gobox.ok:after,
+.gobox.ok,
+.zn_hover_box .hover-box:hover,
+.recentwork_carousel--1 .recentwork_carousel__bg,
+.circlehover:before,
+.kl-ioscaption--style1 .more:before,
+.kl-ioscaption--style1 .more:after,
+.kl-ioscaption--style2 .more {
+    background-color: #2980b9;
+}
+.action_box:before,
+.action_box:after,
+.site-header.style1,
+.site-header.style6 {
+    border-top-color: #2980b9;
+}
+.process_steps--style1 .process_steps__intro:after,
+body .nivo-caption,
+body .kl-flex--classic .flex-caption,
+body .th-wowslider .ws-title,
+.process_box[data-align=left] .content:after,
+body .ls--laptop .ls__item-caption {
+    border-left-color: #2980b9;
+}
+.process_box[data-align=right] .content:after {
+    border-right-color: #2980b9;
+}
+.theHoverBorder:hover {
+    box-shadow: 0 0 0 5px #2980b9 inset;
+}
+.vertical_tabs.kl-style-1 .tabbable .nav>li.active>a {
+    box-shadow: inset -3px 0 0 0 #2980b9 inset;
+}
+.offline-page .containerbox {
+    border-bottom: 5px solid #2980b9;
+}
+.offline-page .containerbox:after {
+    border-top: 20px solid #2980b9;
+}
+.site-header.style2 .site-logo a {
+    border-top: 3px solid #2980b9;
+}
+body .kl-ioscaption--style2 .title_big,
+body .kl-ioscaption--style2 .title_small {
+    border-left: 5px solid #2980b9;
+}
+body .kl-ioscaption--style2.fromright .title_big,
+body .kl-ioscaption--style2.fromright .title_small {
+    border-right: 5px solid #2980b9;
+}
+#buddypress form#whats-new-form p.activity-greeting:after {
+    border-top-color: #2980b9;
+}
+#buddypress input[type=submit],
+#buddypress input[type=button],
+#buddypress input[type=reset],
+#buddypress .activity-list li.load-more a {
+    background: #2980b9;
+}
+#buddypress div.item-list-tabs ul li.selected a,
+#buddypress div.item-list-tabs ul li.current a {
+    border-top: 2px solid #2980b9;
+}
+#buddypress form#whats-new-form p.activity-greeting,
+.widget.buddypress ul.item-list li:hover {
+    background-color: #2980b9;
+}
+.widget.buddypress div.item-options a.selected,
+#buddypress div.item-list-tabs ul li.selected a,
+#buddypress div.item-list-tabs ul li.current a,
+#buddypress div.activity-meta a,
+#buddypress div.activity-meta a:hover,
+#buddypress .acomment-options a {
+    color: #2980b9;
+}
+.keywordbox.keywordbox-2 {
+    border-bottom: solid 5px #2980b9;
+}
+.keywordbox.keywordbox-3 {
+    border-bottom: solid 10px #2980b9;
+}
+.process_box4 .number:before,
+.loginbox-popup input[type=submit],
+.login-panel .login_facebook {
+    background: #2980b9;
+}
+.statistics-horizontal .v-line {
+    border-bottom: dotted 1px #2980b9;
+}
+.statistics-vertical::before {
+    border-left: dotted 1px #2980b9;
+}
+.circle-text-box.style3 .wpk-circle-span,
+.circle-text-box.style2 .wpk-circle-span::before {
+    background: #2980b9;
+}
+.circle-text-box:not(.style3) .wpk-circle-span:after {
+    background-color: #2980b9;
+}
+.circle-text-box .wpk-circle-title {
+    color: #2980b9;
+}
+.services_box--modern .services_box__icon {
+    box-shadow: inset 0 0 0 2px #2980b9;
+}
+.services_box--modern:hover .services_box__icon {
+    box-shadow: inset 0 0 0 40px #2980b9;
+}
+.services_box--modern .services_box__fonticon {
+    color: #2980b8;
+}
+.services_box--modern .services_box__list li:before {
+    box-shadow: 0 0 0 4px #2980b8;
+}
+.services_box--modern .services_box__list li:hover:before {
+    box-shadow: 0 0 0 3px #2980b8;
+}
+.kl-has-overlay .img-intro:hover .overlay {
+    box-shadow: inset 0 -8px 0 0 #2980b9;
+}
+.kl-cta-ribbon {
+    background-color: #2980b8
+}
+.kl-cta-ribbon .trisvg path {
+    fill: #2980b8
+}
+.logo-container .logo-infocard {
+    background: #2980b8;
+}
+body .kl-ioscaption--style4 .more:before {
+    border-color: rgba(41,128,184,0.9);
+    background: rgba(41,128,184,0.5);
+}
+body .kl-ioscaption--style4 .more:hover:before {
+    background: #2980b8;
+}
+.timeline_box:hover:before {
+    background-color: #2980b8;
+}
+body .kl-ioscaption--style3.s3ext .main_title::before,
+body .kl-ios-selectors-block.bullets2 .item.selected::before,
+.iosslider__item .kl-ioscaption--style5 .klios-separator-line span,
+.btn-fullcolor,
+.btn-fullcolor:focus,
+.btn-fullcolor.btn-skewed:before,
+.cart-container .buttons .button.wc-forward,
+body .kl-flex--modern .flex-underbar,
+.tbk--color-theme.tbk-symbol--line .tbk__symbol span,
+.tbk--color-theme.tbk-symbol--line_border .tbk__symbol span,
+.ls__nav-item.selected,
+.site-header.style7 .kl-cart-button .glyphicon:after,
+.how_to_shop .number,
+.recentwork_carousel--2 .recentwork_carousel__title:after,
+.recentwork_carousel_v3 .btn::before,
+.recentwork_carousel--2 .recentwork_carousel__cat,
+.recentwork_carousel_v2 .recentwork_carousel__plus,
+.recentwork_carousel_v3 .recentwork_carousel__cat,
+.pricing-table-element .plan-column.featured .subscription-price .inner-cell,
+.shop-latest .tabbable .nav li.active a:before,
+.product-list-item .kw-actions a,
+.woocommerce ul.products li.product .product-list-item .kw-actions a,
+.latest_posts.style2 ul.posts .details span.date,
+.eBlog .related-articles .rta-post > a:after,
+.shop-features .shop-feature:hover,
+.cart-container .buttons .button.wc-forward,
+.media-container__link--style-borderanim1 > i,
+.site-header .kl-cart-button .glyphicon:after,
+.chaser .main-menu li.active > a,
+.imgboxes_style4 .imgboxes-title:after,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce button.button.alt,
+.woocommerce input.button,
+.woocommerce input#button,
+.woocommerce #review_form #submit {
+    background-color: #2980b8;
+}
+.borderanim2-svg__shape {
+    stroke: #2980b8;
+}
+.btn-fullcolor:hover,
+.btn-fullcolor.btn-skewed:hover:before,
+.cart-container .buttons .button.wc-forward:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button:hover,
+.woocommerce input#button:hover,
+.woocommerce #review_form #submit:hover {
+    background-color: #1c5980;
+}
+.btn-lined.lined-custom {
+    color: #2980b8;
+    border-color: #2980b8;
+}
+.btn-lined.lined-custom:hover {
+    color: #1c5980;
+}
+.site-header.style8 .kl-main-header,
+.site-header.style9,
+.shop-latest .tabbable .nav li.active a:after,
+.zn_post_image,
+.zn_full_image,
+.sidebar .widget .widgettitle:after,
+.imgboxes_style4.kl-title_style_bottom .imgboxes-border-helper,
+.imgboxes_style4.kl-title_style_bottom:hover .imgboxes-border-helper,
+.statistic-box__line {
+    border-bottom-color: #2980b8
+}
+.fake-loading:after {
+    border: 2px solid #2980b8;
+    border-top-color: #2980b8;
+    border-right-color: #2980b8;
+}
+.latest_posts.style2 ul.posts .details span.date:after {
+    border-top-color: #2980b8;
+}
+.eluidf3608cd8 .kl-bg-source__overlay {
+    background: #2980b8 !important;
+}
+.activeItem{
+    color: #fff;
+    background: #2980b8;
+    height: 26px;
+    padding: 0 10px;
+    border-radius: 2px;
+}
+.first{
+    font-size: 20px;
+    color: #2980b8;
+    top: 21px;
+}
+.prev{
+    font-size: 20px;
+    color: #2980b8;
+    top: 21px;
+}
+.next{
+    font-size: 20px;
+    color: #2980b8;
+}
+.last {
+    font-size: 20px;
+    color: #2980b8;
+    right: 17px;
+}
+.pagedisplay {
+    width: 40px;
+    padding: 0 0 3px 4px;
+    font-size: 20px;
+    color: #000;
+    border-radius: 4px;
+}
+.pagesize{
+    color: #000;
+    margin-left: -27px;
+    border-radius: 4px;
+}
+
+#pager{
+    margin-bottom: 40px;
+    position:static !important    
+}
+@media (min-width:992px){
+    .tablesorter-sticky-visible{
+        margin-top:80px;
+    }
+}
+.visible{
+    opacity: 1;
+}
+.hideme{
+    opacity: 0;
+}
+.search{
+    margin:20px 0 0 5%;
+    text-align: center;
+    margin-bottom: -40px;
+}
+.search-slide{
+    margin-left: 3%;
+}
+
+.kl-ioscaption--style5 .main_title .kl-ios-sqbox {
+    position: absolute;
+    top: -20%;
+    left: -30px;
+    width: 280px;
+    height: 175%;
+    background: rgba(0,0,0,0.2);
+    z-index: -1;
+}
+.product-remove:first-letter,
+.product-thumbnail:first-letter,
+.product-name:first-letter,
+.product-price:first-letter,
+.product-quantity:first-letter,
+.product-subtotal:first-letter{
+    text-align: center;
+    text-transform: uppercase;
+}
+product-remove,
+.product-thumbnail,
+.product-name,
+.product-price,
+.product-quantity,
+.product-subtotal{
+    text-align: center;
+}
+.amount{
+    cursor: pointer;
+}
+.button-password{
+    margin-left:377px;
+    margin-top: 20px;
+}
+li .sous-cat{
+    font-size:14px !important;
+    margin-left:20px;
+    color:#a4a4a4;
+}
+#a1{
+    font-size: 14px;
+}
+.app-width-1{
+    z-index: 1;
+    width: 553px;
+    float: left;
+    font-size: 13px;
+    padding: 20px 14px 0px 14px;
+    margin: 5px 0 5px 5px;
+    height: auto;
+    line-height: 35px;
+    outline: 0;
+    box-shadow: inset 1px 2px 0 rgba(0, 0, 0, .06);
+    border: 1px solid #94bfdb;
+    border-radius:0px;
+}
+.app-width-2{
+    z-index: 1;
+    margin: 5px 0 5px 5px;
+    width: 274px;
+    float: left;
+    font-size: 13px;
+    padding: 20px 14px 0px 14px;
+    height: auto;
+    line-height: 35px;
+    outline: 0;
+    box-shadow: inset 1px 2px 0 rgba(0, 0, 0, .06);
+    border: 1px solid #94bfdb;
+    border-radius:0px;
+}
+.buttun{
+    margin-top: 475px;
+    margin-left: -163px;
+}
+.img-hospital{
+    max-width: 250px;
+    max-height: 250px;
+    margin: 5px 0 5px 30px;
+}

@@ -1,0 +1,17 @@
+{% extends "::Layout/article.html.twig" %}
+{% block title %}Pharmacy | NEWS{% endblock %}
+
+{% block help %}
+    {% include '::module/Pharmacy/helpPharmacy.html.twig' %}
+{% endblock %}
+{% block menu %}
+        {% include '::module/Pharmacy/headerPharmacy.html.twig' %}    
+{% endblock %}
+    {% block home %}{{ path('Pharmacy_homepage') }}{% endblock %}
+    {% block blog %}{{ path('Pharmacy_news') }}{% endblock %}
+    {% block javascript %}
+        <script>
+            $("#news").addClass("activeItem");
+            $(".main-menu li#news").css("background", "#2980b8");
+        </script>
+    {% endblock %}

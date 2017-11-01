@@ -1,0 +1,1 @@
+!function(e){"use strict";e(document).ready(function(){var t=function(t){var i=t.find(".testimonials_fader_trigger");i&&"undefined"!=typeof e.fn.carouFredSel&&e.each(i,function(t,i){var n=e(i).data("speed");e(i).carouFredSel({items:{width:360},responsive:!0,auto:{timeoutDuration:n},scroll:{fx:"fade",duration:1500}})})},i=e(".testimonials_fader");i&&t(i)})}(jQuery);

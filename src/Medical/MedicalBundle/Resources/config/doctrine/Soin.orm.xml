@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Medical\MedicalBundle\Entity\Soin" table="soin">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomSoin" type="string" column="nom_soin" length="255" nullable="false"/>
+    <field name="descriptionSoin" type="text" column="description_soin" nullable="false"/>
+    <field name="prixSoin" type="float" column="prix_soin" precision="10" scale="0" nullable="false"/>
+    <field name="dateSoin" type="datetime" column="date_soin" nullable="false"/>
+    <field name="entrepriseSoin" type="integer" column="entreprise_soin" nullable="true"/>
+    <field name="photoSoin" type="string" column="photo_soin" nullable="true"/>
+    <field name="typeSoin" type="string" column="type_soin" nullable="true" length="30"/>
+  </entity>
+</doctrine-mapping>

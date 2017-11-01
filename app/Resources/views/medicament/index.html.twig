@@ -1,0 +1,52 @@
+
+    <h1>Medicament list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Referencemed</th>
+                <th>Nommed</th>
+                <th>Descriptionmed</th>
+                <th>Prixmed</th>
+                <th>Photomed</th>
+                <th>Stockmed</th>
+                <th>Datemed</th>
+                <th>Categoriemed</th>
+                <th>Entreprisemed</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medicament in medicaments %}
+            <tr>
+                <td><a href="{{ path('medicament_show', { 'id': medicament.id }) }}">{{ medicament.referenceMed }}</a></td>
+                <td>{{ medicament.nomMed }}</td>
+                <td>{{ medicament.descriptionMed }}</td>
+                <td>{{ medicament.prixMed }}</td>
+                <td>{{ medicament.photoMed }}</td>
+                <td>{{ medicament.stockMed }}</td>
+                <td>{% if medicament.dateMed %}{{ medicament.dateMed|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ medicament.categorieMed }}</td>
+                <td>{{ medicament.entrepriseMed }}</td>
+                <td>{{ medicament.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('medicament_show', { 'id': medicament.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('medicament_edit', { 'id': medicament.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('medicament_new') }}">Create a new entry</a>
+        </li>
+    </ul>

@@ -1,0 +1,263 @@
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+div,
+ul,
+li {
+    list-style-type: none;
+}
+.planner {
+    overflow: hidden;
+}
+.calendar {
+    padding: 10px;
+    background-color: #fff;
+}
+.calendar-header {
+    color: #2980b8;
+    border-bottom: 1px solid #3e8cbf;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 0px;
+    font-size: 0px;
+    padding-bottom: 10px;
+}
+.calendar-header span,
+.calendar-header a {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+    line-height: 36px;
+}
+.calendar-header a:hover {
+    color: #2980b8;
+    cursor: pointer;
+}
+.calendar-header::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+table {
+    width: 100%;
+    padding: 10px;
+    color: #206693;
+}
+tbody tr{
+    height: 50px;
+}
+th {
+    font-weight: normal;
+    font-size: 18px;
+    color: #081924;
+}
+td {
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+}
+td > span {
+    display: inline-block;
+    text-align: center;
+    padding: 3px;
+    margin: 0px;
+    width: 35px;
+    height: 35px;
+    line-height: 26px;
+}
+td > span:hover {
+    font-weight: bold;
+}
+td > span.active {
+    background: #2980b8;
+    color: #fff;
+    border-radius: 50%;
+}
+.schedule {
+    margin: 0;
+}
+.tabs {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 0px;
+    font-size: 0px;
+    background-color: #1c5980;
+}
+.tabs .tab {
+    display: inline-block;
+    width: 33.3333%;
+    background-color: #1c5980;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border: 0px none;
+    line-height: 38px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.tabs .tab.active {
+    background-color: #2980b8;
+    color: #ffffff;
+    font-weight: 600;
+}
+.tabs .tab.active:hover {
+    background-color: #2980b8;
+}
+.tabs .tab:hover {
+    background-color: #2980b8;
+}
+.tabs .tab a {
+    color: inherit;
+    text-decoration: none;
+}
+.tabs::after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+.tab-pane{
+    background-color: #fff; 
+}
+.schedule-list {
+    padding: 20px;
+    margin-left: 37px;
+    border-left: 2px solid #7eb2d4;
+    display: block;
+}
+.schedule-item {
+    display: block;
+    margin-bottom: 50px;
+    padding: 0;
+    clear: both;
+    min-height: 100px;
+    overflow: visible;
+}
+.schedule-item:last-child {
+    margin-bottom: 10px;
+    min-height: 30px;
+}
+.schedule-item .time {
+    display: block;
+    float: left;
+    margin-left: -41px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #7eb2d4;
+    background-color: #7eb2d4;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    padding: 0px;
+    line-height: 25px;
+}
+.schedule-item .time span {
+    font-size: 12px;
+    height: 10px;
+    margin: auto;
+    display: block;
+}
+.schedule-item .description {
+    display: block;
+    float: left;
+    width: 305px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #14405c;
+    font-size: 14px;
+    overflow: visible;
+}
+.schedule-item .description .description-content {
+    margin-top: 5px;
+}
+.schedule-item .description .description-content p {
+    font-size: 12px;
+    margin: 0;
+    color: #c5c5c5;
+}
+.schedule-item .description .description-content .contact-list {
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+.schedule-item .description .description-content .contact-list .contact {
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #1c5980;
+    border-radius: 60px;
+    width: 56px;
+    height: 56px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+.schedule-item .description .description-content .contact-list .contact img {
+    width: 60px;
+    height: 60px;
+}
+.schedule-item .description .description-content .contact-list .contact:hover {
+    border: 2px solid #2980b8;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact {
+    color: #2980b8;
+    font-size: 20px;
+    line-height: 60px;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact a {
+    color: inherit;
+    text-decoration: none;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact:hover {
+    background-color: #d4e5f0;
+}
+.schedule-item.free .time {
+    border: 2px solid #7eb2d4;
+}
+.schedule-item.free .description .description-header {
+    background-color: #ffffff;
+    color: #c5c5c5;
+    display: block;
+    float: left;
+}
+.schedule-item.free .description .description-content {
+    margin-left: 5px;
+    margin-top: 0;
+    content: '';
+    width: 215px;
+    display: block;
+    float: right;
+    background-image: url(https://dl.dropboxusercontent.com/u/2915418/filler.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+
+nav {
+    position: absolute;
+    text-align: center;
+    z-index: 999;
+}
+
+nav div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin: 3px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.2), 0 2px 1px rgba(255,255,255,0.9);
+    z-index: 999;
+}
+
+nav div.bb-current {
+    background: #2980b8;
+}

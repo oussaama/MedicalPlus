@@ -1,0 +1,72 @@
+<div class="col-md-12" id="setting">
+    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom" style="background-color:#fff;">
+        <div class="ib2-inner">
+            <div class="contactForm">
+                <form action="{{ path('Profil_modif',{'id':app.user.id}) }}" class="contact_form row" {{ form_enctype(form) }} style="margin-top:-200px;"method="post">
+                    <div class='errors'>
+                        {{ form_errors(form) }}
+                    </div>
+                    <div class="cf_response"></div>
+                    {{ form_start(form) }}  
+                    <p class="col-sm-12 kl-fancy-form">
+                        {{ form_label(form.cin)}}
+                        <label class="control-label" style="margin:195px 0 0 -5px;">CIN</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.firstname)}}
+                        <label class="control-label" style="margin:253px 0 0 -5px;">{{'header.menu.profil.fn'|trans}}</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.lastname)}}
+                        <label class="control-label" style="margin:253px 0 0 -5px;">{{'header.menu.profil.ln'|trans}}</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.profession)}}
+                        <label class="control-label" style="margin:308px 0 0 160px;">Profession</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.sex)}}
+                        <label class="control-label" style="margin:308px 0 0 -255px;">{{'header.menu.profil.se'|trans}}</label>
+                    </p>
+                    <p class="col-sm-12 kl-fancy-form"> 
+                        {{ form_label(form.month)}}
+                        <label class="control-label" style="margin:363px 0 0 -5px;">{{'header.menu.profil.m'|trans}}</label>
+                        {{ form_label(form.day)}}
+                        <label class="control-label" style="margin:363px 0 0 160px;">{{'header.menu.profil.da'|trans}}</label>
+                        {{ form_label(form.year)}}
+                        <label class="control-label" style="margin:363px 0 0 325px;">{{'header.menu.profil.y'|trans}}</label>
+                    </p>
+                    <p class="col-sm-7 kl-fancy-form">
+                        {{ form_label(form.email)}}
+                        <label class="control-label" style="margin:425px 0 0 -5px;">EMAIL</label>
+                    </p>
+                    <p class="col-sm-7 kl-fancy-form">
+                        {{ form_label(form.tel)}}
+                        <label class="control-label" style="margin:400px 0 0 285px;">{{'header.menu.profil.p'|trans}}</label>
+                    </p>
+                    <p class="col-sm-12 kl-fancy-form">
+                        {{ form_label(form.adress)}}
+                        <label class="control-label" style="margin:458px 0 0 -5px;">{{'header.menu.profil.ad'|trans}}</label>
+                    </p>
+                    <p class="col-sm-4 kl-fancy-form">
+                        {{ form_label(form.city)}}
+                        <label class="control-label" style="margin:513px 0 0 -5px;">{{'header.menu.profil.c'|trans}}</label>
+                    </p>
+                    <p class="col-sm-4 kl-fancy-form">
+                        {{ form_label(form.state)}}
+                        <label class="control-label" style="margin:513px 0 0 -5px;">{{'header.menu.profil.st'|trans}}</label>
+                    </p>
+                    <p class="col-sm-4 kl-fancy-form">
+                        {{ form_label(form.code)}}
+                        <label class="control-label" style="margin:513px 0 0 -5px;">{{'header.menu.profil.z'|trans}}</label>
+                    </p>
+                    <p class="col-sm-12">
+                        {{ form_label(form.UPDATE )}}
+                    </p>
+                    {{ form_end(form) }}
+                </form>
+                <a href="{{ path('fos_user_change_password')}}" class="change fancybox.ajax" >{{'header.menu.profil.ch'|trans}}</a>
+            </div>
+        </div>
+    </div>
+</div>

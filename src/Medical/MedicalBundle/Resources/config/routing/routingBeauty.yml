@@ -1,0 +1,35 @@
+Menu_Beauty:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMenu/menuBeauty.yml"
+    prefix:   /
+    
+Beauty_class:
+    path:     /class
+    defaults: { _controller: MedicalMedicalBundle:Beauty/Beauty:classBeauty }
+        
+Beauty_delete:
+    path:     /{id}/delete
+    defaults: { _controller: MedicalMedicalBundle:Beauty/Beauty:delete }
+
+photoGallerie:
+    path:     /photo
+    defaults: { _controller: MedicalMedicalBundle:Beauty/Beauty:addPhoto }
+    
+direction:
+    path:     /direction
+    defaults: { _controller: MedicalMedicalBundle:Beauty/Beauty:direction }
+
+medical_promo:
+    path:     /promo
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:promo }
+    
+promo_edit:
+    path:     /promo/edit/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:promoModif }
+    
+promo_delete:
+    path:     /promo/del/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:promoSupp }
+
+promo_show:
+    path:     /promo/show/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:promoShow }

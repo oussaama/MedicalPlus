@@ -1,0 +1,296 @@
+{% extends '::Layout/base.html.twig' %}
+
+{% block title %}{{ 'header.menu.bilan'|trans }}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/ios/style.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/sliders/ios/style.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/sliders/portfolio-slider/portfolio-slider.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('css/theme.default.min.css') }}" type="text/css" media="all"/>
+    <style>
+        @media screen and (min-width: 992px) {
+            .chaser {
+                display: block;
+                background: rgba(0, 0, 0, 1);
+                padding: 0;
+                position: fixed;
+                left: -2999px;
+                right: 0;
+                top: 0;
+                width: 100%;
+                z-index: 99999;
+                opacity: 0;
+                -webkit-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                transform: translateY(-30px);
+                -webkit-transition: opacity .15s ease-in-out, -webkit-transform .15s ease-in-out;
+                transition: opacity .15s ease-in-out, transform .15s ease-in-out
+            }
+        </style>
+    {% endblock %}
+
+    {% block body %}
+        <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+        <div class="kl-slideshow iosslider-slideshow uh_light_gray iosslider--custom-height scrollme kl-slider-loaded"  style="width:auto;height:670px;">
+            <div class="kl-loader">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewbox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+                    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(103.374 20 20)">
+                        <animatetransform attributetype="xml" attributename="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatcount="indefinite"></animatetransform>
+                    </path>
+                </svg>
+            </div>
+            <div class="bgback"></div>
+            <div class="th-sparkles"></div>
+            <div class="iosSlider kl-slideshow-inner animateme" data-trans="6000" data-autoplay="zn_dummy_value" data-infinite="true" data-when="span" data-from="0" data-to="0.75" data-translatey="300" data-easing="linear">
+                <div class="kl-iosslider hideControls">
+                    <div class="item iosslider__item kl-iosslider-active">
+                        <div class="slide-item-bg" style="background-image:url({{ asset('images/sliders/old-iosslider-1.jpg') }});"></div>
+                        <div class="kl-slide-overlay" style="background:rgba(10,0,0,0.2); background: -moz-linear-gradient(left, rgba(10,0,0,0.2) 0%, rgba(10,1,1,0) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(10,0,0,0.2)), color-stop(100%,rgba(10,1,1,0))); background: -webkit-linear-gradient(left, rgba(10,0,0,0.2) 0%,rgba(10,1,1,0) 100%); background: -o-linear-gradient(left, rgba(10,0,0,0.2) 0%,rgba(10,1,1,0) 100%); background: -ms-linear-gradient(left, rgba(10,0,0,0.2) 0%,rgba(10,1,1,0) 100%); background: linear-gradient(to right, rgba(10,0,0,0.2) 0%,rgba(10,1,1,0) 100%); "></div>
+                        <div class="container kl-iosslide-caption kl-ioscaption--style4 s4ext fromleft klios-alignleft kl-caption-posv-bottom">
+                            <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                                <h2 class="main_title has_titlebig "><span><strong>{{ 'laboratory.slider.s1.p1'|trans }}</strong> </span></h2>
+                                <h3 class="title_big">{{ 'laboratory.slider.s1.p2'|trans }} <strong>{{ 'laboratory.slider.s1.p2g'|trans }}</strong></h3>
+                                <h4 class="title_small">{{ 'laboratory.slider.s1.p3'|trans }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item iosslider__item">
+                        <div class="slide-item-bg" style="background-image:url({{ asset('images/sliders/old-iosslider-22.jpg') }});"></div>
+                        <div class="kl-slide-overlay" style="background-color:rgba(10,0,0,0.1)"></div>
+                        <div class="container kl-iosslide-caption kl-ioscaption--style2 fromright klios-alignright kl-caption-posv-middle">
+                            <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                                <h2 class="main_title has_titlebig "><span><strong>{{ 'laboratory.slider.s2.p1g'|trans }}</strong> {{ 'laboratory.slider.s2.p1'|trans }} </span></h2>
+                                <h3 class="title_big"><span style="ff-alternative"> {{ 'laboratory.slider.s2.p2'|trans }} </span></h3>
+                                <a class="more" href="#" target="_self"><span class="glyphicon glyphicon-chevron-right icon-white more-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item iosslider__item">
+                        <div class="slide-item-bg" style="background-image:url({{ asset('images/sliders/old-iosslider-3.jpg') }});"></div>
+                        <div class="container kl-iosslide-caption kl-ioscaption--style5 fromleft klios-alignright kl-caption-posv-middle">
+                            <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear" style="text-shadow: 1px 1px 1px #000;">
+                                <h2 class="main_title has_titlebig "><span style="text-shadow: 1px 1px 1px #000;">{{ 'laboratory.slider.s3.p1'|trans }}<br>{{ 'laboratory.slider.s3.p2'|trans }}</span></h2>
+                                <h3 class="title_big">  <strong>{{ 'laboratory.slider.s3.p3g'|trans }} </strong>{{ 'laboratory.slider.s3.p3'|trans }}</h3>
+                                <h4 class="title_small">{{ 'laboratory.slider.s3.p4'|trans }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item iosslider__item">
+                        <div class="slide-item-bg" style="background-image:url({{ asset('images/sliders/old-iosslider-21.jpg') }});"></div>
+                        <div class="kl-slide-overlay" style="background-color:rgba(0,0,0,0.3)"></div>
+                        <div class="container kl-iosslide-caption kl-ioscaption--style5 zoomin klios-aligncenter kl-caption-posv-middle">
+                            <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                                <h2 class="main_title has_titlebig kl-ios-has-sqbox "><span class="kl-ios-sqbox"></span><span><strong>{{ 'laboratory.slider.s4.p1g'|trans }}</strong><br>{{ 'laboratory.slider.s4.p1'|trans }}</span></h2>
+                                <h3 class="title_big"><strong>{{ 'laboratory.slider.s4.p2g'|trans }} </strong><br>{{ 'laboratory.slider.s4.p2'|trans }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kl-iosslider-prev">
+                    <span class="thin-arrows ta__prev"></span>
+                    <div class="btn-label">{{ 'index.head.prev'|trans }}</div>
+                </div>
+                <div class="kl-iosslider-next">
+                    <span class="thin-arrows ta__next"></span>
+                    <div class="btn-label">{{ 'index.head.next'|trans }}</div>
+                </div>
+            </div>
+            <div class="kl-ios-selectors-block bullets2">
+                <div class="selectors">
+                    <div class="item iosslider__bull-item first selected"></div>
+                    <div class="item iosslider__bull-item"></div>
+                    <div class="item iosslider__bull-item"></div>
+                    <div class="item iosslider__bull-item"></div>
+                </div>
+            </div>
+            <div class="scrollbarContainer"></div>
+        </div>     
+        <section id="content" class="hg_section ptop-60">
+            <div class="container">
+                <div class="row">
+                    <div class="right_sidebar col-md-12" style="margin-right: -100px;">
+                        {% if (x == 1) %}
+                            <div class="col-md-1 col-md-offset-11"style="padding:50px 0 50px 0;">
+                                <button class="btn pull-right btn-fullcolor profil-form">
+                                    <a class="Add fancybox.ajax" href="{{ path('bilan_new',{'id':app.user.id })}}" title="Add this item" style="color:#fff;"><span class="glyphicon glyphicon-plus"></span> {{'header.menu.prod.ad'|trans}}</a>
+                                </button>
+                            </div>
+                        </div>
+                    {% else %}
+                        {% for flashMessage in app.session.flashbag.get('echec') %}
+                            <div class="alert alert-danger alert-dismissible animated bounceInLeft col-xs-12 col-md-6 col-md-offset-3" role="alert" id="myalert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cl">&times;</span></button>
+                                <strong>Echec </strong>{{ flashMessage}}
+                            </div>
+                        {% endfor %}
+                        <style>
+                            .bounceInLeft {
+                                animation-delay: 1s;
+                            }
+                        </style>
+                    {% endif %}
+                    <div class="text_box">
+                        <div class="kl-store">
+                            <div class="col-xs-12 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
+                                <div id="pager" class="pager">
+                                    <form>
+                                        <span class="first glyphicon glyphicon-step-backward"></span>
+                                        <span class="prev glyphicon glyphicon-backward"/>
+                                        <input class="pagedisplay"/>
+                                        <span class="next glyphicon glyphicon-forward"></span>
+                                        <span class="last glyphicon glyphicon-step-forward"></span>
+                                        <select class="pagesize">
+                                            <option selected="selected"  value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option  value="40">40</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                            <form action="#" method="post" class="mb-50">
+                                <table class="shop_table cart sortTable" cellspacing="0">
+                                    <thead style="color: #fff; text-transform: uppercase;font-size: 12px;border-radius: 3px;">
+                                        <tr>
+                                            <th class="product-thumbnail" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius:0;">{{ 'header.menu.prod.re'|trans }}</th>
+                                            <th class="product-name" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.nm'|trans }}</th>  
+                                            <th class="product-subtotal" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.des'|trans }}</th>
+                                            <th class="product-subtotal" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">DATE</th>
+                                            <th class="product-remove" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius:0;">ACTION</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for bilan in bilans|reverse %}
+                                            <tr class="cart_item" style="background-color:white;">
+                                                <td class="product-thumbnail"><a href="">{{ bilan.referenceBilan }}</a></td>
+                                                <td class="product-name"><a href="">{{ bilan.nomBilan }}</a></td>
+                                                <td class="product-name"><a href="">{{ bilan.descBilan }}</a></td>
+                                                <td class="product-name">
+                                                    <a href="">{{ bilan.dateBilan| date('Y-m-d') }} </a>
+                                                    <dl class="variation">
+                                                        <dt class="variation-color">{{ bilan.dateBilan |date('h:m') }}</dt>
+                                                    </dl>
+                                                </td>
+                                                <td class="product-remove">
+                                                    <a href="{{ path('Laboratory_delete',{ 'id': bilan.id }) }}" class="" title="Remove this item" data-product_id="22" data-product_sku=""><span class="glyphicon glyphicon-remove" style="color:#2980b8; font-size:18px;"></span></a>
+                                                    <a href="{{ path('bilan_edit',{ 'id': bilan.id }) }}" class="Edit fancybox.ajax" title="Edit this item" data-product_id="22" data-product_sku=""><span class="glyphicon glyphicon-cog" style="color:#2980b8; font-size:18px;margin-left:10px;"></span></a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('sliders/ios/jquery.iosslider.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/ios/kl-ios-slider.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('addons/scrollme/jquery.scrollme.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-recent-work-carousel.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.cookie.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-logo-carousel.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}" ></script>  
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+    <script>
+        $(function () {
+            $('.sortTable').tablesorter({
+                widgets: ["uitheme", "columns", "filter", "resizable", "stickyHeaders"],
+                headers: {
+                    0: {
+                        sorter: 'number',
+                        filter: true
+                    },
+                    1: {
+                        sorter: "digit",
+                        filter: true
+                    },
+                    2: {
+                        sorter: "digit",
+                        filter: true
+                    },
+                    3: {
+                        sorter: "digit",
+                        filter: true
+                    },
+                    4: {
+                        sorter: "hidden",
+                        filter: false
+                    }
+                },
+                usNumberFormat: false,
+                sortReset: true,
+                sortRestart: true
+            }).tablesorterPager({container: $("#pager")});
+        });
+    </script>
+    <script>
+        $("#balance").addClass("activeItem");
+        $(".main-menu li#balance").css("background", "#2980b8");
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".Add").fancybox({
+                maxWidth: 550,
+                maxHeight: 550,
+                margin: 100,
+                fitToView: true,
+                width: '57%',
+                height: '100%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: false,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                type: 'iframe'
+            });
+            $(".Edit").fancybox({
+                maxWidth: 550,
+                maxHeight: 550,
+                margin: 100,
+                fitToView: true,
+                width: '57%',
+                height: '100%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: false,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                type: 'iframe'
+            });
+        });
+    </script>
+    <script src="{{ asset('js/jquery.tablesorter.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.tablesorter.widgets.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.tablesorter.pagination.js') }}"></script>
+    <script>
+        $(function () {
+            $('.sortTable').tablesorter({
+                widgets: ["uitheme", "columns", "filter", "resizable", "stickyHeaders"],
+                usNumberFormat: false,
+                sortReset: true,
+                sortRestart: true
+            });
+        });
+    </script>
+{% endblock %}

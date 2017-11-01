@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\Article" table="article">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="auteur" type="string" column="auteur" length="40"/>
+        <field name="titre" type="string" column="titre" length="60"/>
+        <field name="contenuArt" type="text" column="contenu_art" />
+        <field name="photoArt" type="string" column="photo_art" />
+        <field name="dateArt" type="datetime" column="date_art" />
+        <field name="auteurId" type="integer" column="auteur_id" />
+        <field name="etatArt" type="string" column="etat_art" length="60"/>
+        <field name="categorieArt" type="integer" column="categorie_art"/>
+        <field name="commentaireArt" type="integer" column="commentaire_art" />
+    </entity>
+</doctrine-mapping>

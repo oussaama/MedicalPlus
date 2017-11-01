@@ -1,0 +1,176 @@
+{% extends '::Layout/base.html.twig' %}
+
+{% block title %}{{ 'header.menu.index'|trans }}{% endblock %}
+{% block stylesheet %}  {% endblock %}
+
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div class="kl-slideshow static-content__slideshow uh_light_gray scrollme">
+        <div class="bgback"></div>
+        <div class="kl-slideshow-inner static-content__wrapper static-content--height h-600" style="background-image: url({{ asset('images/ptf2.jpg') }});background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:center;background-size:cover">
+            <div class="static-content__source animateme" data-when="span" data-from="0" data-to="0.75" data-easing="linear" data-translatey="300" data-opacity="0.1" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                <div class="kl-bg-source">
+                    <div class="kl-bg-source__bgimage" ></div>
+                    <div class="kl-bg-source__overlay" style="background-color:rgba(0,54,96,0.5)"></div>
+                </div>
+                <div class="th-sparkles"></div>
+            </div>
+            <div class="static-content__inner container">
+                <div class="kl-slideshow-safepadding sc__container animateme ptop-220" data-when="span" data-from="0" data-to="0.75" data-translatey="200" data-opacity="0.1" data-easing="linear" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                    <div class="static-content default-style">
+                        <h3 class="static-content__subtitle text-left"><span class="fw-semibold"> {{ 'Medication.slider.t1'|trans }} <span class="fw-thin"> {{ 'Medication.slider.t2'|trans }}</span><span data-rel="tooltip" data-placement="top" title="" data-animation="true" data-original-title=""> {{ 'Medication.slider.t3'|trans }}</span></span><br><span class="fw-thin">{{ 'Medication.slider.t4'|trans }}</span></h3>
+                        <div class="static-content__infopop animated fadeBoxIn sc-infopop--left" data-arrow="top">
+                            <h5 class="sc-infopop__text">{{ 'Medication.slider.t5'|trans }} <strong>Medical+</strong></h5>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hg_section ptop-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="action_box style3" data-arrowpos="center" style="margin-top:-25px;">
+                        <div class="action_box_inner">
+                            <div class="action_box_content">
+                                <div class="ac-content-text">
+                                    <h4 class="text"><span class="fw-thin">{{ 'patient.home.slogan.p1'|trans }}<span class="fw-semibold">{{ 'patient.home.slogan.p2'|trans }}</span> {{ 'patient.home.slogan.p3'|trans }} <span class="fw-semibold">{{ 'patient.home.slogan.p4'|trans }}</span></h4>
+                                    <h5 class="ac-subtitle">{{ 'patient.home.slogan.p5'|trans }}</h5>
+                                </div>
+                                <div class="ac-buttons">
+                                    <a class="btn btn-lined ac-btn" href="about-us.html" target="_blank">{{ 'patient.home.slogan.b2'|trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="services_box services_box--classic sb--hasicon">
+                        <div class="services_box__inner clearfix">
+                            <div class="services_box__icon">
+                                <div class="services_box__icon-inner"><span class="services_box__fonticon icon-noun_65754"></span></div>
+                            </div>
+                            <div class="services_box__content">
+                                <h4 class="services_box__title" style="text-transform: uppercase;">{{ 'Medication.role.r1'|trans }}</h4>
+                                <div class="services_box__desc">
+                                    <p>{{ 'Medication.role.d1'|trans }}</p>
+                                </div>
+                                <div class="services_box__list-wrapper">
+                                    <span class="services_box__list-bg"></span>
+                                    <ul class="services_box__list">
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'Medication.role.t1'|trans }} </span></li>
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'Medication.role.t2'|trans }} </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="services_box services_box--classic sb--hasicon">
+                        <div class="services_box__inner clearfix">
+                            <div class="services_box__icon">
+                                <div class="services_box__icon-inner"><span class="services_box__fonticon icon-process2"></span></div>
+                            </div>
+                            <div class="services_box__content">
+                                <h4 class="services_box__title">{{ 'cabine.desc.des2.t1'|trans }}</h4>
+                                <div class="services_box__desc">
+                                    <p>{{ 'cabine.desc.des2.ds'|trans }}</p>
+                                </div>
+                                <div class="services_box__list-wrapper">
+                                    <span class="services_box__list-bg"></span>
+                                    <ul class="services_box__list">
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des2.p1'|trans }} </span></li>
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des2.p2'|trans }}  </span></li>
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des2.p3'|trans }} </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="services_box services_box--classic sb--hasicon">
+                        <div class="services_box__inner clearfix">
+                            <div class="services_box__icon">
+                                <div class="services_box__icon-inner"><span class="services_box__fonticon icon-process3"></span></div>
+                            </div>
+                            <div class="services_box__content">
+                                <h4 class="services_box__title">{{ 'cabine.desc.des3.t1'|trans }}</h4>
+                                <div class="services_box__desc">
+                                    <p>{{ 'cabine.desc.des3.ds'|trans }}</p>
+                                </div>
+                                <div class="services_box__list-wrapper">
+                                    <span class="services_box__list-bg"></span>
+                                    <ul class="services_box__list">
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des3.p1'|trans }}  </span></li>
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des3.p2'|trans }}  </span></li>
+                                        <li><span class="glyphicon glyphicon-play"></span><span class="services_box__list-text">{{ 'cabine.desc.des3.p3'|trans }} </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section bg-white">
+        <div class="full_width">
+            <div class="row gutter-lg"><div class="col-md-5 col-sm-12">
+                    <div class="media-container style2 h-520">
+                        <div class="kl-bg-source">
+                            <div class="kl-bg-source__bgimage"><img src="{{ asset('images/sliders/ios-living.jpg') }} " class="picture"/></div>
+                        </div>
+                        <div class="media-container__link media-container__link--btn media-container__link--style-borderanim2"  data-lightbox="iframe">
+                            <div class="borderanim2-svg">
+                                <svg height="70" width="400" xmlns="http://www.w3.org/2000/svg" style="    margin-top: -27px;">
+                                <rect class="borderanim2-svg__shape" height="70" width="400"></rect>
+                                </svg>
+                                <span class="media-container__text">MEDICAL + </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="row hg_col_eq_last">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="kl-title-block clearfix text-left tbk-symbol--line tbk-icon-pos--after-title pbottom-0">
+                                <h3 class="tbk__title montserrat fs-38 lh-46 fw-bold">{{ 'patient.home.desc.t1'|trans }}<span class="text-custom fw-normal tcolor">&amp;</span>{{ 'patient.home.desc.t2'|trans }}</h3>
+                                <span class="tbk__symbol "><span></span></span>
+                                <h4 class="tbk__subtitle fs-18 lh-32 fw-vthin">{{ 'patient.home.desc.p1'|trans }}</h4>
+                            </div>
+                            <div class="hg_separator style2 clearfix"></div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <div class="text_box">
+                                <p>{{ 'patient.home.desc.p2'|trans }}</p>
+                                <p>{{ 'patient.home.desc.p3'|trans }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-recent-work-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-testimonials-fader.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-logo-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+    <script>
+        $("#home").addClass("activeItem");
+        $(".main-menu li#home").css("background", "#2980b8");
+    </script>
+{% endblock %}

@@ -1,0 +1,71 @@
+Patient_homepage:
+    path:     /home.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:indexPatient, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_appointment:
+    path:     /appointment.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:appointmentPatient, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_service:
+    path:     /service.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:servicePatient, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_ServiceBeauty:
+    path:     /beauty.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:ServiceBeauty, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_ServicePharmacy:
+    path:     /pharmacy.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:ServicePharmacy, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_ServiceClinical:
+    path:     /clinical.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:ServiceClinical, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_ServiceHospital:
+    path:     /hospital.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:ServiceHospital, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_ServiceLaboratory:
+    path:     /laboratory.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:ServiceLaboratory, _format: php }
+    requirements:
+         _format:  php
+    
+Patient_Basket:
+    path:     /basket/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:basketPatient }
+    
+remove_basket:
+    path:     /remove/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:removeBasket }
+
+patient_search_state:
+    path:     /{state}/{role}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:statePatient }
+
+patient_search:
+    path:     /search/{role}.{_format}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:searchPatient, _format: php }
+    requirements:
+         _format:  php
+         
+Patient_promo:
+    path:     /promo
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:promoPatient, _format: php }
+    requirements:
+         _format:  php

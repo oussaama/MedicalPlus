@@ -1,0 +1,110 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %} Notification {% endblock %}
+{% block stylesheet %} {% endblock %}
+{% block body %} 
+    <div id="page_header" class="page-subheader site-subheader-cst uh_flat_dark_blue min-450" style="width: 100%;height: 667px;">
+        <div class="bgback"></div>
+        <div class="th-sparkles"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__bgimage picture" >
+                <img src="{{ asset('images/general-bg-2.jpg') }}" style="height: 665px; width: 1920px;"/>
+            </div>
+            <div class="kl-bg-source__overlay" style="background-color:rgba(53,53,53,0.3)"></div>   
+        </div>
+        <div class="clearfix"></div>
+        <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+        <div class="ph-content-wrap ptop-250">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row" style="margin:200px 0;">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="">{{'header.menu.index'|trans}}</a></li>
+                                    <li>Message</li>
+                                </ul>
+                                <span id="current-date" class="subheader-currentdate">{{"now" |date('l jS F Y')}}</span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle">Medical+</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hg_section pbottom-50">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="timeline_bar">
+                        <div class="row">
+                            <div class="col-sm-12 end_timeline"><span>{{'now'|date('Y')}}</span></div>
+                            {% for message in message %}
+                                {%if (loop.index%2==0)%}
+                                    <div class="col-sm-6 col-sm-offset-6" data-align="right">
+                                        <div class="timeline_box">
+                                            <div class="date">{{ message.dateCont | date('H:i  d-m-Y') }}</div>
+                                            <h4 class="htitle">{{ message.emailCont }}</h4>
+                                            <p>{{ message.subjectCont }}<br>{{ message.contenuCont}}</p>
+                                        </div>
+                                    </div>
+                                {% else%}
+                                    <div class="col-sm-6">
+                                        <div class="timeline_box">
+                                            <div class="date">{{ message.dateCont | date('H:i  d-m-Y') }}</div>
+                                            <h4 class="htitle">{{ message.emailCont }}</h4>
+                                            <p>{{ message.subjectCont }}<br>{{ message.contenuCont}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div class="col-sm-12 end_timeline">
+                                <span>PAST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listedModernizr.load([{// test for media query support, if not load respond.jstest : Modernizr.mq('only all'),// If not, load the respond.js filenope : '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js'}]);</script><script>(function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');</script>
+    <script>
+        ChatraID = '4mBZYK7ytcuz7Jf4h';
+        (function (d, w, c) {
+            var n = d.getElementsByTagName('script')[0],
+                    s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = (d.location.protocol === 'https:' ? 'https:' : 'http:')
+                    + '//call.chatra.io/chatra.js';
+            n.parentNode.insertBefore(s, n);
+        })(document, window, 'Chatra');
+    </script>
+    <script>
+        $("#notification").addClass("activeItem");
+        $(".main-menu li#notification").css("background", "#2980b8");
+    </script>
+{% endblock %}
+

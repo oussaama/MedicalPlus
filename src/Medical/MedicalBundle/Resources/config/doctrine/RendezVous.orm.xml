@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\RendezVous" table="rendez_vous">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="idDocteur" type="integer" column="id_docteur" nullable="false"/>
+        <field name="idPatient" type="integer" column="id_patient" nullable="false"/>
+        <field name="heureRv" type="integer" column="heure_rv" nullable="false"/>
+        <field name="minuteRv" type="integer" column="minute_rv" nullable="false"/>
+        <field name="etatRv" type="string" column="etat_rv" nullable="false" length="20"/>
+        <field name="dateRv" type="string" column="date_rv" nullable="false"/>
+        <field name="firstnameRv" type="string" column="firstname_rv" nullable="false" length="30"/>
+        <field name="lastnameRv" type="string" column="lastname_rv" nullable="false" length="30"/>
+        <field name="cinRv" type="integer" column="cin_rv" nullable="false"/>
+        <field name="telRv" type="integer" column="telrv" nullable="false"/>
+        <field name="emailRv" type="string" column="email_rv" nullable="false" length="40"/>
+        <field name="reserved" type="string" column="reserved" nullable="false"/>
+        
+    </entity>
+</doctrine-mapping>

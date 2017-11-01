@@ -1,0 +1,168 @@
+{% extends "::Layout/base.html.twig" %}
+{% block title %}{% endblock %}
+{% block stylesheet %} {% endblock %}
+
+{% block body %}
+    <div id="page_header" class="page-subheader site-subheader-cst uh_zn_def_header_style maskcontainer--mask5 picture" style="background-image: url({{ asset('images/sliders/class.jpg') }});">
+        <div class="bgback"></div>
+        <div class="th-sparkles"></div>
+        <div class="ph-content-wrap ptop-180">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="">{{ 'header.menu.index'|trans }}</a></li>
+                                    <li>{{ 'header.menu.pay'|trans }}</li>
+                                </ul>
+                                <span id="current-date" class="subheader-currentdate">{{"now"|date('m-d-y')}}</span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--mask5">
+            <svg width="2700px" height="64px" class="svgmask" viewBox="0 0 2700 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-mask5">
+                        <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                        <feGaussianBlur stdDeviation="1.5" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+                        <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+                        <feMerge>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                            <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path d="M1892,0 L2119,44.993 L2701,45 L2701.133,63.993 L-0.16,63.993 L1.73847048e-12,45 L909,44.993 L1892,0 Z" class="bmask-bgfill" fill="#f5f5f5" filter="url(#filter-mask5)"></path>
+                <path d="M2216,44.993 L2093,55 L1882,6 L995,62 L966,42 L1892,0 L2118,44.993 L2216,44.993 L2216,44.993 Z" fill="#2980b8" class="bmask-customfill" filter="url(#filter-mask5)"></path>
+            </svg>
+        </div>
+    </div>
+    <section id="content" class="hg_section ptop-60">
+        <div class="container">
+            <div class="row">
+                <div class="right_sidebar col-md-9">
+                    <div class="kl-title-block clearfix text-left tbk-symbol--line tbk-icon-pos--after-title">
+                        <h2 class="tbk__title montserrat fs-34 fw-semibold black">{{ 'paiment.pay.che'|trans }}</h2>
+                        <span class="tbk__symbol "><span></span></span>
+                        <h4 class="tbk__subtitle fs-22 fw-thin">{{ 'paiment.pay.sl'|trans }}</h4>
+                    </div>
+                    {% for flashMessage in app.session.flashbag.get('echec') %}
+                        <div class="alert alert-danger">
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="alert alert-success">
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    <div class="text_box">
+                        <div class="kl-store">
+                            <form name="checkout" method="post" class="checkout kl-store-checkout" action="{{ path('Patient_facture',{'id':id,'price':price}) }}" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12" id="customer_details">
+                                        <div class="kl-store-billing-fields">
+                                            <h3>{{ 'paiment.pay.title'|trans }}</h3>
+                                            <div class="clear"></div>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.nm'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="nom" id="billing_nm" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.pn'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="prenom" id="billing_pn" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required validate-email" id="billing_email_field">
+                                                <label for="billing_email" class="">{{ 'paiment.pay.mail'|trans }}<abbr class="required" title="required">*</abbr></label>
+                                                <input type="email" class="input-text " name="mail" id="billing_email" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required validate-phone" id="billing_phone_field">
+                                                <label for="billing_phone" class="">{{ 'paiment.pay.tel'|trans }} <abbr class="required" title="required">*</abbr></label>
+                                                <input type="tel" class="input-text " name="phone" id="billing_phone" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.ad'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="adress" id="billing_ad" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.ville'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="ville" id="billing_ville" placeholder="" value=""required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.st'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="st" id="billing_st" placeholder="" value="" required/>
+                                            </p>
+                                            <p class="form-row form-row form-row-wide validate-required" id="billing_company_field">
+                                                <label for="billing_company" class="">{{ 'paiment.pay.code'|trans }}<abbr class="required" title="required">*</label>
+                                                <input type="text" class="input-text " name="code" id="billing_code" placeholder="" value="" required/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12" style="padding-left:200px;">
+                                        <h3 id="order_review_heading">{{ 'paiment.pay.o'|trans }}</h3>
+                                        <div id="order_review" class="kl-store-checkout-review-order">
+                                            <table class="shop_table kl-store-checkout-review-order-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="product-name">{{ 'paiment.pay.cl'|trans }}</th>
+                                                        <th class="product-total">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="cart_item">
+                                                        <td class="product-name">
+
+                                                        </td>
+                                                        <td class="product-total"><span class="amount">{{ price }}</span></td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <tfoot>
+                                                    <tr class="order-total" style="margin-top:60px;">
+                                                        <th>Total</th>
+                                                        <td><strong><span class="amount">{{ price }}</span></strong></td>
+                                                    </tr>
+                                                    <tr class="order-total" style="margin-top:60px;">
+                                                        <td></td>
+                                                        <td> <input type="submit" class="btn btn-primary" value="{{ 'paiment.pay.p'|trans }}"/></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('js/kl-plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('addons/smoothscroll/smoothscroll.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script>
+    <script type="text/javascript">//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listedModernizr.load([{// test for media query support, if not load respond.jstest : Modernizr.mq('only all'),// If not, load the respond.js filenope : '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js'}]);</script><script>(function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+{% endblock %}

@@ -1,0 +1,252 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}PHARMACY{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/circular-catalogue/circular-catalogue.css') }}" type="text/css" media="all"/>
+{% endblock %}
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:600px;">
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/sliders/ios-living.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="ph-content-wrap ptop-170">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row" style="padding:320px 0px ;">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="{{ path('Patient_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                    <li><a href="{{ path('Patient_ServicePharmacy') }}">{{ 'header.menu.ph'|trans }}</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="th-sparkles"></div>
+    </div>
+    <section id="content" class="hg_section ptop-60">
+        <div class="container">
+            <div class="row">
+                <div class="right_sidebar col-sm-12">
+                    <div class="product">
+                        <div class="row product-page">
+                            <div class="single_product_main_image col-sm-5">
+                                <div class="zn_badge_container"><span class="zonsale zn_badge_sale">{{ pharmacy.class }}</span></div>
+                                <div class="images">
+                                    <a href="{{ asset('uploads/'~pharmacy.picture) }}" itemprop="image" class="kl-store-main-image zoom" title="">
+                                        <img width="300" src="{{ asset('uploads/'~pharmacy.picture) }}" class="attachment-shop_single wp-post-image" alt="{{ pharmacy.username }}" title="{{ pharmacy.username }}" data-o_src="{{ asset('uploads/pharmacy.png') }}" data-o_title="{{ pharmacy.username }}" data-o_alt="{{ pharmacy.username }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="main-data col-sm-7">
+                                <div class="summary entry-summary">
+                                    <h1 itemprop="name" class="product_title entry-title">{{ pharmacy.username }}</h1>
+                                    <div>
+                                        <p style="font-size: 24px; margin: 0 0 20px;"><span class="amount">{{ pharmacy.tel }}</span></p>
+                                    </div>
+                                    <div itemprop="description">
+                                        <p class="desc kw-details-desc">{{ pharmacy.adress }} {{ pharmacy.code }}</p>
+                                        <p class="desc kw-details-desc">{{ pharmacy.city }} {{ pharmacy.state }}</p>
+                                    </div>
+                                    <div class="product_meta" style="margin-bottom: 10px;">
+                                        <span class="sku_wrapper" style="display:block;">PHONE: <span class="sku" itemprop="sku" data-o_sku="N/A">{{ pharmacy.tel }}</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-12">
+                                {% if(medicaments|length >0) %}
+                                    <ul class="products clearfix grid" style="margin: 20px 0px 0px -23px;" data-masonry='{ "columnWidth": 0,"percentPosition": true ,"itemSelector": ".product" }'>
+                                        {% for medicament in medicaments %}
+                                            <li class="product" style="width:245px;float:left; margin: 15px 15px;">
+                                                <div class="product-list-item prod-layout-classic">
+                                                    <div class="zn_badge_container"></div>
+                                                    <a href="">
+                                                        <span class="image kw-prodimage">
+                                                            <img class="kw-prodimage-img" src="{{ asset('uploads/medicament/'~ medicament.photoMed)}}" alt="{{ medicament.nomMed }}">
+                                                        </span>
+                                                        <div class="details kw-details fixclear">
+                                                            <h3 class="kw-details-title">{{ medicament.nomMed }}</h3>
+                                                            <p class="desc kw-details-desc">{{ medicament.descriptionMed }}</p>
+                                                            <span class="price"><span class="amount">{{ medicament.prixMed }}DT</span></span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="actions kw-actions">
+                                                        <a class="actions-moreinfo" href="{{ path ('medicament_cart',{'id':medicament.id}) }}">{{'patient.card'|trans}}</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <div class="row">                                                           
+                                            <ul>
+                                                <li>{{ knp_pagination_render(medicaments) }}</li>
+                                            </ul>
+                                    </div> 
+                                {% else %}
+                                    <div class="cd-fail-message" style="margin-top:50px;text-align: center;">{{ 'Medication.no'|trans }}</div>
+                                {% endif %}
+
+                            </div>
+                            <div class="col-md-3 col-sm-12">
+                                <div id="sidebar-widget" class="sidebar">
+                                    <div class="widget">
+                                        <h3 class="widgettitle title">{{ 'Medication.pc'|trans }}</h3>
+                                        <div class="widget_search">
+                                            <div class="search gensearch__wrapper">
+                                                <form id="searchform" class="gensearch__form" action="http://www.google.fr/search" method="get" onSubmit="Gsitesearch(this)" target="_blank">
+                                                    <input id="s" name="s" maxlength="20" class="inputbox gensearch__input" type="text" size="20" value="{{ 'header.head.sea'|trans}} ..." onblur="if (this.value == '')
+                                                                this.value = '{{ 'header.head.sea'|trans}} ...';" onfocus="if (this.value == '{{ 'header.head.sea'|trans}} ...')
+                                                                            this.value = '';"><button type="submit" id="searchsubmit" value="go" class="gensearch__submit glyphicon glyphicon-search"></button></form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="kl-store_product_categories-2" class="widget kl-store widget_product_categories">
+                                        <h3 class="widgettitle title" style="margin-top:60px;"> {{'Medication.sc'|trans}}</h3>
+                                        <ul class="product-categories" id="tree1"> 
+                                            <li class="cat-iteme"><a>{{ 'header.menu.prod.he'|trans }}</a>
+                                                <ul class="product-categories">
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b1'}) }}">{{ 'header.menu.prod.bes.b1'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b2'}) }}">{{ 'header.menu.prod.bes.b2'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b3'}) }}">{{ 'header.menu.prod.bes.b3'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b4'}) }}">{{ 'header.menu.prod.bes.b4'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b5'}) }}">{{ 'header.menu.prod.bes.b5'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b6'}) }}">{{ 'header.menu.prod.bes.b7'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.bes.b7'}) }}">{{ 'header.menu.prod.bes.b6'|trans }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="cat-iteme"><a>{{ 'header.menu.prod.wi'|trans }}</a>
+                                                <ul class="product-categories">
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wis.b1'}) }}">{{ 'header.menu.prod.wis.b1'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wis.b2'}) }}">{{ 'header.menu.prod.wis.b2'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wis.b3'}) }}">{{ 'header.menu.prod.wis.b3'|trans }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="cat-iteme"><a>{{ 'header.menu.prod.beu'|trans }}</a>
+                                                <ul class="product-categories">
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.heus.b1'}) }}">{{ 'header.menu.prod.heus.b1'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.heus.b2'}) }}">{{ 'header.menu.prod.heus.b2'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.heus.b3'}) }}">{{ 'header.menu.prod.heus.b3'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.heus.b4'}) }}">{{ 'header.menu.prod.heus.b4'|trans }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="cat-iteme"><a>{{ 'header.menu.prod.wl'|trans }}</a>
+                                                <ul class="product-categories">
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wls.b1'}) }}">{{ 'header.menu.prod.wls.b1'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wls.b2'}) }}">{{ 'header.menu.prod.wls.b2'|trans }}</a></li>
+                                                    <li class="cat-iteme sous-cat"><a href="{{ path('patient_medicament',{'id':id,'cat':'header.menu.prod.wls.b3'}) }}">{{ 'header.menu.prod.wls.b3'|trans }}</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="widget widget_recent_entries">
+                                        {% if panierEnt|length >0 %}
+                                            <div class="latest_posts style3">
+                                                <h3 class="widgettitle title" style="margin-top:60px;">Panier</h3>
+                                                <ul class="posts">
+                                                    {% for p in panierEnt %}
+                                                        <li class="lp-post">
+                                                            <a href="" class="hoverBorder pull-left"><span class="hoverBorderWrapper"><img src="{{ asset('uploads/medicament/'~p.photoMed) }}" width="80" height="80"><span class="theHoverBorder"></span></span></a>
+                                                            <h4 class="title"><a href="" title="Enthusiastically administrate ubiquitous">{{ p.nomMed }}</a></h4>
+                                                        </li>
+                                                    {% endfor %} 
+                                                </ul>
+                                                <a href="{{ path('Patient_Basket',{'id':id}) }}" class="button wc-forward"><button class="btn btn-fullcolor pull-right">{{ 'header.head.view'|trans }}</button></a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/_jquery-ui-1.10.3.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/sliders/caroufredsel/circular-catalogue/kl-circular-catalogue.js') }}"></script>                           
+    <script type="text/javascript" src="{{asset('sliders/ios/jquery.iosslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/sliders/ios/kl-ios-slider.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-partners-carousel.js') }}"></script>
+    <script>
+                                                                    $("#service").addClass("activeItem");
+                                                                    $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+    <script>
+        $.fn.extend({
+            treed: function (o) {
+
+                //initialize each of the top levels
+                var tree = $(this);
+                tree.addClass("tree");
+                tree.find('li').has("ul").each(function () {
+                    var branch = $(this); //li with children ul
+                    branch.prepend("<i class='indicator'></i>");
+                    branch.addClass('branch');
+                    branch.on('click', function (e) {
+                        if (this == e.target) {
+                            $(this).children().children().slideToggle();
+                        }
+                    });
+                    branch.children().children().toggle();
+                });
+                //fire event from the dynamically added icon
+                tree.find('.branch .indicator').each(function () {
+                    $(this).on('click', function () {
+                        $(this).closest('li').click();
+                    });
+                });
+                //fire event to open branch if the li contains an anchor instead of text
+                tree.find('.branch>a').each(function () {
+                    $(this).on('click', function (e) {
+                        $(this).closest('li').click();
+                        e.preventDefault();
+                    });
+                });
+                //fire event to open branch if the li contains a button instead of text
+                tree.find('.branch>button').each(function () {
+                    $(this).on('click', function (e) {
+                        $(this).closest('li').click();
+                        e.preventDefault();
+                    });
+                });
+            }
+        });
+        $('#tree1').treed();
+    </script>
+    <script>
+
+        var grid = document.querySelector('.grid');
+        var msnry = new Masonry(grid, {
+            columnWidth: 100,
+            gutter: 10,
+            percentPosition: true
+        });
+
+        grid.addEventListener('click', function (event) {
+            // don't proceed if item was not clicked on
+            if (!matchesSelector(event.target, '.product')) {
+                return;
+            }
+            // change size of item via class
+            event.target.classList.toggle('grid-item--gigante');
+            // trigger layout
+            msnry.layout();
+        });
+
+
+    </script>
+{% endblock %}

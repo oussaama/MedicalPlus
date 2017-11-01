@@ -1,0 +1,102 @@
+<script type="text/javascript">
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var monthNames = ['{{'appointment.cal.month.ja'|trans}}', '{{'appointment.cal.month.fe'|trans}}', '{{'appointment.cal.month.ma'|trans}}', '{{'appointment.cal.month.av'|trans}}', '{{'appointment.cal.month.mai'|trans}}', '{{'appointment.cal.month.ju'|trans}}', '{{'appointment.cal.month.jui'|trans}}', '{{'appointment.cal.month.au'|trans}}', '{{'appointment.cal.month.sp'|trans}}', '{{'appointment.cal.month.oc'|trans}}', '{{'appointment.cal.month.nv'|trans}}', '{{'appointment.cal.month.de'|trans}}'];
+    // Returns the number of days in the month in a given year (January=0)
+    function getDaysInMonth(month, year) {
+        if ((month == 1) && (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0))) {
+            return 29;
+        } else {
+            return daysInMonth[month];
+        }
+    }
+    // Performs an action when a date is clicked
+    function dateClicked(days, months, years) {
+        var n = new Date();
+        var x = new Date(years, months - 1, days+1);
+        if (x >= n) {
+            document.forms.calendar.date.value = days + '/' + months + '/' + years;
+            $('#setting').load('{{ path('FormAppointment',{'id':doctor.id}) }}', {query: $("#date").val()});
+        }
+    }
+    // Sets the displayed month
+    function setDisplayedMonth(month) {
+        if (month < 0) {
+            alert('You have reached the beginning of this calendar');
+        } else if (month >= months) {
+            alert('You have reached the end of this calendar');
+        } else {
+            for (var i = 0; i < 12; i++) {
+                document.getElementById('calendarMonth' + i).style.display = 'none';
+            }
+            document.getElementById('calendarMonth' + month).style.display = 'block';
+        }
+    }
+</script>
+<form id="calendar" name="calendar" >
+    <table>
+        <tr>
+            <td><input type="hidden" id="date" name="date" value=""></td>
+        </tr>
+        <tr><td></td><td>
+                <script type="text/javascript">
+                    var myDate = new Date();
+                    var month = 0;
+                    var year = myDate.getFullYear();
+                    var months = 12;
+                    for (var i = 0; i < months; i++) {
+                        document.writeln('<table class="calendarMonth" ' + 'id="calendarMonth' + i + '" cellspacing="0">');
+                        document.writeln('<tr>'
+                                + '<th class="calendarPrevious" onClick="setDisplayedMonth(' + (i - 1) + ')"><span class="glyphicon glyphicon-chevron-left"></span></th>' + '<th class="calendarTitle" colspan="5">' + monthNames[month] + ' ' + year + '</th>' + '<th class="calendarNext" onClick="setDisplayedMonth(' + (i + 1) + ')"><span class="glyphicon glyphicon-chevron-right"></span></th>' + '</tr>');
+                        document.writeln('<tr><th>{{'appointment.cal.su'|trans}}</th><th>{{'appointment.cal.mo'|trans}}</th><th>{{'appointment.cal.tu'|trans}}</th>' + '<th>{{'appointment.cal.we'|trans}}</th><th>{{'appointment.cal.th'|trans}}</th><th>{{'appointment.cal.fr'|trans}}</th><th>{{'appointment.cal.sa'|trans}}</th></tr>');
+                        var firstDayDate = new Date(year, month, 1);
+                        var firstDay = firstDayDate.getDay();
+                        for (j = 0; j < 42; j++) {
+                            if (j % 7 == 0) {
+                                document.write('<tr>')
+                            }
+                            ;
+                            var l = firstDay;
+                            var k = firstDay + getDaysInMonth(month, year);
+                            if (j >= k) {
+                                document.write('<td class="calendarEmpty"></td>');
+                            } else if (j < l) {
+                                document.write('<td class="calendarEmpty"></td>');
+                            } else if (j % 7 == 0) {
+                                document.write('<td class="calendarDay no-appointment">' + (j - firstDay + 1) + '</td>');
+                            } else {
+                                if (j + 1 == myDate.getDate()) {
+                                    document.write('<td class="calendarDay appointment" ' + 'onClick="dateClicked(' + (j - firstDay + 1) + ',' + (month + 1) + ',' + year + ',this)"><a class="various">' + (j - firstDay + 1) + '</a></td>');
+                                } else {
+                                    document.write('<td class="calendarDay" ' + 'onClick="dateClicked(' + (j - firstDay + 1) + ',' + (month + 1) + ',' + year + ',this)"><a class="various">' + (j - firstDay + 1) + '</a></td>');
+                                }
+                            }
+                            if (j % 7 == 6)
+                                document.write('</tr>');
+                        }
+                        document.writeln('</table>');
+                        month++;
+                        if (month >= 12) {
+                            month = 0;
+                            year++;
+                        }
+                    }
+                    var moi = myDate.getMonth();
+                    setDisplayedMonth(moi);
+                </script>
+            </td></tr>
+    </table>
+</form> 
+<style>
+    .no-appointment{
+        opacity: 0.7; 
+        background: transparent; 
+        color: #184c6e;
+        cursor: none;
+    }
+    .appointment {
+        font-weight: 600;
+        color: #184c6e;
+        cursor: pointer;
+        border: 2px solid #2980b8;
+    }
+    </style>

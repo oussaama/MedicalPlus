@@ -1,0 +1,50 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}{% endblock %}
+{% block stylesheet %} 
+    <link rel="shortcut icon" href="../favicon.ico"/> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.jscrollpane.custom.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/template1.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/customs.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+{% endblock %}
+{% block fos_user_content %}
+    <div class="static-content__source ">
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__bgimage" style="background-repeat:repeat;background-attachment:scroll;background-position-x:center;background-position-y:center;background-size:cover">
+                <img src="{{ asset('images/login.jpg') }}" style="width:1300px;height: 667px;" />
+            </div>
+            <div class="kl-bg-source__overlay" style="background-color:rgba(0,0,0,0.1)"></div> 
+        </div>
+        <div class="th-sparkles"></div>
+    </div>
+    <div class="col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-4">
+        <div class="fancy_register_form">
+            {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+            {{ form_widget(form) }}
+            <div>
+                <input type="submit" value="{{ 'ok'|trans }}" />
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock fos_user_content %}
+{% block javascript %}
+    <script src="{{ asset('js/modernizr.custom.79639.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.mousewheel.js') }}"></script>
+    <script src="{{ asset('js/jquery.jscrollpane.min.js') }}"></script>
+    <script src="{{ asset('js/jquerypp.custom.js') }}"></script>
+    <script src="{{ asset('js/jquery.bookblock.js') }}"></script>
+    <script src="{{ asset('js/page.js') }}"></script>
+    <script src="{{ asset('js/parsley.js') }}"></script>
+    <script>
+        $(function () {
+
+            Page.init();
+
+        });
+    </script>
+{% endblock %}

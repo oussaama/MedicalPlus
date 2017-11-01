@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+        <meta name="keywords" content="premium html template, unique premium template, multipurpose template"/>
+        <meta name="description" content="Kallyas is an ultra-premium, responsive theme built for todays websites. Create your website, fast.">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="apple-touch-icon" href="{{ asset('images/favicons/apple-touch-icon-144-precomposed.html') }}" sizes="144x144"/>
+        <link rel="apple-touch-icon" href="{{ asset('images/favicons/apple-touch-icon-114-precomposed.html') }}" sizes="114x114"/>
+        <link rel="apple-touch-icon" href="{{ asset('images/favicons/apple-touch-icon-72-precomposed.html') }}" sizes="72x72"/>
+        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon-57-precomposed.html') }}" sizes="57x57"/>
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-16x16.png') }}" sizes="16x16"/>
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-32x32.html') }}" sizes="32x32"/>
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-96x96.html') }}" sizes="96x96"/>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,600italic,700,800,800italic" rel="stylesheet" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('css/template.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('css/updates.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/>
+    </head>
+    <body>
+    {% block body %}{% endblock %}
+    <div class="kl-slideshow static-content__slideshow scontent__maps">
+        <div class="th-google_map" style="height: 1080px; opacity:.6;"> </div>
+    </div>
+    <section class="hg_section ptop-80 pbottom-80" style="margin-top:-400px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="contactForm">
+                        <form action="http://hogash-demos.com/kallyas_html/php_helpers/_contact-process.php" method="post" class="contact_form row">
+                            <div class="cf_response"></div>
+                            <p class="col-sm-6 kl-fancy-form">
+                                <input type="text" name="name" id="cf_name" class="form-control" placeholder="Please enter your first name" value="" tabindex="1" maxlength="35" required>
+                                <label class="control-label">FIRSTNAME</label>
+                            </p>
+                            <p class="col-sm-6 kl-fancy-form">
+                                <input type="text" name="lastname" id="cf_lastname" class="form-control" placeholder="Please enter your first last name" value="" tabindex="1" maxlength="35" required>
+                                <label class="control-label">LASTNAME</label>
+                            </p>
+                            <p class="col-sm-12 kl-fancy-form">
+                                <input type="text" name="email" id="cf_email" class="form-control" placeholder="Please enter your email address" value="" tabindex="1" maxlength="35" required>
+                                <label class="control-label">EMAIL</label>
+                            </p>
+                            <p class="col-sm-12 kl-fancy-form">
+                                <input type="text" name="subject" id="cf_subject" class="form-control" placeholder="Enter the subject message" value="" tabindex="1" maxlength="35" required>
+                                <label class="control-label">SUBJECT</label>
+                            </p>
+                            <p class="col-sm-12 kl-fancy-form">
+                                <textarea name="message" id="cf_message" class="form-control" cols="30" rows="10" placeholder="Your message" tabindex="4" required></textarea>
+                                <label class="control-label">MESSAGE</label>
+                            </p>
+                            <p class="col-sm-12">
+                                <button class="btn btn-fullcolor" type="submit" style="margin-right: 13px;">Send</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4" style="margin-left:-50px;">
+                    <div class="kl-contentmaps__panel"> 
+                        <a href="#" class="js-toggle-class kl-contentmaps__panel-tgg hidden-xs" data-target=".kl-contentmaps__panel" data-target-class="is-closed"></a>
+                        <a href="{{asset ('images/home-office-569359_640.jpg') }}" data-lightbox="image" class="kl-contentmaps__panel-img" style="background-image:url({{asset('images/home-office-569359_640.jpg') }})"></a>
+                        <div class="kl-contentmaps__panel-info">
+                            <h5 class="kl-contentmaps__panel-title">Medical+</h5>
+                            <div class="kl-contentmaps__panel-info-text">
+                                <h3 class="text_box-title text_box-title--style2">CONTACT INFO</h3>
+                                <h4>Mulberry St, New York, NY 10012, USA</h4>
+                                <p><a href="mailto:#">hello@yourwebsite.com</a><br><a href="http://www.hogash.com/">www.hogash.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include '::module/footer.html.twig' %}
+</div>
+<a href="#" id="totop">TOP</a>
+<script type="text/javascript" src="{{ asset('js/vendor/modernizr.min.js') }}"></script>
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.10.1.min.js') }}">\x3C/script>')</script>
+<script src="../../code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/kl-plugins.js') }}"></script>
+<script type="text/javascript" src="{{ asset('addons/smoothscroll/smoothscroll.js') }}"></script>
+<script type="text/javascript" src="{{ asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{{ asset('js/kl-google-maps.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/kl-scripts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/kl-custom.js') }}"></script>
+{% block javascript %}{% endblock %}
+</body>
+</html>

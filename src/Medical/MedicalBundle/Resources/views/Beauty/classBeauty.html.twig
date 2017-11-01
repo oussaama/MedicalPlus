@@ -1,0 +1,107 @@
+{% extends '::Layout/class.html.twig' %}
+
+{% block title %}Class{% endblock %}
+{% block help %}{% include '::module/Beauty/helpBeauty.html.twig' %}{% endblock %}
+{% block menu %}{% include '::module/Beauty/headerBeauty.html.twig' %}{% endblock %}
+{% block body %}
+    {% if(x ==0) %}
+        {% for flashMessage in app.session.flashbag.get('echec') %}
+            <div class="alert alert-info alert-dismissible animated bounceInLeft col-xs-12 col-md-4 col-md-offset-4" role="alert" id="myalert" style="margin-top:20px;margin-bottom: 40px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cl">&times;</span></button>
+                {{ flashMessage}}
+            </div>
+        {% endfor %}
+        <style>
+            .bounceInLeft {
+                animation-delay: 1s;
+            }
+        </style>
+    {% endif %}
+    <section class="hg_section ptop-80 pbottom-80">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="pricing-table-element blue" data-columns="3">
+                        <div class="plan-column">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell">{{ 'paiment.cla.st'|trans }}</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">0.00<span class="currency">DT</span></span></div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c7'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell"> - </div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell"> - </div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="plan-column ">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell">Professional</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">17.99<span class="currency">DT</span></span>{{ 'paiment.cla.pm'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c8'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c5'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c3'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li> 
+                                {% if (x == 1) %}
+                                    <li>
+                                        <div class="inner-cell"><a href="{{ path('formulaire_class',{'type':'premium','price':16.99}) }}" class="btn btn-fullcolor">{{ 'paiment.cla.ord'|trans }}</a></div>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="plan-column featured">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell" style="font-weight: 600;font-size: 42px;">Ultra</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">189.99<span class="currency">DT</span></span>{{ 'paiment.cla.pa'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c9'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c6'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c4'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li>
+                                {% if (x == 1) %}
+                                    <li>
+                                        <div class="inner-cell"><a href="{{ path('formulaire_class',{'type':'ultra','price':'169.99'}) }}" class="btn btn-fullcolor">{{ 'paiment.cla.ord'|trans }}</a></div>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

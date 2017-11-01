@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<div class="col-sm-12">
+        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request reset-form">
+            <div>
+                {% if invalid_username is defined %}
+                    <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+                {% endif %}
+                <p class="col-sm-12 kl-fancy-form">
+                    <input type="email" name="email" id="username" class="form-control" placeholder="Please enter your email email" value="" tabindex="1" maxlength="35" required>
+                    <label class="control-label">EMAIL</label>
+                </p>
+            </div>
+            <div>
+                <input type="submit" value="{{ 'Send'|trans }}" class="btn button-reset pull-right various fancybox.ajax"/>
+            </div>
+        </form>
+</div>
+
+

@@ -1,0 +1,96 @@
+medical_homepage:
+    path:     /
+    defaults: { _controller: MedicalMedicalBundle:Default:index }
+    
+medical_contact:
+    path:     /send
+    defaults: { _controller: MedicalMedicalBundle:Default:contact }
+ 
+medical_news:
+    path:     /news
+    defaults: { _controller: MedicalMedicalBundle:Default:news }
+    
+medical_news_article:
+    path:     /article/{user}/{id}/{categorie}
+    defaults: { _controller: MedicalMedicalBundle:Default:newsArticle }
+    
+Profil_modif:
+    pattern:  /profil/edit/{id}
+    defaults: { _controller: MedicalMedicalBundle:Default:modifProfil }
+    
+profil:
+    path:     /profil/{id}
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPatient:profil }
+    
+medical_notification:
+    path:     /notification
+    defaults: { _controller: MedicalMedicalBundle:Default:notification }
+    
+medical_message:
+    path:     /message
+    defaults: { _controller: MedicalMedicalBundle:Default:message }
+    
+medical_about:
+    path:     /about
+    defaults: { _controller: MedicalMedicalBundle:Default:about }
+    
+medical_contact:
+    path:     /medical
+    defaults: { _controller: MedicalMedicalBundle:Contact:new }
+    methods:  [GET, POST]
+ 
+medical_delete:
+    path:     /delete
+    defaults: { _controller: MedicalMedicalBundle:Default:delete }
+    
+deactive:
+    path:     /deactive
+    defaults: { _controller: MedicalMedicalBundle:Default:deactive }
+    
+medical_add_article:
+    path:     /add
+    defaults: { _controller: MedicalMedicalBundle:Default:addArticle }
+    
+medical_add:
+    path:     /article
+    defaults: { _controller: MedicalMedicalBundle:Default:article }
+    
+formulaire_class:
+    path:     /form/{price}/{type}
+    defaults: { _controller: MedicalMedicalBundle:Default:formClass }
+    
+class_paid:
+    path:     /paid/{price}/{type}
+    defaults: { _controller: MedicalMedicalBundle:Default:classPaid }
+
+medical_commentaire:
+    path:     /commentaire/{id}/{user}/{categorie}
+    defaults: { _controller: MedicalMedicalBundle:Default:commentaire }
+
+medical_news_categorie:
+    path:     /news/{categorie}
+    defaults: { _controller: MedicalMedicalBundle:Default:newsCategorie }
+    
+medical_message_panel:
+    path:     /message/panel
+    defaults: { _controller: MedicalMedicalBundle:Default:rechercheMessagePanal }
+
+nbr_recherche:
+    path:     /nbr
+    defaults: { _controller: MedicalMedicalBundle:Default:nbrMessage }
+    
+not_recherche:
+    path:     /not
+    defaults: { _controller: MedicalMedicalBundle:Default:rechercheNot }
+
+book_recherche:
+    path:     /book
+    defaults: { _controller: MedicalMedicalBundle:Default:nbrBook }
+
+medical_add_promo:
+    path:     /promo/add
+    defaults: { _controller: MedicalMedicalBundle:Default:promoAdd }
+    
+medical_show_promo:
+    path:     /promo/show/{id}
+    defaults: { _controller: MedicalMedicalBundle:Default:promoShow }

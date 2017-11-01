@@ -1,0 +1,29 @@
+<?php
+
+
+namespace Medical\MedicalBundle\Entity;
+
+use AncaRebeca\FullCalendarBundle\Model\Event as BaseEvent;
+
+class CalendarEvent extends BaseEvent
+{
+     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

@@ -1,0 +1,11 @@
+Menu_Pharmacy:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMenu/menuPharmacy.yml"
+    prefix:   /
+    
+Pharmacy_class:
+    path:     /class
+    defaults: { _controller: MedicalMedicalBundle:Pharmacy/Pharmacy:classPharmacy }
+    
+Pharmacy_delete:
+    path:     /{id}/delete
+    defaults: { _controller: MedicalMedicalBundle:Pharmacy/Pharmacy:delete }

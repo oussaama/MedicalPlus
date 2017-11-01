@@ -1,0 +1,41 @@
+<?php
+
+namespace Medical\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Medical\MedicalBundle\Entity\Entreprise;
+
+/**
+ * Cabine
+ *
+ * @ORM\Table(name="cabine")
+ * @ORM\Entity(repositoryClass="Medical\MedicalBundle\Repository\CabineRepository")
+ */
+class Cabine extends Entreprise {
+
+    /**
+     * @ORM\ManyToOne(targetEntiy="MedicalMedicalBundle\Entity\Categorie",cascade={"persist","remove"})
+     * @ORM\JoinColumn(name="categorie_cab",referencedColumnName="id",nullable=false)
+     */
+    private $categorieCab;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */ 
+    public function setCategorieCab($categorie) {
+        $this->categorieCab = $categorie;
+        return $this;
+    }
+
+    /**
+     *  Get categorieCab
+     * 
+     * @return Categorie
+     */
+    public function getCategorieCab() {
+        return $this->categorieCab;
+    }
+
+}

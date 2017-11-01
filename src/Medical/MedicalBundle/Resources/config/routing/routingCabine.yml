@@ -1,0 +1,19 @@
+Menu_Cabine:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMenu/menuCabine.yml"
+    prefix:   /
+    
+Cabine_class:
+    path:     /class 
+    defaults: { _controller: MedicalMedicalBundle:Cabine/Cabine:classCabine }
+       
+accept_book:
+    path:     /accept/{id}
+    defaults: { _controller: MedicalMedicalBundle:Cabine/Cabine:acceptBook }
+    
+modif_book:
+    path:     /edit/{id}
+    defaults: { _controller: MedicalMedicalBundle:Cabine/Cabine:modifBook }
+    
+delete_book:
+    path:     /remove/{id}
+    defaults: { _controller: MedicalMedicalBundle:Cabine/Cabine:deleteBook }

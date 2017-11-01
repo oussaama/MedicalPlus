@@ -1,0 +1,529 @@
+index:
+    doctor:
+        d1: les médecins plus compétent au bout du clic
+    pharmacie:
+        t1: "votre pharmacie en ligne!"
+        d1: des produits de qualité sélectionnés par un pharmacien
+    paramedical:
+        d1: Chaque jours vous prenez soins des autres ... Nous vous proposons dans cet espace une sélection de produits afin de prendre soin de vous !
+    patient:
+        d1: Si tu es déjà membre, connecte-toi en utilisant le menu S’IDENTIFIER .Sinon tu peux t’inscrire en utilisant le menu REGISTRE.Tu peux également RECEVOIR LA NEWSLETTER. Et bien sûr, tu peux profiter de nos services .
+    lab:
+        d1: Retrouvez toutes les informations concernant les différents types de bilans
+    head:
+        log: LOGIN
+        reg: REGISTER
+        sec: SECRETARY
+        doct: DOCTOR 
+        upgrade: UPGRADE
+        next: NEXT 
+        prev: PREVIOUS
+        sd: Medical + is an ultimate medical plateform that includes all informations and services that you want
+    form:
+        username: USERNAME
+        password: PASSWORD
+        con-password: CONFIRM PASSWORD
+        role: ROLE
+        current: CURRENT PASSWORD
+        new: NEW PASSWORD
+        cnew: CONFIRM NEW PASSWORD
+        remember: Remember me
+        perdu: Forgot your password ?
+        login: Login
+        logm: Check your username or password
+        userp: Please enter your username
+        passp: Please enter your password
+        passcp: Please enter your confirm password
+        emailp: Please enter your email 
+        op: Please enter your current password
+        np: Please enter your new password
+        cnp: Please enter your new password confirmation
+flush:
+    comm:
+        cs: Your comment has been added successfully
+        cf: your adding comment was unsuccessful
+    appo:
+        as: Your appointment has been added successfully , waiting response
+        af: Your chosen date is reserved ,choose another date 
+        adp: Your date has passed must choose another date
+        av: Check Your Data
+        pv: you have been passed the limit to book the appointment for this day
+    art:
+        ars: Your article has been added successfully , waiting response
+        arf: Your adding article was unsuccessful
+footer:
+    app: Appointment
+    n: News
+    a: About us
+    p: Pharmacy
+    b: paramedic
+    l: Laboratory
+    h: Hospital
+    c: Clinic
+    newsl:
+        t1: NEWSLETTER SIGNUP
+        p1: By subscribing to our mailing list you will always be update with the latest news from us.
+        plh: your.adress@email.com
+        b1: JOIN US
+        p2: We never spam!
+    info:
+        t1: GET IN TOUCH
+        phone: (+216) 71 000 000
+        email: medical@email.com
+        ltd: Medical+ LTD
+        adress: nr 48,Street Taieb Mhiri ,2080,Ariana,Tunis
+        gm: Open in Google Maps
+    coon:
+        right: 2016 All rights reserved Medical+
+        so: SOCIAL NETWORKS
+header:
+    help:
+        process-patient: HOW TO BOOK AN APPOINTMENT 
+        step1-patient: Login or create new account
+        step2-patient: Search for a doctor
+        step3-patient: Book an appointment ONLINE
+        mail: If you still have problems, please let us know, by sending an email to support@website.com . Thank you!
+    head:
+        lang: LANGUAGES
+        langEn: ENGLISH
+        langFr: FRENCH
+        log: LOGOUT
+        call: 'Question?Call:'
+        sea: Search
+        top: Top
+        sub: SubTotal
+        view: View Cart
+        check: Remove       
+    menu:
+        index: home
+        directory: directory
+        med: Medicaments
+        care: Cares
+        bilan: Bilans
+        ph: pharmacy
+        be: paramedic
+        se: Hospital Sector
+        promo: Deals
+        cl: clinic
+        h: hospital
+        m: doctor
+        lab: laboratory
+        rendez: appointment
+        news: Article
+        about: about us
+        notif: View your notifications
+        msg: View your notifications
+        appo: View your appointments
+        up: Upgrade
+        class: CLASS
+        pay: PAIEMENT
+        upgrade: UPGRADE YOUR ACCOUNT
+        promos:
+            slider: Discover our Deals
+        contact:
+            fn: FIRSTNAME
+            ln: LASTNAME
+            s: SUBJECT
+            env: SEND
+        abouts:
+            s1: ABOUT OUR COMPANY
+            s2: GET TO KNOW US BETTER
+            intro: Medical + a versatile website allowing users to browse a comprehensive directory " doctors, pharmacies, laboratories, clinics, hospitals and paramedical fields ", make an appointment and to make purchases of pharmaceutical products. This allows us to say that Medical + acts as an assistant in the field of health (medical, paramedical and pharmaceutical).
+            ginfo: General Information
+            info1: Governance
+            info1c: at Medical+ our highest priority is to ensure that our Users focus permeates the entrire organization , in every department at evrey level.
+            info2: Medical+ Mission
+            info2c: We want to be your most trusted ally in your pursuit of health and well-being.
+            indo3: Mediacl+ Care Network
+            info3c: Medical+ provides expertise and resources to member medical facilities through formal collaboration and advanced tools
+            info4: Easy Management Tools
+            info4c: Medical + gives you robust applications and advanced tools that put you in control of all the services that are at your disposal.
+        newss:
+           slide: THE PASSION FOR WRITING
+           comm: COMMENT
+           by: By
+           pub: PUBLISHED IN
+           tag: TAGGED UNDER
+           rm: READ MORE
+        profil:
+            fn: LASTNAME
+            ln: FIRSTNAME
+            ef: Edit
+            en: Entreprise Name
+            ad: Adress
+            cl: Class
+            p: Phone
+            dn: Doctor Name
+            cn: Cabine Name
+            b: Birth
+            s: Speciality
+            u: Username
+            se: Sex
+            dc: DATE CREATION
+            i: INSURED
+            param: PARAMATER
+            Set: Settings
+            Setc:
+            dea: Deactivate
+            deac:
+            c: CITY
+            st: STATE
+            z: ZIP CODE
+            m: Month
+            da: DAY
+            y: YEAR
+            ch: Change Password
+            cinp: Please enter your cin
+            fnp: Please enter your fistname
+            lnp: Please enter your lastname
+            profp: Please enter your profession
+            mp: JANUARY
+            emp: Please enter your email
+            pp: Please enter your phone
+            ap: Please enter your adress
+            cp: Please enter your city
+            sp: Please enter your state
+            codp: Please enter your zip code
+            entp: Please enter your entreprise name
+            userp: Please entrer votre username
+            specp: Please enter your speciality 
+            subp: Please enter your subject
+            msgp: Please enter your message
+            up: UPDATE
+            book: BOOK
+            create: CRAETE
+        prod:
+            re: REFERENCE
+            na: NAME
+            des: DESCRIPTION
+            pr: PRICE
+            cat: CATEGORY
+            sto: STORAGE
+            pho: PICTURE
+            type: TYPE
+            ad: ADD
+            add: ADD CARE
+            addp: ADD DEALS
+            db: START DATE
+            df: END DATE
+            ref: Please enter your reference
+            name: Please enter your name
+            desc: Please enter your descreption
+            price: Please enter your price 
+            create: Create
+            auth: Please enter your auther
+            title: Please enter your title
+            category: Please enter your category
+            store: Please enter your storage
+            typep: Pleasez enter your type
+            nm: Name
+            datefp: Please enter the end date of offer
+            datedp: Please enter the start date of offer
+            he: health
+            beu: beauty
+            wi: weight loss
+            wl: wellness
+            nb: Storage
+patient:
+    card: Add to Card
+    panier:
+        ph: Picture
+        nm: Name
+        pr: Price
+        qt: Quantity
+    service:
+        des: a comprehensive summary of all available products and services provided by subscribing members listed above is also at your disposal.
+        se: SEE MORE
+        s1: Check subscribing pharmacies and display their available medication and adresses.
+        s2: Check offered services and available beauty and care products.also includes address and directions.
+        s3: Includes address,directions and basic information about regional and national.
+        s4: Display doctors and book an appointment with doctor.
+        s5: Display available  blood tests and services with a brief desciption of each.Includes addresses and directions of all regional and national laboratories.            
+    slider:
+        s1:
+            i1: Doctor
+            i2: HEALTH CARE
+            i2g: SOLUTION
+            i3: KNOW MORE
+            i4: SEE AVAILABLE APPOINTMENTS DATES
+        s2:
+            i1: LABORATORY
+            i2: ONLINE
+            i3: ALL SERVICES
+            i4: YOUR HEALTH IS OUR PRIOURITY 
+        s3: 
+            i1: CLINICAL • HOSPITAL
+            i2: FULL COMFORT
+            i3: SEARCH
+            i4: CLINIC
+            i5: HOSPITAL
+        s4: 
+            i1: PHARMACY
+            i2: EXPLORE ALL THE PHARMACY STORES AND FIND THE MEDICATION THAT YOU SEEK
+            i3: SEE OUR PHARMACIES
+        s5:
+            i1: BEAUTY CENTER
+            i2: ENJOY OUR SPECIAL OFFERS AND CARE
+    home:
+        slogan: 
+            p1: MEDICAL+ ,
+            p2: ONE PLATFORM 
+            p3: FOR
+            p4: ALL YOUR NEEDS
+            p5: Grouping all medical and health services avaible to th public , Medical+ is a pionner in it's field
+            b1: JOIN OUR NEWSLETTER
+            b2: LEARN MORE
+        services:
+            title: OK, SO WHY MEDICAL+ ?
+            titled: Well, lots of reasons, but most importantly because..
+            serv1:
+                t1: Appointment
+                t2: Online
+                p3: an easy way to make appointments without caring about location. 
+            serv2:
+                t1: Search for Doctors
+                p1: We provide you with an all new online booking system that helps patients find closeby doctors .
+            serv3:
+                t1: Show Medication
+                p1: An online medication store with high availability .everything you want is within your reach, in the comfort of your home!
+            serv4:
+                t1: NEWS ARTICALS
+                p1: Medical and health headlines posted throughout the day.
+        actors:
+            a1: DOCTOR
+            a2: PHARMACY
+            a3: BEAUTY PARAMEDIC
+            a4: LABORATORY
+            a5: HOSPITAL
+            a6: CLINIC
+        objectifs:
+            t1: This is Medical+ , an integral, feature rich
+            t2: PLATFORM.
+            obj1: EASY APPOINTMENTS
+            obj1d: Facilitate the process of making appointments.
+            obj2: HIGHT QUALITY SERVICES
+            obj2d: Professional health services
+            obj3: HIGHLY INFORMATIVE
+            obj3d: Illustrated and Information-rich articles
+        desc:
+            t1: BOTH PROFESSIONAL 
+            t2: CUSTOMER ORIENTED
+            p1: Provide Professionals with a platform to promote their services to the public all the while delivering Premium services and Expert-level recommendations to customers. 
+            p2: Professionals can now take advantage of the growing online market to expand their customer base and reach new patients, powered by web technologies.
+            p3: Enables vistitors to access reviews by other patients regarding customer service, health care quality, and Personnel performance.
+        art:
+            l: OUR LATEST ARTICLE
+            v: VIEW ALL 
+appointment:
+    etat:
+        rv: Reserved
+        rw: Waiting
+    process:
+        t1: our working process
+        t2: in 3 steps
+        desc: Find your doctor , request appointement and confirm date
+        p1: Find 
+        p1d: Your doctor easily Through Advanced Search.
+        p2: Request
+        p2d: An appointment date, using the calendar
+        p3: Confirm
+        p3d: Your appointment once the date is approved.
+        all: ALL
+        mo: More Info
+        res: No result found
+    filter:
+        s: check your speciality
+        st: check your state
+    doctor:
+        spec: Specialty
+        rt: RETURN
+        sh: SHARE
+        comm: Comments
+        des: Description
+        loc: Location
+        cal: Calendar
+        lr: Leave a Reply
+        cm: Comment
+        pm: Post Comment
+        nc: No comment found
+        nm: Name
+        se: Sex
+        ad: Adress
+        ph: Phone
+    cal:
+        mo: Mon
+        tu: Tue
+        we: Wed
+        th: Thu
+        fr: Fri
+        sa: Sat
+        su: Sun
+        month:
+            ja: January
+            fe: February
+            ma: March
+            av: April
+            mai: May
+            ju: June
+            jui: July
+            au: August
+            sp: September
+            oc: October
+            nv: November
+            de: December
+    appoi:
+        d1: A doctor at the end of the click
+        p1: Please select a date from the calendar.
+        p2: make sure you choose a free time slot.
+    noti:
+        sap: Appointment accepted
+        fap: Appointment refused
+        sp: Your Appointment Request accepted at 
+        fp: Your Appointment Request refused at
+        sp1: widh doctor
+Medication:
+    slider:
+        t1: PHARMACY
+        t2: an epic and
+        t3: wonderful premium piece of work
+        t4: , for the typical modern website.
+        t5: on exclusive
+    ss: SEARCH BY STATE
+    pc: PRODUCT SEARCH
+    sc: SEARCH BY CATEGORY
+    t1: Showcasing all available medication at subscribing Pharmacies and their respective addresses
+    no: No medication found
+    nof: No pharmacy found
+    am: Add Medication
+    role:
+        r1: Manage medications
+        d1: you can add, edit or delete easly  the medicaments in the store as well as we provide for you the posibility of 
+        t1: showing the medicament full list
+        t2: searshing efficacely any medicament
+cabine:
+    table:
+        fn: FIRSTNAME
+        ln: LASTNAME
+        ph: PHONE
+        cn: CONDITION 
+        h: HOUR
+    slider:
+        p1: In This space you can
+        p2: View , Approve , Reject or Reschedule
+        p3: appointement requests
+        t1: APPOINTMENTS
+        t2: View appointement schedule
+    slogan:
+        p1: ONE PLATFORM
+        p2: FOR 
+        p3: ALL YOUR NEEDS
+        p4: Grouping all medical and health services available to the public, MEDICAL+ is a pioneer in it's field
+        t1: This is Medical+, a rich featured, integral interface with
+        t1g: Premium privileges
+        t2: , destined for Experts and Patients all alike.
+        t3: Currently one of the leading websites on the internet ,with numerous positive reviews from both professionals and patients.
+        ft: FIND OUT
+        ftg: MORE
+        l: LATEST ARTICLES
+    desc:
+        des1:
+            t1: CONSULT APPOINTEMENTS
+            ds: can view appointments made with patients, consult appointement requests and see upcoming events.
+            p1: View appointments
+            p2: Validate requests
+            p3: Stay tuned on upcoming events
+        des2:
+            t1: POST AND VIEW ARTICLES
+            ds: Stay up to date with the latest articles in the field, and post articles of your own for a knowledge-hungry audience
+            p1: Post articles
+            p2: View articles written by collegues
+            p3: News feed
+        des3:
+            t1: MANAGE PROFILE
+            ds: Update your profile with recent details about your achievements and qualifications to improve your reputaion
+            p1: Keep your Profile on track
+            p2: let visitors follow up with your personel developement
+            p3: Update skills and qualifications often  
+    class:
+        c1: manage appointments
+        c2: publish profile information
+        c3: publish 5 articles per month
+        c4: publish 20 articles per year
+        c6: publish 5 promo per day
+        c7: add 5 products per day
+        c8: add 10 products per day
+        c9: add unlimited products per day
+        c10: add one medical check-up per day
+        c11: add 5 medical check-up médical per day
+        c12: add 10 medical check-up médical per day
+laboratory:
+    slider: 
+        s1:
+            p1: LABORATORY
+            p2: TESTS 
+            p2g: AND ANALYSIS
+            p3: AND DESCRIPTION
+        s2:
+            p1g: HIGHLY
+            p1: QUALIFIED PERSONNEL 
+            p2:  AT YOUR SERVICE 
+        s3:
+            p1: ACCURATE • RELIABLE
+            p2: RESULTS
+            p3g: NO ROOM 
+            p3: FOR MISTAKES!
+            p4: ALL AVAILABLE BLOOD TESTS
+        s4:
+            p1g: CUTTING
+            p1: EDGE TECHNOLOGIES
+            p2g: EFFICIENCY AND PERFORMANCE 
+            p2: at their finest
+    slogan:
+        p1g:  Regional and National Test labs are at your service at a moment's notice 
+        p1:  Delivering all tests and analysis you require in unparalleled time frames and seamless precision 
+beauty:
+    slider:
+        p1: Beauty Center
+        p2: Packed with all sorts of beauty and care services , this is your "GO TO " place.
+    slogan:
+        p1: EXACTLY! ONE PLACE FOR ALL YOUR NEEDS
+        p2: Hair care, Skin care, and everything in between!
+    contenu:
+        t1: YOU ARE ONE STEP AWAY 
+        p1: from receiving a myriad of top tier care and beauty services at the hands of qualified experts.beauty is within your reach!.
+        st: STATISTICS  
+paiment:
+    cla:
+        st: Free
+        mp: MOST POPULAIRE
+        pm: per month
+        pa: per year
+    ord: Order now
+    pay:
+        che: CHECKOUT PROCESS
+        sl: You're definitely on the right track!
+        title: Billing Details
+        cn: Company name
+        ea: Email Address
+        ph: Phone
+        o: Your order
+        cl: Class
+        p: pay
+        nm: Firstname
+        pn: Lastname
+        mail: Email
+        tel: Phone
+        ad: Adress
+        ville: City
+        st: State
+        code: Zip Code  
+centre:
+    md: soft medicines
+    cd: dermatology and laser center
+    k: physiotherapist
+    i: nurse
+    orth: orthoptist
+    ort: Speech Therapist
+    op: optician
+    di: dietitian  
+    

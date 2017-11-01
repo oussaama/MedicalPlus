@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.w3schools.com/js/tryit.asp?filename=tryjs_date_current -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script async="" type="text/javascript" src="./Tryit Editor v3.0_files/gpt.js"></script><script async="" src="./Tryit Editor v3.0_files/analytics.js"></script><script>(function blockPopupsFunc(popupBlockMessage, showNotification, extensionId, rules) {
+    var stndz = {
+        originalWindowOpen: window.open,
+        originalDocumentCreateElement: document.createElement,
+        originalDocumentCreateEvent: document.createEvent,
+        lastCreatedAnchor: undefined,
+        lastCreatedAnchorTime: undefined,
+        allowed: false
+    };
+
+    var popupRegexRules = null;
+    function isPopup(url) {
+        if (popupRegexRules == null) {
+            popupRegexRules = [];
+            for (var i = 0; i < rules.length; i++) {
+                popupRegexRules.push(new RegExp(rules[i], "i"));
+            }
+        }
+
+        for (var i = 0; i < popupRegexRules.length; i++) {
+            if (popupRegexRules[i].test(url))
+                return true;
+        }
+
+        return false;
+    }
+
+    var windowOpenAllowRegex = /^(http(s)?:)?\/\/([^\/]*\.)?(pinterest\.com|twitter\.com|paypal\.com|yahoo\.com|facebook\.com|linkedin\.com|salesforce\.com|amazon\.co|google\.co)/i;
+    var windowOpenAllowHosts = /^http(s):\/\/([^\/]*\.)?(search\.yahoo\.com|linkedin\.com|facebook\.com)/i;
+    window.open = function() {
+        var popupArguments = arguments;
+        var openPopupFunc = function() {
+            return stndz.originalWindowOpen.apply(window, popupArguments);
+        };
+
+        if (stndz.allowed)
+            return openPopupFunc();
+
+        var popupUrl = arguments.length >= 1 && arguments[0] && typeof arguments[0] == "string" ? arguments[0] : null;
+        var block = isPopup(popupUrl);
+        if (block) {
+            showPopupNotificationWindow('ad-popup', arguments, openPopupFunc);
+            return {};
+        }
+
+        var allow = windowOpenAllowRegex.test(popupUrl) || windowOpenAllowHosts.test(window.location.href);
+        if (allow) {
+            return openPopupFunc();
+        }
+
+        var targetName = arguments.length >= 2 ? arguments[1] : null;
+        if (targetName == '_parent' || targetName == '_self' || targetName == '_top')
+            return openPopupFunc();
+
+        if (!window.event)
+            return openPopupFunc();
+
+        if (popupUrl) {
+            try {
+                var windowOpenUrl = new URL(popupUrl);
+                if (windowOpenUrl.host.indexOf(window.location.host) > -1 || (windowOpenUrl.host != "" && window.location.host.indexOf(windowOpenUrl.host) > -1))
+                    return openPopupFunc();
+            } catch(e) { }
+        }
+
+        var currentTargetValid = window.event &&
+            window.event.currentTarget &&
+            window.event.currentTarget !== window &&
+            window.event.currentTarget !== document &&
+            window.event.currentTarget !== document.body;
+
+        var targetValid = window.event &&
+            window.event.target &&
+            window.event.target.tagName == 'A' &&
+            window.event.target.href.indexOf('http') == 0;
+
+        if (currentTargetValid || targetValid) {
+            return openPopupFunc();
+        }
+
+        if (showNotification)
+            showPopupNotificationWindow('not-user-initiated', arguments, openPopupFunc);
+
+        return {};
+    };
+
+    window.stndzStopPopupBlocking = function(iframeGuid) {
+        if (popupBlockMessage.iframeGuid == iframeGuid) {
+            stndz.allowed = true;
+        }
+    };
+
+    window.stndzResumePopupBlocking = function(iframeGuid) {
+        if (popupBlockMessage.iframeGuid == iframeGuid) {
+            stndz.allowed = false;
+        }
+    };
+
+    document.createElement = function() {
+        var element = stndz.originalDocumentCreateElement.apply(document, arguments);
+        if (element.tagName == 'A') {
+            stndz.lastCreatedAnchorTime = new Date();
+            stndz.lastCreatedAnchor = element;
+        }
+
+        return element;
+    };
+
+    var anchorPopupsExcludedHosts = { 'sh.st': true };
+    document.createEvent = function() {
+        if (!stndz.allowed && arguments[0].toLocaleLowerCase().indexOf('mouse') > -1 && stndz.lastCreatedAnchorTime && new Date() - stndz.lastCreatedAnchorTime < 50) {
+            if (anchorPopupsExcludedHosts[document.location.host]) {
+                stndz.lastCreatedAnchor.target = "_top";
+            } else if (windowOpenAllowRegex.test(stndz.lastCreatedAnchor.href) == false) {
+                var anchor = stndz.lastCreatedAnchor;
+                showPopupNotificationWindow('create-link', null, function() { anchor.click(); });
+                return null;
+            }
+        }
+
+        return stndz.originalDocumentCreateEvent.apply(document, arguments);
+    };
+
+    window.addEventListener("message", function(event) {
+        switch (event.data.type) {
+            case 'stndz-show-popup-notification':
+                if (window !== window.top)
+                    return;
+
+                stndz.stndzPopupActionWindow = event.source;
+                stndz.stndzPopupClicked = function(option) {
+                    stndz.hidePopupNotification();
+                    stndz.stndzPopupActionWindow.postMessage({type: 'stndz-popup-action', option: option}, event.origin);
+                };
+
+                if (stndz.popupNotificationOpen) {
+                    stndz.highlightPopupNotification();
+                } else if (window.popupNotificationOpen === false) { // if it was previously opened just show it, the delegate to open the new window was created above
+                    stndz.showPopupNotification();
+                } else {
+                    var notificationElement = createNotificationOnPage();
+
+                    setTimeout(function() {
+                        stndz.showPopupNotification();
+                    }, 0);
+
+                    stndz.showPopupNotification = function() {
+                        stndz.popupNotificationOpen = true;
+
+                        notificationElement.style.top = '0px';
+
+                        var hidePopupNotificationId;
+                        stndz.hidePopupNotification = function() {
+                            stndz.popupNotificationOpen = false;
+                            notificationElement.style.top = '-40px';
+                            notificationElement.style.height = '30px';
+                            clearTimeout(hidePopupNotificationId);
+                        };
+
+                        hidePopupNotificationId = setTimeout(stndz.hidePopupNotification, 30 * 1000);
+                        notificationElement.onmouseover = function() {
+                            clearTimeout(hidePopupNotificationId);
+                        };
+                    };
+
+                    var helpOpen = false;
+                    var originalBackground = notificationElement.style.background;
+                    stndz.highlightPopupNotification = function() {
+                        notificationElement.style.background = '#FFFBCC';
+                        setTimeout(function() {
+                            notificationElement.style.background = originalBackground;
+                        }, 1000);
+
+                        notificationElement.style.height = '120px';
+                        helpOpen = true;
+                    };
+
+                    stndz.togglePopupNotificationHelp = function() {
+                        notificationElement.style.height = helpOpen ? '30px' : '120px';
+                        helpOpen = !helpOpen;
+                    };
+                }
+
+                break;
+
+            case 'stndz-popup-action':
+                stndz.stndzPopupAction && stndz.stndzPopupAction(event.data.option);
+                break;
+        }
+    }, false);
+
+    function allowPopupsOnThisPage() {
+        stndz.allowed = true;
+    }
+
+    function showPopupNotificationWindow(blockType, args, openPopupFunc) {
+        if (!showNotification)
+            return;
+
+        stndz.stndzPopupAction = function(option) {
+            if (option == 'once' || option == 'allow') {
+                allowPopupsOnThisPage();
+                popupBlockMessage.arguments = args;
+                openPopupFunc && openPopupFunc();
+            } else {
+                showNotification = false;
+            }
+
+            popupBlockMessage.option = option;
+            var stndzActivateFrame = document.getElementById("stndz-activate");
+            var windowToPost = stndzActivateFrame ? stndzActivateFrame.contentWindow : window;
+            windowToPost.postMessage(popupBlockMessage, '*');
+        };
+
+        window.top.postMessage({
+            type: 'stndz-show-popup-notification',
+            iframeGuid: popupBlockMessage.iframeGuid,
+            blockType: blockType
+        }, '*');
+    }
+
+    function createNotificationOnPage() {
+        var style = document.createElement('style');
+        style.textContent = '.stndz-popup-notification {' +
+        'width: 670px;' +
+        'height: 30px;' +
+        'position: fixed;' +
+        'overflow: hidden;' +
+        'top: -40px;' +
+        'margin: 0 auto;' +
+        'z-index: 2147483647;' +
+        'left: 0px;' +
+        'right: 0px;' +
+        'background: rgb(240, 240, 240);' +
+        'border-radius: 0px 0px 5px 5px;' +
+        'border: solid 1px #999999;' +
+        'box-shadow: 0px 2px 5px #444444;' +
+        'border-top: none; ' +
+        'line-height: 31px;' +
+        'font-size: 12px;' +
+        'font-family: sans-serif;' +
+        'color: #59595c;' +
+        'text-align: center;' +
+        'direction: ltr;' +
+        'transition-duration: 500ms;}' +
+        '.stndz-button {' +
+        'padding: 3px 15px !important;' +
+        'border: solid 1px #a4a6aa !important;' +
+        'height: 25px !important;' +
+        'border-radius: 5px !important;' +
+        'background-color: #3058b0 !important;' +
+        'background: linear-gradient(#f5f5f5, #dfdfdf) !important;' +
+        'box-shadow: inset 0px 1px 0px #ffffff, inset 0 -1px 2px #acacac !important;' +
+        'color: #555555 !important;' +
+        'font-size: 12px !important;' +
+        'line-height: 16px !important;' +
+        'font-family: sans-serif !important;' +
+        'text-align: center !important;' +
+        'background-repeat: no-repeat !important;' +
+        'text-decoration: none !important;}' +
+        '.stndz-button:hover{' +
+        'background: linear-gradient(#eeeeee, #d1d1d1) !important;' +
+        'text-decoration: none !important;' +
+        'color: #555555 !important;}';
+        document.documentElement.appendChild(style);
+
+        var div = document.createElement('div');
+        div.setAttribute('class', 'stndz-popup-notification');
+        div.innerHTML = '<img src="chrome-extension://' + extensionId + '/views/web_accessible/images/icon.png" style="top: 5px; left: 5px;height: 20px; display: initial;position: absolute;">' +
+        '&nbsp;<b>Site Popup Blocked:</b>' +
+        '&nbsp;&nbsp;<a href="javascript:void(0)" id="stndz-popup-allow-once" class="stndz-button">Allow once</a>' +
+        '&nbsp;&nbsp;<a href="javascript:void(0)" id="stndz-popup-allow" class="stndz-button">Allow always</a>' +
+        '&nbsp;&nbsp;<a href="javascript:void(0)" id="stndz-popup-block" class="stndz-button">Block always</a>' +
+        '&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" id="stndz-popup-help"><img src="chrome-extension://' + extensionId + '/views/web_accessible/images/help.png" style="opacity: 0.3; position: absolute; top: 7px; display: initial;right: 30px;" /></a>' +
+        '&nbsp;<a href="javascript:void(0)" id="stndz-popup-close"><img src="chrome-extension://' + extensionId + '/views/web_accessible/images/close.png" style="opacity: 0.3; position: absolute; top: 7px; display: initial;right: 7px;" /></a>' +
+        '<br /><div style="line-height: 22px; text-align: left; padding: 0px 5px 0px 5px; font-size: 11px;">The site tried to open a popup and Stands blocked it.' +
+        '<br />if you don\'t trust this site you should click <b>"Block always"</b>, if you do click <b>"Allow always"</b>.' +
+        '<br />If you\'re not sure click <b>"Allow once"</b> which will open the popup and pause popup blocking for the current page visit.' +
+        '<br />You can always change your settings in the application window.</div>';
+        document.body.appendChild(div);
+
+        document.getElementById("stndz-popup-allow-once").addEventListener("click", function(event) { event.stopPropagation(); stndz.stndzPopupClicked("once") }, true);
+        document.getElementById("stndz-popup-allow").addEventListener("click", function(event) { event.stopPropagation(); stndz.stndzPopupClicked("allow") }, true);
+        document.getElementById("stndz-popup-block").addEventListener("click", function(event) { event.stopPropagation(); stndz.stndzPopupClicked("block") }, true);
+        document.getElementById("stndz-popup-help").addEventListener("click", function(event) { event.stopPropagation(); stndz.togglePopupNotificationHelp() }, true);
+        document.getElementById("stndz-popup-close").addEventListener("click", function(event) { event.stopPropagation(); stndz.hidePopupNotification(); }, true);
+
+        return div;
+    }
+})({"type":"popup-user-action","iframeGuid":"mUW5vvdkrsFf0KhSNoj0fN700bdTz6T4V7vL"},true, 'lgblnfidahcdcjddiepkckcfdhpknnjh', ["mediaserver","directrev\\.com","tradeadexchange\\.com","liveadexchanger\\.com","interyield\\.","ordingly\\.com","peritas247\\.info","goodbookbook\\.com","word-my\\.com","terraclicks\\.com","tracki112\\.com","popped","ahtamsu\\.ru","startnewtab\\.com","onclickads\\.net","europacash\\.com","wordkeyhelper\\.com","d1110e4\\.se","buzzonclick\\.com","adultadworld\\.com","3wr110\\.net","ads\\.xladzop\\.com","mtagmonetizationc\\.com","ad\\.propellerads\\.com","popmyads\\.com","popunderclick\\.com","pipeaota\\.com","expocrack\\.com","trafficforce\\.com","poprockets\\.info","trustedsurf\\.com","smartnewtab\\.com","wonderlandads\\.com","admediatracker\\.com","n\\d{3}adserv\\.com","adland\\.co","adexc\\.net"]);</script><style>iframe[id*="google_ads_iframe_"] { display: none !important; } </style>
+<title>Tryit Editor v3.0</title>
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./Tryit Editor v3.0_files/w3.css">
+<script src="./Tryit Editor v3.0_files/w3codecolor.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3855518-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<script type="text/javascript">
+ // GPT slots
+ var gptAdSlots = [];
+ googletag.cmd.push(function() {
+
+   var leaderMapping = googletag.sizeMapping().
+   // Mobile ad
+   addSize([0, 0], [320, 50]). 
+   // Vertical Tablet ad
+   addSize([468, 0], [468, 60]). 
+   // Horizontal Tablet
+   addSize([728, 0], [728, 90]).
+   // Desktop and bigger ad
+ addSize([970, 0], [[728, 90], [970, 90]]).build();
+// addSize([970, 0], [728, 90]).build();
+ gptAdSlots[0] = googletag.defineSlot('/16833175/TryitLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1428407818244-0').
+// gptAdSlots[0] = googletag.defineSlot('/16833175/TryitLeaderboard', [728, 90], 'div-gpt-ad-1428407818244-0').
+   defineSizeMapping(leaderMapping).addService(googletag.pubads());
+
+
+   googletag.pubads().setTargeting("content","tryjs");
+   googletag.enableServices();
+ });
+</script>
+<script>
+if (window.addEventListener) {              
+    window.addEventListener("resize", browserResize);
+} else if (window.attachEvent) {                 
+    window.attachEvent("onresize", browserResize);
+}
+var xbeforeResize = window.innerWidth;
+
+function browserResize() {
+    var afterResize = window.innerWidth;
+    if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+        (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+        (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+        xbeforeResize = afterResize;
+        googletag.cmd.push(function() {
+            googletag.pubads().refresh([gptAdSlots[0]]);
+        });
+    }
+    if (window.screen.availWidth <= 768) {
+      restack(window.innerHeight > window.innerWidth);
+    }
+    fixDragBtn();
+}
+</script>
+<style>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color:#000000;
+  margin:0px;
+  font-size:100%;
+}
+.trytopnav {
+  height:40px;
+  overflow:hidden;
+  min-width:600px;
+  position:absolute;
+  width:100%;
+  top:99px;
+}
+.w3-navbar button {
+  border:none;
+  padding:8px 16px;
+  display:block;
+}
+a.w3schoolslink {
+  padding:0 !important;
+  display:inline !important;
+}
+a.w3schoolslink:hover,a.w3schoolslink:active {
+  text-decoration:underline !important;
+  background-color:transparent !important;
+}
+#dragbar{
+  position:absolute;
+  cursor: col-resize;
+  z-index:3;
+  padding:5px;
+}
+#shield {
+  display:none;
+  top:0;
+  left:0;
+  width:100%;
+  position:absolute;
+  height:100%;
+  z-index:4;
+}
+#container {
+  background-color:#f1f1f1;
+  width:100%;
+  overflow:auto;
+  position:absolute;
+  top:138px;
+  bottom:0;
+  height:auto;
+}
+#textareacontainer, #iframecontainer {
+  float:left;
+  height:100%;
+  width:50%;
+}
+#textarea, #iframe {
+  height:100%;
+  width:100%;
+  padding-bottom:10px;
+  padding-top:1px;
+}
+#textarea {
+  padding-left:10px;
+  padding-right:5px;  
+}
+#iframe {
+  padding-left:5px;
+  padding-right:10px;  
+}
+#textareawrapper {
+  width:100%;
+  height:100%;
+  background-color: #ffffff;
+  position:relative;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#iframewrapper {
+  width:100%;
+  height:100%;
+  -webkit-overflow-scrolling: touch;
+  background-color: #ffffff;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#textareaCode {
+  background-color: #ffffff;
+  font-family: consolas,"courier new",monospace;
+  font-size:15px;
+  height:100%;
+  width:100%;
+  padding:8px;
+  resize: none;
+  border:none;
+  line-height:normal;    
+}
+textarea.textareaCC {
+  background-color:transparent !important;
+  z-index:2;
+  position:relative;
+  -webkit-text-fill-color: transparent;
+  line-height:normal;    
+}
+.codecolorCC {
+  position:absolute;
+  font-family: consolas,"courier new",monospace;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  resize: none;
+  border: none;
+  z-index: 1;
+  overflow-y:auto;
+  word-wrap: break-word;
+  line-height:normal;    
+}
+#iframeResult, #iframeSource {
+  background-color: #ffffff;
+  height:100%;
+  width:100%;  
+}
+#stackV {background-color:#999999;}
+#stackV.horizontal,#stackV.horizontal {background-color:transparent;}
+#stackV.horizontal:hover {background-color:#d3d3d3;}
+#stackH,#stackH {background-color:transparent;}
+#stackH:hover {background-color:#d3d3d3;}
+#stackH.horizontal {background-color:#999999;}
+#textareacontainer.horizontal,#iframecontainer.horizontal{
+  height:50%;
+  float:none;
+  width:100%;
+}
+#textarea.horizontal{
+  height:100%;
+  padding-left:10px;
+  padding-right:10px;
+}
+#iframe.horizontal{
+  height:100%;
+  padding-right:10px;
+  padding-bottom:10px;
+  padding-left:10px;  
+}
+#container.horizontal{
+  min-height:200px;
+  margin-left:0;
+}
+#tryitLeaderboard {
+  overflow:hidden;
+  text-align:center;
+  margin-top:5px;
+  height:90px;
+}
+@media screen and (max-width: 727px) {
+  .trytopnav {top:70px;}
+  #container {top:108px;}
+}
+@media screen and (max-width: 467px) {
+  .trytopnav {top:60px;}
+  #container {top:98px;}
+}
+@media only screen and (max-device-width: 768px) {
+  #iframewrapper {overflow: auto;}
+  #container     {min-width:320px;}
+  .stack         {display:none;}
+}
+#iframewrapper {
+	
+}
+</style>
+<!--[if lt IE 8]>
+<style>
+#textareacontainer, #iframecontainer {width:48%;}
+#container {height:500px;}
+#textarea, #iframe {width:90%;height:450px;}
+#textareaCode, #iframeResult {height:450px;}
+.stack {display:none;}
+</style>
+<![endif]-->
+<script src="./Tryit Editor v3.0_files/pubads_impl_87.js" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-2/html/container.html"></head>
+<body cz-shortcut-listen="true">
+<div id="tryitLeaderboard" style="background-color:#ffffff">
+<!-- TryitLeaderboard -->
+<div id="div-gpt-ad-1428407818244-0">
+<script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-1428407818244-0'); });</script>
+<div id="google_ads_iframe_/16833175/TryitLeaderboard_0__container__" stndz-container="" style="border: 0pt none; height: auto; text-align: center;"><iframe id="google_ads_iframe_/16833175/TryitLeaderboard_0" title="3rd party ad content" name="google_ads_iframe_/16833175/TryitLeaderboard_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom; display: none;" src="./Tryit Editor v3.0_files/saved_resource.html"></iframe><iframe name="__stndz__jlrG5fyzUOZGNBpzyPL90bfRnDmkzTxt8BDs" id="__stndz__jlrG5fyzUOZGNBpzyPL90bfRnDmkzTxt8BDs" width="728" height="90" src="javascript:document.write(&#39;&lt;html&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot; id=&quot;frame-script&quot; src=&quot;//stands-app/placeholder.js?pageId=ykWNwzoA3pChFdS3K5NUr8V9eTHY4lOERJxq&amp;rand=1199063131262&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;this.frameElement.style.visibility=&quot;visible&quot;;&lt;/script&gt;&lt;/head&gt;&lt;body style=&quot;margin:0px&quot;&gt;&lt;style&gt;#stndz-marker { display: none; position: absolute; background-color: white; bottom: 0px; left: -25px; z-index: 2147483647; font-family: arial; font-size: 9px; border-top-right-radius: 5px; cursor: pointer; padding: 2px 4px 2px 2px; transition-duration: 200ms; } body:hover #stndz-marker { left: 0px; text-decoration: none; color: #007DBD; } #stndz-marker:hover { text-decoration: underline !important; } #stndz-explainer { position: absolute; bottom: 0px; left: 0px; height: 0%; width: 0%; background-color: #ffffff; transition-duration: 300ms; z-index: 2147483647; }&lt;/style&gt;&lt;div id=&quot;stndz-marker&quot; onclick=&quot;openStndzExplainar()&quot;&gt;Ad by STANDS&lt;/div&gt;&lt;div id=&quot;stndz-explainer&quot;&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var frameData = { atf: true}; var stndzMarker = document.getElementById(&quot;stndz-marker&quot;); var stndzExplainer = document.getElementById(&quot;stndz-explainer&quot;); var explainerIframe; function openStndzExplainar() { if (!explainerIframe) {explainerIframe = document.createElement(&quot;iframe&quot;); explainerIframe.width=&quot;100%&quot;; explainerIframe.height=&quot;100%&quot;; explainerIframe.frameBorder=&quot;0&quot;; explainerIframe.marginWidth=&quot;0&quot;; explainerIframe.marginHeight=&quot;0&quot;; stndzExplainer.appendChild(explainerIframe);} stndzExplainer.style.width = &quot;100%&quot;; stndzExplainer.style.height = &quot;100%&quot;; stndzMarker.style.visibility = &quot;hidden&quot;; setTimeout(function() { explainerIframe.src = &quot;chrome-extension://gagfkmknmijppikpcikmbbkdkhggcmge/views/web_accessible/explainers/72890.html?tag=&quot; + document.getElementById(&quot;stndz-data&quot;).getAttribute(&quot;tag-id&quot;); if (!explainerIframe.onload) explainerIframe.onload=stndzExplainerIframeSrcChanged; }, 300); } function stndzExplainerIframeSrcChanged() { try { explainerIframe.contentDocument; stndzExplainer.style.width = &quot;0%&quot;; stndzExplainer.style.height = &quot;0%&quot;; stndzMarker.style.visibility = &quot;visible&quot;; } catch(e) {} }&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;var pageData = {&quot;tags&quot;:[1],&quot;geo&quot;:&quot;TUN&quot;,&quot;hostAddress&quot;:&quot;www.w3schools.com&quot;,&quot;topHostAddress&quot;:&quot;www.w3schools.com&quot;,&quot;site&quot;:&quot;w3schools.com&quot;,&quot;experimentGroup&quot;:&quot;s&quot;};&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;//stands-app/tag.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;document.close();&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;&#39;);" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" style="visibility: visible; margin: 0px auto; left: 0px; right: 0px; max-height: 90px; max-width: 728px; display: inline !important; width: 728px !important; height: 90px !important;" src="./Tryit Editor v3.0_files/saved_resource(1).html"></iframe></div><iframe id="google_ads_iframe_/16833175/TryitLeaderboard_0__hidden__" title="" name="google_ads_iframe_/16833175/TryitLeaderboard_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;" src="./Tryit Editor v3.0_files/saved_resource(2).html"></iframe></div>
+</div>
+
+<div class="trytopnav">
+<ul class="w3-navbar w3-light-grey" style="border-top:1px solid #f1f1f1;">
+  <li style="width:auto !important;float:left;"><span style="padding:8px 16px 8px 10px;display:block">Edit The Code:</span></li>
+  <li class="stack" style="width:auto !important;float:left;"><button title="Vertically" onclick="restack(false)" id="stackV"><img src="./Tryit Editor v3.0_files/stack_vertically.png"></button></li>
+  <li class="stack" style="width:auto !important;float:left;"><button title="Horizontally" onclick="restack(true)" id="stackH"><img src="./Tryit Editor v3.0_files/stack_horizontally.png"></button></li>
+  <li style="width:auto !important;float:left;"><button class="w3-green w3-hover-white w3-hover-text-green" onclick="submitTryit()">See Result »</button></li>
+  <li class="w3-right w3-hide-small"><span style="padding:8px 16px;display:block">Try it Yourself - © <a href="http://www.w3schools.com/" class="w3schoolslink">w3schools.com</a></span></li>  
+</ul>
+</div>
+<div id="shield" style="display: none;"></div>
+<a href="javascript:void(0)" id="dragbar" style="width: 5px; top: 138px; left: 669.5px; height: 450px; cursor: col-resize;"></a>
+<div id="container">
+  <div id="textareacontainer">
+    <div id="textarea">
+      <div id="textareawrapper">
+        <div id="codecolor" class=" codecolorCC"><span style="color:brown"><span style="color:mediumblue">&lt;</span>!DOCTYPE<span style="color:red"> html</span><span style="color:mediumblue">&gt;</span></span><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>html<span style="color:mediumblue">&gt;</span></span><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>body<span style="color:mediumblue">&gt;</span></span><br><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>p<span style="color:red"> id<span style="color:mediumblue">="demo"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>script<span style="color:mediumblue">&gt;</span></span><span style="color:black"><br>&nbsp;<span style="color:mediumblue">var</span> n = <span style="color:mediumblue">new</span> Date();<br>&nbsp;&nbsp; &nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<span style="color:mediumblue">if</span>(n.getDay()&lt;<span style="color:red">10</span>){<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;n.getDay()=<span style="color:brown">'0'</span>+n.getDay();<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; alert(n.getDay());<br>&nbsp;&nbsp;<br></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/script<span style="color:mediumblue">&gt;</span></span><br><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>/body<span style="color:mediumblue">&gt;</span></span><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>/html<span style="color:mediumblue">&gt;</span></span><br><br><br></div>
+        <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" class=" textareaCC">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML = Date();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+          <form autocomplete="off" style="margin:0px;display:none;">
+            <input type="hidden" name="code" id="code">
+            <input type="hidden" id="bt" name="bt">
+          </form>
+       </div>
+    </div>
+  </div>
+  <div id="iframecontainer">
+    <div id="iframe">
+      <div id="iframewrapper"><iframe frameborder="0" id="iframeResult" src="./Tryit Editor v3.0_files/saved_resource(3).html"></iframe></div>
+    </div>
+  </div>
+</div>
+<script>
+submitTryit()
+function submitTryit() {
+  var text = document.getElementById("textareaCode").value;
+  var ifr = document.createElement("iframe");
+  ifr.setAttribute("frameborder", "0");
+  ifr.setAttribute("id", "iframeResult");  
+  document.getElementById("iframewrapper").innerHTML = "";
+  document.getElementById("iframewrapper").appendChild(ifr);
+  var ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument;
+  ifrw.document.open();
+  ifrw.document.write(text);  
+  ifrw.document.close();
+  //23.02.2016: contentEditable is set to true, to fix text-selection (bug) in firefox.
+  //(and back to false to prevent the content from being editable)
+  //(To reproduce the error: Select text in the result window with, and without, the contentEditable statements below.)  
+  if (ifrw.document.body && !ifrw.document.body.isContentEditable) {
+    ifrw.document.body.contentEditable = true;
+    ifrw.document.body.contentEditable = false;
+  }
+}
+function restack(horizontal) {
+    var tc, ic, t, i, c, f, sv, sh, d, height, flt, width;
+    tc = document.getElementById("textareacontainer");
+    ic = document.getElementById("iframecontainer");
+    t = document.getElementById("textarea");
+    i = document.getElementById("iframe");
+    c = document.getElementById("container");    
+    sv = document.getElementById("stackV");
+    sh = document.getElementById("stackH");
+    tc.className = tc.className.replace("horizontal", "");
+    ic.className = ic.className.replace("horizontal", "");        
+    t.className = t.className.replace("horizontal", "");        
+    i.className = i.className.replace("horizontal", "");        
+    c.className = c.className.replace("horizontal", "");                        
+    sv.className = sv.className.replace("horizontal", "");
+    sh.className = sh.className.replace("horizontal", "");
+    stack = "";
+    if (horizontal) {
+        tc.className = tc.className + " horizontal";
+        ic.className = ic.className + " horizontal";        
+        t.className = t.className + " horizontal";        
+        i.className = i.className + " horizontal";                
+        c.className = c.className + " horizontal";                
+        sv.className = sv.className + " horizontal";                        
+        sh.className = sh.className + " horizontal";
+        stack = " horizontal";
+        document.getElementById("textareacontainer").style.height = "50%";
+        document.getElementById("iframecontainer").style.height = "50%";
+        document.getElementById("textareacontainer").style.width = "100%";
+        document.getElementById("iframecontainer").style.width = "100%";
+    } else {
+        document.getElementById("textareacontainer").style.height = "100%";
+        document.getElementById("iframecontainer").style.height = "100%";
+        document.getElementById("textareacontainer").style.width = "50%";
+        document.getElementById("iframecontainer").style.width = "50%";
+    }
+    fixDragBtn();
+}
+if (navigator.userAgent.indexOf("WebKit") > -1 && navigator.userAgent.indexOf("Edge") == -1) {
+    document.getElementById("codecolor").className += " codecolorCC";
+    document.getElementById("textareaCode").className += " textareaCC";
+    colorcoding();
+    if (document.getElementById("textareaCode").addEventListener) {              
+        document.getElementById("textareaCode").addEventListener("input", colorcoding);
+        document.getElementById("textareaCode").addEventListener("scroll", syncscroll);
+    } else if (document.getElementById("textareaCode").attachEvent) {                 
+        document.getElementById("textareaCode").attachEvent("oninput", colorcoding);
+       document.getElementById("textareaCode").attachEvent("onscroll", syncscroll);
+    }
+}
+function syncscroll() {
+    document.getElementById("codecolor").scrollTop = document.getElementById("textareaCode").scrollTop;
+}
+function colorcoding() {
+    var text = document.getElementById("textareaCode").value;
+    text = text.replace(/&/g, "&amp;");
+    text = text.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");   
+    text = text.replace(/  /g, " &nbsp;");  
+    text = text.replace(/</g, "&lt;");
+    text = text.replace(/>/g, "&gt;");
+    text = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    text = text.replace(/<br> /g, "<br>&nbsp;");  
+    text = w3CodeColorize(text);
+    document.getElementById("codecolor").innerHTML = text + "<br><br>";
+}
+var i = 0;
+var dragging = false;
+var buttonwidth;
+var stack;
+if ((window.screen.availWidth <= 768 && window.innerHeight > window.innerWidth) || "" == " horizontal") {restack(true);}
+function fixDragBtn() {
+  var textareawidth, leftpadding, dragleft, containertop
+  var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+  if (stack != " horizontal") {
+    document.getElementById("dragbar").style.width = "5px";    
+    textareasize = Number(w3_getStyleValue(document.getElementById("textareaCode"), "width").replace("px", ""));
+    leftpadding = Number(w3_getStyleValue(document.getElementById("textarea"), "padding-left").replace("px", ""));
+    buttonwidth = Number(w3_getStyleValue(document.getElementById("dragbar"), "width").replace("px", ""));
+    textareaheight = w3_getStyleValue(document.getElementById("textareaCode"), "height");
+    dragleft = textareasize + leftpadding + (leftpadding / 2) - (buttonwidth / 2);
+    document.getElementById("dragbar").style.top = containertop + "px";
+    document.getElementById("dragbar").style.left = dragleft + "px";
+    document.getElementById("dragbar").style.height = textareaheight;
+    document.getElementById("dragbar").style.cursor = "col-resize";
+    
+  } else {
+    document.getElementById("dragbar").style.height = "5px";
+    if (window.getComputedStyle) {
+        textareawidth = window.getComputedStyle(document.getElementById("textareaCode"),null).getPropertyValue("height");
+        textareaheight = window.getComputedStyle(document.getElementById("textareaCode"),null).getPropertyValue("width");
+        leftpadding = window.getComputedStyle(document.getElementById("textarea"),null).getPropertyValue("padding-top");
+        buttonwidth = window.getComputedStyle(document.getElementById("dragbar"),null).getPropertyValue("height");
+    } else {
+        dragleft = document.getElementById("textareaCode").currentStyle["width"];
+    }
+    textareawidth = Number(textareawidth.replace("px", ""));
+    leftpadding = Number(leftpadding .replace("px", ""));
+    buttonwidth = Number(buttonwidth .replace("px", ""));
+    dragleft = containertop + textareawidth + leftpadding + (leftpadding / 2);
+    document.getElementById("dragbar").style.top = dragleft + "px";
+    document.getElementById("dragbar").style.left = "5px";
+    document.getElementById("dragbar").style.width = textareaheight;
+    document.getElementById("dragbar").style.cursor = "row-resize";        
+  }
+}
+function dragstart(e) {
+  e.preventDefault();
+  dragging = true;
+  var main = document.getElementById("iframecontainer");
+}
+function dragmove(e) {
+  if (dragging) 
+  {
+    document.getElementById("shield").style.display = "block";        
+    if (stack != " horizontal") {
+      var percentage = (e.pageX / window.innerWidth) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.width = percentage + "%";
+        document.getElementById("iframecontainer").style.width = mainPercentage + "%";
+        fixDragBtn();
+      }
+    } else {
+      var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+      var percentage = ((e.pageY - containertop + 20) / (window.innerHeight - containertop + 20)) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.height = percentage + "%";
+        document.getElementById("iframecontainer").style.height = mainPercentage + "%";
+        fixDragBtn();
+      }
+    }
+  }
+}
+function dragend() {
+  document.getElementById("shield").style.display = "none";
+  dragging = false;
+}
+if (window.addEventListener) {              
+  document.getElementById("dragbar").addEventListener("mousedown", function(e) {dragstart(e);});
+  document.getElementById("dragbar").addEventListener("touchstart", function(e) {dragstart(e);});
+  window.addEventListener("mousemove", function(e) {dragmove(e);});
+  window.addEventListener("touchmove", function(e) {dragmove(e);});
+  window.addEventListener("mouseup", dragend);
+  window.addEventListener("touchend", dragend);
+  window.addEventListener("load", fixDragBtn);
+}
+function w3_getStyleValue(elmnt,style) {
+    if (window.getComputedStyle) {
+        return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+    } else {
+        return elmnt.currentStyle[style];
+    }
+}
+</script>
+
+</body></html>

@@ -1,0 +1,12 @@
+{% extends "::Layout/payment.html.twig" %}
+{% block title %}Pharmacy | Basket{% endblock %}
+
+{% block help %}
+    {% include '::module/Pharmacy/helpPharmacy.html.twig' %}
+{% endblock %}
+
+{% block menu %}
+        {% include '::module/Pharmacy/headerPharmacy.html.twig' %}
+{% endblock %}
+{% block confirm %} {{ path('Pharmacy_confirme') }} {% endblock %}
+

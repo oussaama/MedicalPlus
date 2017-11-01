@@ -1,0 +1,20 @@
+Menu_Laboratory:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMenu/menuLaboratory.yml"
+    prefix:   /
+    
+Laboratory_class:
+    path:     /class
+    defaults: { _controller: MedicalMedicalBundle:Laboratory/Laboratory:classLaboratory }
+    
+formulaire_Laboratory:
+    path:     /payment
+    
+    defaults: { _controller: MedicalMedicalBundle:Laboratory/Laboratory:saisirPayment }
+Laboratory_confirme:
+    path:     /payment/confirm
+    defaults: { _controller: MedicalMedicalBundle:Laboratory/Laboratory:confirmeLaboratory }
+    
+Laboratory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: MedicalMedicalBundle:Laboratory/Laboratory:delete }
+    

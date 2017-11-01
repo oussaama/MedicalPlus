@@ -1,0 +1,147 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}HOSPITAL{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/sliders/nivo-slider/nivo-slider.css') }}" type="text/css" media="all"/>
+{% endblock %}  
+{% block body %}
+    <div class="kl-slideshow kl-nivoslider uh_zn_def_header_style maskcontainer--shadow_ud">
+        <div class="fake-loading loading-2s"></div>
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__bgimage" style="background-image:url({{ asset('images/general-bg-2.jpg') }});background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+            <div class="kl-bg-source__overlay" style="background-color:rgba(233,233,233,0.5)"></div>
+        </div>
+        <div class="th-sparkles"></div>
+        <div class="kl-slideshow-inner container kl-slideshow-safepadding">
+            <div class="nivo-slider">
+                <div class="nivoslider nivoContainer">
+                    <div class="nivoSlider zn-shadow-lifted" data-transition="random" data-autoslide="0" data-pausetime="6000">
+                        <a class="link nivo-imageLink" href="#" target="_self">
+                            <img title="NATIONAL-LEVEL SERVICES" src="{{ asset('images/sliders/nivoslider-1.jpg') }}" width="1140" height="470" alt="AWESOME VISUAL TRANSITIONS">
+                        </a>
+                        <a class="link nivo-imageLink" href="#" target="_self">
+                            <img title=" HIGHLY QUALIFIED PERSONNEL" src="{{ asset('images/sliders/nivoslider-2.jpg') }}" width="1140" height="470" alt="FANCY YET ELEGANT">
+                        </a>
+                        <a class="link nivo-imageLink" href="#" target="_self">
+                            <img title="24-HOUR PATIENT CARE" src="{{ asset('images/sliders/nivoslider-3.jpg') }}" width="1140" height="470" alt="RESPONSIVE AND ACCESSIBLE">
+                        </a>
+                        <a class="link nivo-imageLink" href="#" target="_self">
+                            <img title="DOCTORS AT DISPOSAL AT ANY GIVEN MOMENT" src="{{ asset('images/sliders/nivoslider-4.jpg') }}" width="1140" height="470" alt="CUSTOMISABLE WITH OPTIONS">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    </div>
+    <section class="hg_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix tbk--left tbk-symbol--line tbk-icon-pos--after-title ptop-35 pbottom-65">
+                        <h2 class="tbk__title fs-34 black montserrat"><strong>HOSPITAL</strong></h2>
+                        <div class="tbk__symbol"><span></span></div>
+                        <h4 class="tbk__subtitle fs-30 fw-thin">Your health couldn't be in better hands</h4>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+    <main class="cd-main-content">
+        <div class="cd-tab-filter-wrapper">
+            <div class="cd-tab-filter">
+                <ul class="cd-filters" style="padding-left:120px; margin-top: -20px;">
+                    <li class="placeholder"> 
+                        <a data-type="all" href="#0">{{ 'appointment.process.all'|trans }}</a>
+                    </li> 
+                    <li class="filter"><a class="selected" href="#0" data-type="all">{{ 'appointment.process.all'|trans }}</a></li>
+                    <li class="filter" data-filter=".t"><a href="#0" data-type=".t">Tunis</a></li>
+                    <li class="filter" data-filter=".m"><a href="#0" data-type=".m">Manouba</a></li>
+                    <li class="filter" data-filter=".a"><a href="#0" data-type=".a">Ariena</a></li>
+                    <li class="filter" data-filter=".b"><a href="#0" data-type=".b">Ben Arous</a></li>
+                </ul> 
+            </div> 
+        </div>
+
+        <section class="cd-gallery">
+            <ul>
+                <li class="mix item ch t" alt="">
+                    <div class="inner-item" style="border-left:3px solid #2980b8;box-shadow: 0 0 5px rgba(0, 0, 0, .4);">
+                        <div class="doctor-header">
+                            <p>Hopital</p>
+                        </div>
+                        <div class="img-intro">
+                            <img src="{{ asset('uploads/hospital.png') }}" width="800" height="600" alt=""/>
+                        </div>
+                        <h4 class="title">
+                            <div class="descriptions-doctor">
+                                <div class="speciality">  
+                                    <p class="champs-14 pos"><span class="glyphicon glyphicon-tags desc"></span><strong> </strong></p>
+                                    <p class="champs-14 pos"><span class="glyphicon glyphicon-map-marker desc"></span><strong> adress</strong></p>
+                                </div>
+                            </div>
+                        </h4>
+                        <div class="clear"></div>
+                    </div>
+                </li>   
+            </ul>
+        </section> 
+
+        <div class="cd-filter">
+            <form>
+                <div class="cd-filter-block">
+                    <h4>{{ 'appointment.filter.s'|trans }}</h4>
+                    <ul class="cd-filter-content cd-filters list" >
+                        <li>
+                            <input class="filter" data-filter=".chr" type="checkbox" id="chr" >
+                            <label class="checkbox-label" for="chr">les centres hospitaliers régionaux universitaires</label>
+                        </li>
+                        <li>
+                            <input class="filter" data-filter=".ch" type="checkbox" id="ch" >
+                            <label class="checkbox-label" for="ch">les centres hospitaliers</label>
+                        </li>
+                        <li>
+                            <input class="filter" data-filter=".chs" type="checkbox" id="chs" >
+                            <label class="checkbox-label" for="chs">les centres hospitaliers spécialisés en psychiatrie </label>
+                        </li>
+                    </ul> 
+                </div>
+
+                <div class="cd-filter-block">
+                    <h4>{{ 'appointment.filter.st'|trans }}</h4>
+
+                    <div class="cd-filter-content">
+                        <div class="cd-select cd-filters">
+                            <select class="filter" name="selectThis" id="selectThis">
+                                <option value=".t">Tunis</option>
+                                <option value=".m">Manouba</option>
+                                <option value=".b">Ben Arous</option>
+                                <option value=".a">Ariena</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </form>
+            <a href="#0" class="cd-close"><span class="">Close</a>
+        </div>
+
+        <a href="#0" class="cd-filter-trigger">Filters</a>
+    </main>
+{% endblock %}
+
+{% block javascript %}     
+    <script type="text/javascript" src="{{ asset('sliders/nivo-slider/jquery.nivo.slider.pack.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/nivo-slider/kl-nivo-slider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mixitup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-portfolio-sortable.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#service").addClass("activeItem");
+            $(".main-menu li#service").css("background", "#2980b8");
+        });
+    </script>
+{% endblock %}

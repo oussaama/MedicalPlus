@@ -1,0 +1,46 @@
+
+    <h1>Soin list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Referencesoin</th>
+                <th>Nomsoin</th>
+                <th>Descriptionsoin</th>
+                <th>Prixsoin</th>
+                <th>Datesoin</th>
+                <th>Entreprisesoin</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for soin in soins %}
+            <tr>
+                <td><a href="{{ path('soin_show', { 'id': soin.id }) }}">{{ soin.referenceSoin }}</a></td>
+                <td>{{ soin.nomSoin }}</td>
+                <td>{{ soin.descriptionSoin }}</td>
+                <td>{{ soin.prixSoin }}</td>
+                <td>{% if soin.dateSoin %}{{ soin.dateSoin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ soin.entrepriseSoin }}</td>
+                <td>{{ soin.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('soin_show', { 'id': soin.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('soin_edit', { 'id': soin.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('soin_new') }}">Create a new entry</a>
+        </li>
+    </ul>

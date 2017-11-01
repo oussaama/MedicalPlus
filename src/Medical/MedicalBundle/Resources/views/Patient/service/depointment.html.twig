@@ -1,0 +1,229 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}Patient | Doctor Depointment{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+{% endblock %}
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:670px;">
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/sliders/doctor4.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="th-sparkles"></div>
+        <div class="kl-bottommask kl-bottommask--mask3">
+            <svg width="5000px" height="57px" class="svgmask " viewBox="0 0 5000 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-mask3">
+                        <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                        <feGaussianBlur stdDeviation="2" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+                        <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+                        <feMerge>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                            <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path d="M9.09383679e-13,57.0005249 L9.09383679e-13,34.0075249 L2418,34.0075249 L2434,34.0075249 C2434,34.0075249 2441.89,33.2585249 2448,31.0245249 C2454.11,28.7905249 2479,11.0005249 2479,11.0005249 L2492,2.00052487 C2492,2.00052487 2495.121,-0.0374751261 2500,0.000524873861 C2505.267,-0.0294751261 2508,2.00052487 2508,2.00052487 L2521,11.0005249 C2521,11.0005249 2545.89,28.7905249 2552,31.0245249 C2558.11,33.2585249 2566,34.0075249 2566,34.0075249 L2582,34.0075249 L5000,34.0075249 L5000,57.0005249 L2500,57.0005249 L1148,57.0005249 L9.09383679e-13,57.0005249 Z" class="bmask-bgfill" filter="url(#filter-mask3)" fill="#f5f5f5"></path>
+            </svg> 
+        </div>
+    </div>
+    <section class="hg_section ptop-80 pbottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="hg-portfolio-sortable"> 
+                    <ul id="portfolio-nav" class="fixclear">
+                        <li class=""><a href="#" data-filter=".Week1">Week1</a></li>
+                        <li class=""><a href="#" data-filter=".Week2">Week2</a></li>
+                        <li class="current"><a href="#" data-filter=".Week3">Week3</a></li>
+                        <li class=""><a href="#" data-filter=".Week4">Week4</a></li>
+                    </ul>
+                    <button class="btn pull-right btn-fullcolor profil-form">
+                        <a class="various fancybox.ajax" href="{{ path('FormulaireDepointment')}}" style="color:#fff;">BOOK</a>
+                    </button>
+                    <div class="clear"></div>
+                    <ul id="thumbs" class="fixclear" data-columns="4">
+                        <li class="item kl-has-overlay Week3 web_sort even" data-date="02122016">
+                            <div style="width:1200px;">
+                                <table class="table-depointment">
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment">
+                                            <a href="">Monday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">14-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                        <td class="hour-depointment">
+                                            <a href="">Tuesday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">15-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                        <td class="hour-depointment">
+                                            <a href="">Wednesday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">16-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                        <td class="hour-depointment">
+                                            <a href="">Thursday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">17-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                        <td class="hour-depointment">
+                                            <a href="">Friday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">18-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                        <td class="hour-depointment">
+                                            <a href="">Saturday</a>
+                                            <dl class="variation">
+                                                <dt class="variation-color">19-03-2016</dt>
+                                            </dl>
+                                        </td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment"> 9:00 - 10:00</td>
+                                        <td class="depointment various">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment"> 10:00 - 11:00</td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="depointment">Reserved</td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment"> 11:00 - 12:00 </td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment">12:00 - 13:00</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment"> 
+                                        <td class="hour-depointment">13:00 - 14:00</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment">14:00 - 15:00</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment">15:00 - 16:00</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                    <tr class="day-depointment">
+                                        <td class="hour-depointment">16:00 - 17:00</td>
+                                        <td class="depointment">Reserved</td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                        <td class="hour-depointment"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+
+    <script type="text/javascript" src="{{asset('js/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/_jquery-ui-1.10.3.custom.min.js') }}"></script>                      
+    <script type="text/javascript" src="{{asset('addons/scrollme/jquery.scrollme.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-partners-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-portfolio-sortable.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.isotope.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}" ></script>  
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');</script>
+    <script>
+        $("#depointment").addClass("activeItem");
+        $(".main-menu li#depointment").css("background", "#2980b8");
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".various").fancybox({
+                maxWidth: 800,
+                maxHeight: 1500,
+                margin: 100,
+                fitToView: true,
+                width: '57%',
+                height: '95%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: false,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic'
+            });
+        });
+    </script>
+{% endblock %}
+

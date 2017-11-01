@@ -1,0 +1,150 @@
+{% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+{% set frParams = params|merge({'_locale': 'fr'}) %}
+{% set enParams = params|merge({'_locale': 'en'}) %}
+<header id="header" class="site-header cta_button">
+    <div class="kl-header-bg"></div>
+    <div class="container siteheader-container">
+        <div class="kl-top-header clearfix">
+            <div class="header-links-container">
+                <ul class="topnav navRight topnav">
+                    <li><a class="" href="{{ path('fos_user_security_logout') }}">{{ 'header.head.log'|trans }}</a></li>
+                </ul>
+                <ul class="topnav navLeft topnav--lang">
+                    <li class="languages drop">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-globe icon-white xs-icon"></span>
+                            <span class="hidden-xs">{{ 'header.head.lang'|trans }}</span>
+                        </a>
+                        <div class="pPanel">
+                            <ul class="inner">
+                                {% if(app.request.locale == "en") %}
+                                    <li class="toplang-item active">
+                                        <a href="{{ path(app.request.attributes.get('_route'), enParams) }}"><img src="{{ asset('images/en.png') }}" alt="{{ 'header.head.langEn'|trans }}" class="toplang-flag" width="18" height="12"/> {{ 'header.head.langEn'|trans }}<span class="glyphicon glyphicon-ok"></span></a>
+                                    </li>
+                                    <li class="toplang-item ">
+                                        <a href="{{ path(app.request.attributes.get('_route'), frParams) }}"><img src="{{ asset('images/fr.png') }}" alt="{{ 'header.head.langFr'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langFr'|trans }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="toplang-item ">
+                                        <a href="{{ path(app.request.attributes.get('_route'), enParams) }}"><img src="{{ asset('images/en.png') }}" alt="{{ 'header.head.langEn'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langEn'|trans }}</a>
+                                    </li>
+                                    <li class="toplang-item active">
+                                        <a href="{{ path(app.request.attributes.get('_route'), frParams) }}"><img src="{{ asset('images/fr.png') }}" alt="{{ 'header.head.langFr'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langFr'|trans }}<span class="glyphicon glyphicon-ok"></span></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div id="search" class="header-search">
+                    <a href="#" class="searchBtn ">
+                        <span class="glyphicon glyphicon-search icon-white"></span>
+                    </a>
+                    <div class="search-container">
+                        <form id="searchform" class="header-searchform" action="http://www.google.com/search" method="get" onSubmit="Gsitesearch(this)" target="_blank">
+                            <input name="s" maxlength="20" class="inputbox" type="text" size="20" value="{{ 'header.head.sea'|trans }} ..." onblur="if (this.value == '')
+                                        this.value = '{{ 'header.head.sea'|trans }} ...';" onfocus="if (this.value == '{{ 'header.head.sea'|trans }} ...')
+                                                    this.value = '';">
+                            <button type="submit" id="searchsubmit" class="searchsubmit glyphicon glyphicon-search icon-white"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-leftside-container ">
+                <ul class="social-icons sc--clean topnav navRight">
+                    <li><a href="#" target="_self" class="" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" target="_self" class="" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" target="_self" class="" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="#" target="_blank" class="" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+                <div class="clearfix visible-xxs"></div>
+                <span class="kl-header-toptext">{{ 'header.head.call'|trans }} <a href="#" class="fw-bold">0900 800 900</a></span>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="logo-container hasInfoCard logosize--yes">
+            <h1 class="site-logo logo " id="logo">
+                <a href="{{ path('Beauty_homepage') }}">
+                    <img class="logo-img" src="{{ asset('images/logo.png') }}" alt="Medical+" title="Medical+" width="150" height="55" style="margin-top: -18px;">
+                </a>
+            </h1>
+            <div id="infocard" class="logo-infocard">
+                <div class="custom">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p>&nbsp;</p>
+                            <p style="text-align: center;margin-top:-40px;">
+                                <img src="{{ asset('images/logo.png') }}" alt="" width="150" height="50">
+                            </p>
+                            <p style="text-align: center;">{{'index.head.sd'|trans }}</p>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="custom contact-details">
+                                <p><strong>Tel: (+216) 71 000 000</strong><br>
+                                    Email:&nbsp;<a href="mailto:sales@yourwebsite.com">{{ 'footer.info.email'|trans }}</a>
+                                </p>
+                                <p>{{ 'header.menu.profil.ad'|trans }}<br>{{ 'footer.info.adress' |trans }}</p>
+                                <a href="http://goo.gl/maps/1OhOu" target="_blank" class="map-link">
+                                    <span class="glyphicon glyphicon-map-marker icon-white"></span>
+                                    <span> Open in Google Maps</span>
+                                </a>
+                            </div>
+                            <div style="height:20px;"></div>
+                            <ul class="social-icons sc--clean">
+                                <li><a href="#" target="_self" class="" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_self" class="" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_self" class="" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#" target="_blank" class="" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator visible-xxs"></div>
+        <div id="zn-res-menuwrapper">
+            <a href="#" class="zn-res-trigger zn-header-icon"></a>
+        </div>
+        <!-- bar de menu-->
+        <div id="main-menu" class="main-nav zn_mega_wrapper">
+            <ul id="menu-main-menu" class="main-menu zn_mega_menu">
+                <li class="menu-item-has-children" id="home"><a href="{{path('Beauty_homepage')}}">{{ 'header.menu.index'|trans }}</a></li>
+                <li class="menu-item-has-children" id="cares"><a href="{{path('Beauty_cares')}}">{{ 'header.menu.care'|trans }}</a></li>
+                <li class="menu-item-has-children" id="promo"><a href="{{path('medical_promo')}}">{{ 'header.menu.promo'|trans }}</a></li>
+                <li class="menu-item-has-children" id="profil"><a href="{{path('profil',{'id':app.user.id})}}">PROFIL</a></li>
+                <li class="menu-item-has-children" id="news"><a href="{{path('medical_news')}}">{{ 'header.menu.news'|trans }}</a></li>
+                <li class="menu-item-has-children" id="about"><a href="{{path('medical_about')}}">{{ 'header.menu.about'|trans }}</a></li>
+                <li class="menu-item-has-children" id="contact"><a href="{{path('contact_new')}}">CONTACT</a></li>
+            </ul>
+        </div>
+        <ul class="topnav navLeft topnav--cart" style="margin-top:7px;">
+            <li>
+                <a href="{{ path('medical_message') }}" class="kl-cart-button" href="#" title="{{ 'header.menu.msg'|trans }}" >
+                    {% if mb>0 %}
+                        <i id="not" class="yes glyphicon glyphicon-envelope icon-white flipX-icon sm-icon" data-count=""></i>
+                    {% else %}
+                        <i id="not" class="glyphicon glyphicon-envelope icon-white flipX-icon sm-icon" data-count=""></i>
+                    {% endif %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('medical_notification') }}" class="kl-cart-button" href="#" title="{{ 'header.menu.notif'|trans }}"> 
+                    {% if nb>0 %}                   
+                        <i id="message" class="yes glyphicon glyphicon-info-sign icon-white flipX-icon sm-icon" data-count=""></i>
+                    {% else %}
+                        <i id="message" class="glyphicon glyphicon-info-sign icon-white flipX-icon sm-icon" data-count=""></i>
+                    {% endif %}
+                </a>
+            </li>
+            <li style="margin-top:7px;"> 
+                <a href="{{ path('Beauty_class') }}" id="ctabutton" class="ctabutton kl-cta-ribbon" title="{{ 'header.menu.upgrade'|trans }}" target="_self">
+                    <strong style="padding:5px;width: 100%;">{{ 'index.head.upgrade'|trans }}</strong>
+                    <svg version="1.1" class="trisvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveaspectratio="none" width="14px" height="5px" viewbox="0 0 14.017 5.006" enable-background="new 0 0 14.017 5.006" xml:space="preserve">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.016,0L7.008,5.006L0,0H14.016z"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</header>

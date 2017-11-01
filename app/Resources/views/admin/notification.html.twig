@@ -1,0 +1,22 @@
+<div class="panel-body list-group scroll" style="height: 200px;">
+    {% for article in articles %}
+        {% if (article.etatArt =="non lu") %}
+            <a href="{{ path('admin_edit_article',{'id':article.id}) }}" class="list-group-item">
+                <div class="list-group-status status-online"></div>
+                <img src="{{ asset('uploads/'~article.picture) }}" class="pull-left" alt="{{ article.auteur }}">
+                <span class="contacts-title">{{ article.auteur }}</span>
+                <p>{{ article.titre }} / {{article.nomCat}}</p>
+            </a>
+        {% else %}
+            <a href="{{ path('admin_edit_article',{'id':article.id}) }}" class="list-group-item">
+                <div class="list-group-status status-away"></div>
+                <img src="{{ asset('uploads/'~article.picture) }}" class="pull-left" alt="{{ article.auteur }}" style="width: 50px;">
+                <span class="contacts-title">{{ article.auteur }}</span>
+                <p>{{ article.titre }} / {{article.nomCat}}</p>
+            </a>
+        {% endif %}
+    {% endfor %}
+    <div class="panel-footer text-center">
+        <a href="{{ path('admin_article') }}">Show all tasks</a>
+    </div>
+</div>

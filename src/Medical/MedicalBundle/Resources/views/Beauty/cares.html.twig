@@ -1,0 +1,288 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}{{'header.menu.care'|trans}}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/portfolio-slider/portfolio-slider.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/theme.default.min.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('css/jquery.fileupload.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+    <style>
+        @media screen and (min-width: 992px) {
+            .chaser {
+                display: block;
+                background: rgba(0, 0, 0, 1);
+                padding: 0;
+                position: fixed;
+                left: -2999px;
+                right: 0;
+                top: 0;
+                width: 100%;
+                z-index: 99999;
+                opacity: 0;
+                -webkit-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                transform: translateY(-30px);
+                -webkit-transition: opacity .15s ease-in-out, -webkit-transform .15s ease-in-out;
+                transition: opacity .15s ease-in-out, transform .15s ease-in-out
+            }
+        </style>
+    {% endblock %}
+    {% block body %}
+        <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+        <div class="kl-slideshow portfolio-slider__sideshow gradient zn_def_header_style maskcontainer--mask5 scrollme">
+            <div class="fake-loading loading-1s"></div>
+            <div class="bgback"></div>
+            <div class="kl-slideshow-inner portfolio-slider-frames psl__wrapper psl--horizontal psl--left psl--height h-760">
+                <div class="kl-bg-source">
+                    <div class="kl-bg-source__bgimage" style="background-image:url({{ asset('images/sliders/bg-sliding-frames.jpg') }});background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+                </div>
+                <div class="th-sparkles"></div>
+                <div class="psl__inner">
+                    <div class="kl-slideshow-safepadding psl__container animateme" data-when="span" data-from="0" data-to="0.75" data-translatey="300" data-opacity="0.1" data-easing="linear">
+                        <div class="container">
+                            <h3 class="psl__main-title"><span class="fw-normal">{{ 'header.menu.be'|trans }}</span></h3>
+                            <h4 class="psl__main-desc">{{ 'beauty.slider.p2'|trans }}</h4>
+                        </div>
+                        <div class="psl-carousel__wrapper">
+                            <div class="psl-carousel__container" >
+                                <div class="psl-carousel__item psl--item-0">
+                                    <div class="psl__img psl-img--right">
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-03.jpg') }})"></div>
+                                    </div>
+                                    <div class="psl__img psl-img--left">
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-02.jpg') }})"></div>
+                                    </div>
+                                    <div class="psl__img psl-img--front">
+                                        <span class="psl__project_title"></span><a class="psl__project_url" href="#" target="_self"></a>
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-01.jpg') }})"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="psl-carousel__item psl--item-1">
+                                    <div class="psl__img psl-img--right">
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-03.jpg') }})"></div>
+                                    </div>
+                                    <div class="psl__img psl-img--left">
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-02.jpg') }})"></div>
+                                    </div>
+                                    <div class="psl__img psl-img--front">
+                                        <span class="psl__project_title"></span><a class="psl__project_url" href="#" target="_self"></a>
+                                        <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-01.jpg') }})"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <a class="psl__prev" href="#"><span class="glyphicon glyphicon-chevron-left icon-white"></span></a><a class="psl__next" href="#"><span class="glyphicon glyphicon-chevron-right icon-white"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kl-bottommask kl-bottommask--mask5">
+                <svg width="2700px" height="64px" class="svgmask" viewbox="0 0 2700 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                <filter x="-50%" y="-50%" width="200%" height="200%" filterunits="objectBoundingBox" id="filter-mask5">
+                    <feoffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feoffset>
+                    <fegaussianblur stddeviation="1.5" in="shadowOffsetInner1" result="shadowBlurInner1"></fegaussianblur>
+                    <fecomposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></fecomposite>
+                    <fecolormatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></fecolormatrix>
+                    <femerge>
+                        <femergenode in="SourceGraphic"></femergenode>
+                        <femergenode in="shadowMatrixInner1"></femergenode>
+                    </femerge>
+                </filter>
+                </defs>
+                <path d="M1892,0 L2119,44.993 L2701,45 L2701.133,63.993 L-0.16,63.993 L1.73847048e-12,45 L909,44.993 L1892,0 Z" class="bmask-bgfill" fill="#f5f5f5" filter="url(#filter-mask5')"></path>
+                <path d="M2216,44.993 L2093,55 L1882,6 L995,62 L966,42 L1892,0 L2118,44.993 L2216,44.993 L2216,44.993 Z" fill="#cd2122" class="bmask-customfill" filter="url(#filter-mask5)"></path>
+                </svg>
+            </div>
+        </div>
+        <section id="content" class="hg_section ptop-60">
+            <div class="container">
+                <div class="row">
+                    <div class="right_sidebar col-md-12" style="margin-right: -100px;">
+                        {% if (x == 1) %}
+                            <div class="col-md-2 col-md-offset-10"style="padding:50px 0 50px 0;">
+                                <button class="btn btn-fullcolor profil-form">
+                                    <a class="Add fancybox.ajax" href="{{ path('soin_new',{'id':app.user.id})}}" title="{{ 'header.menu.prod.add'|trans }}" style="color:#fff;display:relative;margin:0 15px;"><span class="glyphicon glyphicon-plus"></span>{{ 'header.menu.prod.add'|trans }}</a>
+                                </button>
+                            </div>
+                        {% else %}
+                            {% for flashMessage in app.session.flashbag.get('echec') %}
+                                <div class="alert alert-danger alert-dismissible animated bounceInLeft col-xs-12 col-md-6 col-md-offset-3" role="alert" id="myalert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cl">&times;</span></button>
+                                    <strong>Echec </strong>{{ flashMessage}}
+                                </div>
+                            {% endfor %}
+                            <style>
+                                .bounceInLeft {
+                                    animation-delay: 1s;
+                                }
+                            </style>
+                        {% endif %}
+                        <div class="text_box">
+                            <div class="kl-store">
+                                <div class="col-xs-12 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
+                                    <div id="pager" class="pager">
+                                        <form>
+                                            <span class="first glyphicon glyphicon-step-backward"></span>
+                                            <span class="prev glyphicon glyphicon-backward"/>
+                                            <input class="pagedisplay"/>
+                                            <span class="next glyphicon glyphicon-forward"></span>
+                                            <span class="last glyphicon glyphicon-step-forward"></span>
+                                            <select class="pagesize">
+                                                <option selected="selected"  value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option  value="40">40</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <form action="#" method="post" class="mb-50">
+                                    <table class="shop_table cart sortTable" cellspacing="0">
+                                        <thead style="color: #fff; text-transform: uppercase;font-size: 12px;border-radius: 3px;">
+                                            <tr>
+                                                <th class="product-name" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.pho'|trans }}</th>
+                                                <th class="product-price" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.nm'|trans }}</th>
+                                                <th class="product-quantity" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.des'|trans }}</th>
+                                                <th class="product-subtotal" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.pr'|trans }}</th>
+                                                <th class="product-subtotal" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.type'|trans }}</th>
+                                                <th class="product-remove" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius: 0;">DATE</th>
+                                                <th class="product-remove" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius: 0;">ACTION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for cares in cares|reverse %}
+                                                <tr class="cart_item" style="background-color:white;">
+                                                    <td class="product-name"><a href="{{ asset('uploads/soin/'~cares.photoSoin) }}"><img src="{{ asset('uploads/soin/'~cares.photoSoin) }}"/></a></td>
+                                                    <td class="product-name"><a href="">{{ cares.nomSoin }}</a></td>
+                                                    <td class="product-name">{{ cares.descriptionSoin }}</td> 
+                                                    <td class="product-name">{{cares.prixSoin}}DT</td>
+                                                    <td class="product-name">{{cares.typeSoin}}</td>
+                                                    <td class="product-name">
+                                                        <a href="">{{cares.dateSoin |date('d-m-y')}}</a>
+                                                        <dl class="variation">
+                                                            <dt class="variation-color">{{cares.dateSoin|date('H:m')}}</dt>
+                                                        </dl>
+                                                    </td> 
+                                                    <td class="product-remove">
+                                                        <a href="{{ path('Beauty_delete',{'id':cares.id}) }}" class="" title="Remove this item" data-product_id="22" data-product_sku=""><span class="glyphicon glyphicon-remove" style="color:#2980b8; font-size:18px;"></span></a>
+                                                        <a href="{{ path('soin_edit',{'id':cares.id}) }}" class="Edit various fancybox.ajax" title="Edit this item" data-product_id="22" data-product_sku=""><span class="glyphicon glyphicon-cog" style="color:#2980b8; font-size:18px;"></span></a>
+                                                    </td> 
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    {% endblock %}
+
+    {% block javascript %}
+        <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/sliders/caroufredsel/portfolio-slider/kl-portfolio-slider.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/kl-partners-carousel.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/_jquery-ui-1.10.3.custom.min.js') }}"></script>        
+        <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}" ></script>  
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.tablesorter.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.tablesorter.widgets.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.tablesorter.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.tablesorter.widgets.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.tablesorter.pagination.js') }}"></script>
+        <script>
+            $("#cares").addClass("activeItem");
+            $(".main-menu li#cares").css("background", "#2980b8");</script>
+        <script>
+            $(function () {
+                $('.sortTable').tablesorter({
+                    widgets: ["uitheme", "columns", "filter", "resizable", "stickyHeaders"],
+                    headers: {
+                        0: {
+                            sorter: 'number',
+                            filter: true
+                        },
+                        1: {
+                            sorter: "digit",
+                            filter: true
+                        },
+                        2: {
+                            sorter: "digit",
+                            filter: true
+                        },
+                        3: {
+                            sorter: "text",
+                            filter: true
+                        }
+                        ,
+                        4: {
+                            sorter: "text",
+                            filter: true
+                        },
+                        5: {
+                            sorter: "text",
+                            filter: true
+                        },
+                        6: {
+                            sorter: "hidden",
+                            filter: false
+                        }
+                    },
+                    usNumberFormat: false,
+                    sortReset: true,
+                    sortRestart: true
+                }).tablesorterPager({container: $("#pager")});
+            });</script>
+        <script>
+            $(document).ready(function () {
+                $(".Add").fancybox({
+                    maxWidth: 800,
+                    maxHeight: 1500,
+                    margin: 100,
+                    fitToView: true,
+                    width: '57%',
+                    height: '100%',
+                    autoCenter: true,
+                    autoResize: true,
+                    autoSize: true,
+                    closeClick: false,
+                    playSpeed: 2000,
+                    openMethod: 'zoomIn',
+                    closeMethod: 'zoomOut',
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    type: 'iframe'
+                });
+                $(".Edit").fancybox({
+                    maxWidth: 800,
+                    maxHeight: 1000,
+                    margin: 100,
+                    fitToView: true,
+                    width: '57%',
+                    height: '100%',
+                    autoCenter: true,
+                    autoResize: true,
+                    autoSize: true,
+                    closeClick: false,
+                    playSpeed: 2000,
+                    openMethod: 'zoomIn',
+                    closeMethod: 'zoomOut',
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    type: 'iframe'
+                });
+            });
+        </script>
+    {% endblock %}

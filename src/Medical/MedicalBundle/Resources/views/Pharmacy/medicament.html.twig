@@ -1,0 +1,259 @@
+{% extends '::Layout/base.html.twig' %}
+
+{% block title %} {{ 'header.menu.med'|trans }} {% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/jquery.fileupload.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('css/theme.default.min.css') }}" rel="stylesheet"/>
+    <style>
+        @media screen and (min-width: 992px) {
+            .chaser {
+                display: block;
+                background: rgba(0, 0, 0, 1);
+                padding: 0;
+                position: fixed;
+                left: -2999px;
+                right: 0;
+                top: 0;
+                width: 100%;
+                z-index: 99999;
+                opacity: 0;
+                -webkit-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                transform: translateY(-30px);
+                -webkit-transition: opacity .15s ease-in-out, -webkit-transform .15s ease-in-out;
+                transition: opacity .15s ease-in-out, transform .15s ease-in-out
+            }
+        </style>
+    {% endblock %}
+
+    {% block body %} 
+        <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+        <div class="kl-slideshow static-content__slideshow uh_light_gray scrollme">
+            <div class="bgback"></div>
+            <div class="kl-slideshow-inner static-content__wrapper static-content--height h-600">
+                <div class="static-content__source animateme" data-when="span" data-from="0" data-to="0.75" data-easing="linear" data-translatey="300" data-opacity="0.1" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                    <div class="kl-bg-source">
+                        <div class="kl-bg-source__bgimage picture">
+                            <img src="{{ asset('images/ptf2.jpg') }}"/>
+                        </div>
+                        <div class="kl-bg-source__overlay" style="background-color:rgba(0,54,96,0.7)"></div>
+                    </div>
+                    <div class="th-sparkles"></div>
+                </div>
+                <div class="static-content__inner container">
+                    <div class="kl-slideshow-safepadding sc__container animateme ptop-220" data-when="span" data-from="0" data-to="0.75" data-translatey="200" data-opacity="0.1" data-easing="linear" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                        <div class="static-content default-style">
+                            <h3 class="static-content__subtitle text-left"><span class="fw-semibold"> {{ 'Medication.slider.t1'|trans }} <span class="fw-thin"> {{ 'Medication.slider.t2'|trans }}</span><span data-rel="tooltip" data-placement="top" title="" data-animation="true" data-original-title=""> {{ 'Medication.slider.t3'|trans }}</span></span><br><span class="fw-thin">{{ 'Medication.slider.t4'|trans }}</span></h3>
+                            <div class="static-content__infopop animated fadeBoxIn sc-infopop--left" data-arrow="top">
+                                <h5 class="sc-infopop__text">{{ 'Medication.slider.t5'|trans }} <strong>Medical+</strong></h5>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="content" class="hg_section ptop-60">
+            <div class="container">
+                <div class="row">
+                    <div class="right_sidebar col-md-12" style="margin-right: -100px;">
+                        {% if (x == 1) %}
+                            <div class="col-md-2 col-md-offset-10"style="padding:50px 0 50px 0;">
+                                <button class="btn pull-right btn-fullcolor profil-form">
+                                    <a class="Add fancybox.ajax" href="{{ path('medicament_new',{'id':app.user.id})}}" title="Add this item" style="color:#fff;display:absolute;margin:0px;"><span class="glyphicon glyphicon-plus"></span> {{ 'Medication.am'|trans }}</a>
+                                </button>
+                            </div>
+                        {% else %}
+                            {% for flashMessage in app.session.flashbag.get('echec') %}
+                                <div class="alert alert-danger alert-dismissible animated bounceInLeft col-xs-12 col-md-6 col-md-offset-3" role="alert" id="myalert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cl">&times;</span></button>
+                                    <strong>Echec </strong>{{ flashMessage}}
+                                </div>
+                            {% endfor %}
+                            <style>
+                                .bounceInLeft {
+                                    animation-delay: 1s;
+                                }
+                            </style>
+                        {% endif %}
+                        <div class="text_box">
+                            <div class="kl-store">
+                                <div class="col-xs-12 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
+                                    <div id="pager" class="pager">
+                                        <form>
+                                            <span class="first glyphicon glyphicon-step-backward"></span>
+                                            <span class="prev glyphicon glyphicon-backward"/>
+                                            <input class="pagedisplay"/>
+                                            <span class="next glyphicon glyphicon-forward"></span>
+                                            <span class="last glyphicon glyphicon-step-forward"></span>
+                                            <select class="pagesize">
+                                                <option selected="selected"  value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option  value="40">40</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <form action="#" method="post" class="mb-50">
+                                    <table class="shop_table cart sortTable" cellspacing="0">
+                                        <thead style="color: #fff; text-transform: uppercase;font-size: 12px;border-radius: 3px;">
+                                            <tr>
+                                                <th class="product-thumbnail" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius: 0;">{{ 'header.menu.prod.pho'|trans }}</th>
+                                                <th class="product-price" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.nm'|trans }}</th>
+                                                <th class="product-price" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.cat'|trans }}</th>
+                                                <th class="product-quantity" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.sto'|trans }}</th>
+                                                <th class="product-subtotal" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">{{ 'header.menu.prod.pr'|trans }}</th>
+                                                <th class="product-remove" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;">DATE</th>
+                                                <th class="product-remove" style="background-color: #2980b8; color: white; font-weight: 600;padding: 15px 0;border-radius: 0;">ACTION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for medicament in medicaments|reverse %}
+                                                <tr class="cart_item" style="background-color:white;">
+                                                    <td class="product-name" >
+                                                        <div class="gridPhotoGallery mfp-gallery misc gridPhotoGallery--ratio-square gridPhotoGallery--cols-5 attachment-shop_thumbnail" >
+                                                            <a class="gridPhotoGalleryItem--h2 gridPhotoGallery__link hoverBorder" data-lightbox="mfp" data-mfp="image" href="{{ asset('uploads/medicament/'~medicament.photoMed) }}">
+                                                                <div class="gridPhotoGallery__img" style="background-image:url({{ asset('uploads/medicament/'~medicament.photoMed) }}"></div>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-name"><a href="">{{ medicament.nomMed }}</a></td>
+                                                    <td class="product-name"><a href="">{{ medicament.categorieMed|trans }}</a></td>
+                                                    <td class="product-name">{{ medicament.stockMed }}</td>                                             
+                                                    <td class="product-name">{{ medicament.prixMed }} DT</td>
+                                                    <td class="product-name">
+                                                        <a href="">{{ medicament.dateMed|date('d-m-y') }} </a>
+                                                        <dl class="variation">
+                                                            <dt class="variation-color">{{ medicament.dateMed|date('h:m') }}</dt>
+                                                        </dl>
+                                                    </td> 
+                                                    <td class="product-remove">
+                                                        <a href="{{ path('Pharmacy_delete',{ 'id': medicament.id }) }}" class="" title="Remove this item"  data-product_sku=""><span class="glyphicon glyphicon-remove" style="color:#2980b8; font-size:18px;"></span></a>
+                                                        <a href="{{ path('medicament_edit',{ 'id': medicament.id }) }}" class="Edit various fancybox.ajax" title="Edit this item"  data-product_sku=""><span class="glyphicon glyphicon-cog" style="color:#2980b8; font-size:18px;margin-left:10px;"></span></a>
+                                                    </td> 
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    {% endblock %}
+
+    {% block javascript %}
+        <script type="text/javascript" src="{{ asset('js/vendor/modernizr.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/kl-plugins.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/kl-recent-work-carousel.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/kl-testimonials-fader.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/kl-logo-carousel.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}" ></script>  
+        <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+        <script>
+            $("#medicament").addClass("activeItem");
+            $(".main-menu li#medicament").css("background", "#2980b8");
+        </script>
+        <script>
+            $(document).ready(function () {
+                $(".Add").fancybox({
+                    maxWidth: 800,
+                    maxHeight: 1500,
+                    margin: 100,
+                    fitToView: true,
+                    width: '35%',
+                    height: '65%',
+                    autoCenter: true,
+                    autoResize: true,
+                    autoSize: false,
+                    closeClick: false,
+                    playSpeed: 2000,
+                    openMethod: 'zoomIn',
+                    closeMethod: 'zoomOut',
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    type: 'iframe'
+                });
+
+                $(".Edit").fancybox({
+                    maxWidth: 700,
+                    maxHeight: 1500,
+                    margin: 100,
+                    fitToView: true,
+                    width: '35%',
+                    height: '65%',
+                    autoCenter: true,
+                    autoResize: true,
+                    autoSize: false,
+                    closeClick: false,
+                    playSpeed: 2000,
+                    openMethod: 'zoomIn',
+                    closeMethod: 'zoomOut',
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    type: 'iframe'
+                });
+            });
+        </script>
+
+        <script src="{{ asset('js/jquery.tablesorter.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.tablesorter.widgets.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.tablesorter.pagination.js') }}"></script>
+        <script>
+            $(function () {
+                $('.sortTable').tablesorter({
+                    widgets: ["uitheme", "columns", "filter", "resizable", "stickyHeaders"],
+                    headers: {
+                        0: {
+                            sorter: 'number',
+                            filter: true
+                        },
+                        1: {
+                            sorter: "digit",
+                            filter: true
+                        },
+                        2: {
+                            sorter: "digit",
+                            filter: true
+                        },
+                        3: {
+                            sorter: "text",
+                            filter: true
+                        }
+                        ,
+                        4: {
+                            sorter: "text",
+                            filter: true
+                        },
+                        5: {
+                            sorter: "shortDate",
+                            filter: true
+                        },
+                        6: {
+                            sorter: "text",
+                            filter: true
+                        },
+                        7: {
+                            sorter: "hidden",
+                            filter: false
+                        }
+                    },
+                    usNumberFormat: false,
+                    sortReset: true,
+                    sortRestart: true
+                }).tablesorterPager({container: $("#pager")});
+            });
+        </script>
+    {% endblock %}

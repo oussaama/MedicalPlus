@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\User" table="user">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="cin" type="string" column="cin" nullable="true" length="8"/>
+        <field name="adress" type="string" column="adress" nullable="true" />
+        <field name="city" type="string" column="city" nullable="true" length="30" />
+        <field name="state" type="string" column="state" nullable="true" length="30" />
+        <field name="code" type="integer" column="code" nullable="true" length="4" />
+        <field name="class" type="string" column="class" nullable="true" length="15" default="gratuit" />
+        <field name="picture" type="string" column="picture" nullable="true" />
+        <field name="firstName" type="string" column="firstname" nullable="true" length="30" />
+        <field name="lastName" type="string" column="lastname" nullable="true" length="30" />
+        <field name="day" type="integer" column="day" nullable="true" />
+        <field name="year" type="integer" column="year" nullable="true" />
+        <field name="month" type="string" column="month" nullable="true" />
+        <field name="profession" type="string" column="profession" nullable="true" />
+        <field name="sex" type="string" column="sex" nullable="true" length="1"/>
+        <field name="tel" type="integer" column="tel" nullable="true" length="20"/>
+        <field name="speciality" type="string" column="speciality" length="50" nullable="true"/>
+        <field name="role" type="integer" column="role" length="1" nullable="false"/>
+        <field name="entrepriseName" type="string" column="entreprise_name" length="40" nullable="true"/>
+        <field name="nombre" type="integer" column="nombre" nullable="true" default="0"/>
+        <field name="assurance" type="string" column="assurance" nullable="true" />
+        <field name="nbpromo" type="integer" column="nbpromo" nullable="true" default="0"/>
+        <field name="nbprod" type="integer" column="nbprod" nullable="true" default="0"/>
+        <field name="createDt" type="date" column="createdt" nullable="true"/>
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,170 @@
+{% extends "::admin/layout.html.twig" %}
+{% block title %}User{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" src="{{ asset('admin/css/animate.css') }}"/>
+{% endblock %}
+{% block body %} 
+    <div class="page-content">
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>
+            </li>   
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+            </li> 
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-comments"></span></a>
+                <div class="informer informer-danger"><b class="mes"></b></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-danger"><b class="mes"></b>new</span>
+                        </div>
+                    </div>
+                    {% include "::admin/message.html.twig" %}                           
+                </div>                        
+            </li>
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-tasks"></span></a>
+                <div class="informer informer-warning"><i class="n"></i></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-warning"><b class="n"></b> active</span>
+                        </div>
+                    </div>
+                    {% include "::admin/notification.html.twig" %}                         
+                </div>                        
+            </li>
+        </ul> 
+        <ul class="breadcrumb">
+            <li><a href="#">User</a></li>
+        </ul>
+        <div class="page-title">                    
+            <h2><span class="fa fa-users"></span> User List</h2>
+        </div>
+        <div class="page-content-wrap">  
+            <div class="row">
+                <div class="col-md-12"> 
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>Use search to find contacts. You can search by: name, address, phone. Or use the advanced search.</p>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-search"></span>
+                                            </div>
+                                            <form href="{{ path('admin_recherche') }}" method="post">
+                                                <input type="text" name="recherche" class="form-control" placeholder="Who are you looking for?"/>
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-primary" type="submit">Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="filters-button-group">                       
+                                            <a href="{{ path('admin_user') }}" id="filter"><i class="fa fa-square"></i>  All</a>
+                                            <a href="{{ path('admin_filter',{'filter':1})}}"><i class="fa fa-user"></i> Patient</a>
+                                            <a href="{{ path('admin_filter',{'filter':2})}}" ><i class="fa fa-user-md"></i> Cabine</a>
+                                            <a href="{{ path('admin_filter',{'filter':3})}}"><i class="fa fa-medkit"></i> Pharmacy</a>
+                                            <a href="{{ path('admin_filter',{'filter':4})}}" >Beauty</a>
+                                            <a href="{{ path('admin_filter',{'filter':5})}}"><i class="fa fa-tint"></i> Laboratory</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>                                    
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row grid" data-masonry='{ "columnWidth": 0,"percentPosition": true ,"itemSelector": ".grid-item" }'>
+                {% for user in users %}
+                    <div class="col-md-3 grid-item bttrlazyloading">
+                        <div class="panel panel-default animated bounceIn ">
+                            <div class="panel-body profile">
+                                <div class="profile-image">
+                                    <img src="{{ asset('uploads/'~user.picture) }}" alt="{{ user.username }}"/>
+                                </div>
+                                <div class="profile-data">
+                                    <div class="profile-data-name">{{ user.firstname}} {{user.lastname}}</div>
+                                    <div class="profile-data-title">{{ user.username }}</div>
+                                </div>
+                                <div class="profile-controls">
+                                    <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                    <a href="#" class="profile-control-right"><span class="fa fa-phone"></span></a>
+                                </div>
+                            </div>                                
+                            <div class="panel-body">                                    
+                                <div class="contact-info">
+                                    <p><small>Mobile</small><br/>{{ user.tel}}</p>
+                                    <p><small>Email</small><br/>{{ user.email }}</p>
+                                    <p><small>Address</small><br/>{{ user.adress }} {{user.code}},{{ user.city}} {{user.state}}</p>                                   
+                                </div>
+                            </div>                                
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">                                                           
+                <nav>
+                    <ul class="pager">
+                        <li>{{ knp_pagination_render(users) }}</li>
+                    </ul>
+                </nav>
+            </div>  
+        </div>                                            
+    </div>            
+</div>
+
+<script>
+
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry(grid, {
+        columnWidth: 100,
+        gutter: 10,
+        percentPosition: true
+    });
+
+    grid.addEventListener('click', function (event) {
+        // don't proceed if item was not clicked on
+        if (!matchesSelector(event.target, '.grid-item')) {
+            return;
+        }
+        // change size of item via class
+        event.target.classList.toggle('grid-item--gigante');
+        // trigger layout
+        msnry.layout();
+    });
+
+
+</script>
+
+{% endblock %}
+{% block javascript %} 
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script type='text/javascript' src='{{ asset('admin/js/plugins/icheck/icheck.min.js') }}'></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/blueimp/jquery.blueimp-gallery.min.js') }}"></script>
+    <script lang="text/javascript">
+    $(document).ready(function () {
+        $(".filter").click(function () {
+            $("div").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            });
+        });
+    });
+    </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Medical\MedicalBundle\Entity\Contact" table="contact">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="firstnameCont" type="string" column="firstname_cont" length="30" nullable="true"/>
+    <field name="lastnameCont" type="string" column="lastname_cont" length="30" nullable="true"/>
+    <field name="emailCont" type="string" column="email_cont" length="255" nullable="false"/>
+    <field name="emailRecu" type="string" column="email_recu" length="255" nullable="false"/>
+    <field name="subjectCont" type="string" column="subject_cont" length="255" nullable="false"/>
+    <field name="contenuCont" type="text" column="contenu_cont" nullable="false"/>
+    <field name="dateCont" type="datetime" column="date_cont" nullable="false"/>
+    <field name="etatCont" type="string" column="etat_cont" nullable="true"/>
+  </entity>
+</doctrine-mapping>

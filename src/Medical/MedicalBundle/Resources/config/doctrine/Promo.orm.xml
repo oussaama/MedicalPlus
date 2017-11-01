@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\Promo" table="promo">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="entreprisePr" type="integer" column="entreprise_pr"/>
+        <field name="nomPr" type="string" column="nom_pr" length="30"/>
+        <field name="categoriePr" type="text" column="categorie_pr" />
+        <field name="prixPr" type="float" column="prix_pr" />
+        <field name="photoPr" type="string" column="photo_pr" />
+        <field name="descreptionPr" type="string" column="descreption_pr" length="255"/>
+        <field name="datePr" type="datetime" column="date_pr"/>
+        <field name="datefinPr" type="date" column="datefin_pr"/>
+        <field name="datedebPr" type="date" column="datedeb_pr"/>
+    </entity>
+</doctrine-mapping>

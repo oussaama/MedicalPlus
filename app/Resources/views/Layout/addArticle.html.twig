@@ -1,0 +1,29 @@
+<div class="col-sm-12" id="setting" style="margin-top:50px;">
+    <div class="contactForm">
+        <form action="{{ path('medical_add')}}" method="post" class="contact_form row">
+            <div class="cf_response"></div>
+            <p class="col-sm-12 kl-fancy-form">
+                <input type="text" name="author" id="cf_auteur" class="form-control profil-form" placeholder="Please enter your author" value="" tabindex="1" maxlength="35"  required>
+                <label class="control-label">AUTHOR</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                <input type="text" name="title" id="cf_titre" class="form-control profil-form" placeholder="Please enter your title" value="" tabindex="1" maxlength="35" required>
+                <label class="control-label">TITLE</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                <textarea name="contenu" id="cf_contenu" class="form-control profil-form" placeholder="Enter the articale Descreption" value="" tabindex="1" maxlength="35" required/>
+                <label class="control-label">DESCREPTION</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                <span class="fileinput-button">
+                    <i class="glyphicon glyphicon-camera" style="font-size: 14px;"></i>
+                    <span>Add Picture</span>
+                    <input type="file" name="files[]" multiple>
+                </span>
+            </p>
+            <p class="col-sm-12">
+                <button class="btn pull-right btn-fullcolor " type="submit">Add</button>
+            </p>
+        </form>
+    </div>
+</div>

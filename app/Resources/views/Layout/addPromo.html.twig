@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('css/template.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+
+<div class="col-sm-12" id="setting">
+    <div class="contactForm">
+        <form action="{{ path('medical_add_promo',{'id':app.user.id}) }}" method="post" class="contact_form row" {{ form_enctype(form) }} style="margin-top:-75px;margin-left: 40px">
+            <div class="cf_response"></div>
+            {{ form_start(form) }}
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.nomPr)}}
+                <label class="control-label" style="margin:95px 0 0 -5px;">{{ 'header.menu.prod.nm'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.categoriePr)}}
+                <label class="control-label" style="margin:161px 0 0 -5px;">{{ 'header.menu.prod.cat'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.descreptionPr)}}
+                <label class="control-label" style="margin:227px 0 0 -5px;">{{ 'header.menu.prod.des'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.prixPr)}}
+                <label class="control-label" style="margin:295px 0 0 -5px;">{{ 'header.menu.prod.pr'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.datefinPr)}}
+                <label class="control-label" style="margin:358px 0 0 -5px;">{{ 'header.menu.prod.db'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.datefinPr)}}
+                <label class="control-label" style="margin:399px 0 0 -5px;">{{ 'header.menu.prod.df'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.file)}}
+            </p> 
+            <p class="col-sm-6 kl-fancy-form">
+                {{ form_label(form.Create)}}
+            </p>
+            {{ form_end(form) }}
+        </form>
+    </div>
+</div>
+
+

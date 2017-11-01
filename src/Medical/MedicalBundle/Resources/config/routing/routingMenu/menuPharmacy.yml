@@ -1,0 +1,7 @@
+Pharmacy_homepage:
+    path:     /home
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPharmacy:indexPharmacy }
+    
+Pharmacy_medicament:
+    path:     /medicament
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuPharmacy:medicament }

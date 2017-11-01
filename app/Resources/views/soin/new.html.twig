@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('css/template.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+
+<div class="col-sm-12" id="setting">
+    <div class="contactForm">
+        <form action="{{ path('soin_new',{'id':app.user.id}) }}" method="post" class="contact_form row" style="margin-top:-40px;" {{ form_enctype(form) }}>
+            <div class="cf_response"></div>
+            {{ form_start(form) }}
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.nom_soin)}}
+                <label class="control-label" style="margin:75px 0 0 -5px;">{{ 'header.menu.prod.nm'|trans }}</label>
+            </p> 
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.description_soin)}}
+                <label class="control-label" style="margin:140px 0 0 -5px;">{{ 'header.menu.prod.des'|trans }}</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.prix_soin)}}
+                <label class="control-label" style="margin:205px 0 0 -5px;">{{ 'header.menu.prod.pr'|trans }}</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.type_soin)}}
+                <label class="control-label" style="margin:275px 0 0 -5px;">{{ 'header.menu.prod.type'|trans }}</label>
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.file)}}
+            </p>
+            <p class="col-sm-12 kl-fancy-form">
+                {{ form_label(form.Create)}}
+            </p>
+            {{ form_end(form) }}
+        </form>
+    </div>
+</div>
+

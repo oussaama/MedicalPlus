@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('css/template.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/updates.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/>
+<table>
+    <tbody>
+        <tr style="border:4px solid white;">
+            <th class="depointment-patient">{{ 'header.menu.prod.re'|trans }}</th>
+            <td class="day-depointment-patient">{{ bilan.referenceBilan }}</td>
+        </tr>
+        <tr style="border:4px solid white;">
+            <th class="depointment-patient">{{ 'header.menu.prod.nm'|trans }}</th>
+            <td class="day-depointment-patient">{{ bilan.nomBilan }}</td>
+        </tr>
+         <tr style="border:4px solid white;">
+            <th class="depointment-patient">{{ 'header.menu.prod.des'|trans }}</th>
+            <td class="day-depointment-patient">{{ bilan.descBilan }}</td>
+        </tr>
+        <tr style="border:4px solid white;">
+            <th class="depointment-patient">Date</th>
+            <td class="day-depointment-patient">{% if bilan.dateBilan %}{{ bilan.dateBilan|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+
+    </tbody>
+</table>

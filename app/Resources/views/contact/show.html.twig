@@ -1,0 +1,52 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block body %}
+    <h1>Contact</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Firstnamecont</th>
+                <td>{{ contact.firstnameCont }}</td>
+            </tr>
+            <tr>
+                <th>Lastnamecont</th>
+                <td>{{ contact.lastnameCont }}</td>
+            </tr>
+            <tr>
+                <th>Emailcont</th>
+                <td>{{ contact.emailCont }}</td>
+            </tr>
+            <tr>
+                <th>Subjectcont</th>
+                <td>{{ contact.subjectCont }}</td>
+            </tr>
+            <tr>
+                <th>Contenucont</th>
+                <td>{{ contact.contenuCont }}</td>
+            </tr>
+            <tr>
+                <th>Datecont</th>
+                <td>{% if contact.dateCont %}{{ contact.dateCont|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

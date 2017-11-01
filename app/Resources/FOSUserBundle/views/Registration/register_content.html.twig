@@ -1,0 +1,162 @@
+{% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+{% set frParams = params|merge({'_locale': 'fr'}) %}
+{% set enParams = params|merge({'_locale': 'en'}) %}
+
+<header id="header" class="site-header cta_button">
+    <div class="kl-header-bg"></div>
+    <div class="container siteheader-container">
+        <div class="kl-top-header clearfix" style="border-bottom: 1px solid #A5A5A5;">
+            <div class="header-links-container">
+                <ul class="topnav navRight topnav">
+                    <li><a class="popup-with-form" href="{{ path('fos_user_security_login')}}">{{ 'index.head.log'|trans }}</a></li>
+                    <li><a class="popup-with-form" href="{{ path('fos_user_registration_register')}}">{{ 'index.head.reg'|trans }}</a></li>
+                </ul>
+                <ul class="topnav navLeft topnav--lang">
+                    <li class="languages drop">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-globe icon-white xs-icon"></span>
+                            <span class="hidden-xs">{{ 'header.head.lang'|trans }}</span>
+                        </a>
+                        <div class="pPanel">
+                            <ul class="inner">
+                                {% if(app.request.locale == "en") %}
+                                    <li class="toplang-item ">
+                                        <a href="{{ path(app.request.attributes.get('_route'), enParams) }}" style="margin: 0 0 10px 29px;"><img src="{{ asset('images/en.png') }}" alt="{{ 'header.head.langEn'|trans }}" class="toplang-flag" width="18" height="12"/> {{ 'header.head.langEn'|trans }}<span class="glyphicon glyphicon-ok"></span></a>
+                                    </li>
+                                    <li class="toplang-item ">
+                                        <a href="{{ path(app.request.attributes.get('_route'), frParams) }}" style="margin: 15px 0 10px 29px;"><img src="{{ asset('images/fr.png') }}" alt="{{ 'header.head.langFr'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langFr'|trans }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="toplang-item ">
+                                        <a href="{{ path(app.request.attributes.get('_route'), enParams) }}"style="margin: 0 0 10px 29px;"><img src="{{ asset('images/en.png') }}" alt="{{ 'header.head.langEn'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langEn'|trans }}</a>
+                                    </li>
+                                    <li class="toplang-item active">
+                                        <a href="{{ path(app.request.attributes.get('_route'), frParams) }}"style="margin: 15px 0 10px 29px;"><img src="{{ asset('images/fr.png') }}" alt="{{ 'header.head.langFr'|trans }}" class="toplang-flag" width="18" height="12" /> {{ 'header.head.langFr'|trans }}<span class="glyphicon glyphicon-ok"></span></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-leftside-container ">
+                <ul class="social-icons sc--clean topnav navRight" style="margin-top: 3px;">
+                    <li><a href="#" target="_self" class="" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" target="_self" class="" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" target="_self" class="" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="#" target="_blank" class="" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+                <span class="kl-header-toptext">{{ 'header.head.call'|trans }} <a href="#" class="fw-bold">71 000 000</a></span>
+            </div>
+        </div>
+        <div class="logo-container hasInfoCard logosize--yes">
+            <h1 class="site-logo logo " id="logo">
+                <a href="index.html">
+                    <img class="logo-img" src="{{ asset('images/logo.png') }}" alt="Medical+" title="Medical+" width="125" height="55">
+                </a>
+            </h1>
+            <div id="infocard" class="logo-infocard">
+                <div class="custom">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p>&nbsp;</p>
+                            <p style="text-align: center;">
+                                <img src="{{ asset('images/logo.png') }}" alt="" width="53" height="53">
+                            </p>
+                            <p style="text-align: center;">{{'index.head.sd'|trans }}</p>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="custom contact-details">
+                                <p><strong>T (216) 71 000 000</strong><br>
+                                    Email:&nbsp;<a href="mailto:sales@yourwebsite.com">{{ 'footer.info.email'|trans }}</a>
+                                </p>
+                                <p>{{ 'header.menu.profil.ad'|trans }}<br>{{ 'footer.info.adress' |trans }}:</p>
+                                <a href="http://goo.gl/maps/1OhOu" target="_blank" class="map-link">
+                                    <span class="glyphicon glyphicon-map-marker icon-white"></span>
+                                    <span> Open in Google Maps</span>
+                                </a>
+                            </div>
+                            <div style="height:20px;"></div>
+                            <ul class="social-icons sc--clean">
+                                <li><a href="#" target="_self" class="" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_self" class="" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_self" class="" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#" target="_blank" class="" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator visible-xxs"></div>
+        <div id="zn-res-menuwrapper">
+            <a href="#" class="zn-res-trigger zn-header-icon"></a>
+        </div>  
+</header>
+<div class="container-full">
+    <img src="{{ asset('images/sliders/ins.jpg') }}" style="-webkit-filter: blur(5px);"/>
+    <div class="col-md-offset-1">
+    <div class="col-sm-12 col-md-12 animated bounceInUp">
+        <div class="fancy_register_form register-form" >
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register contact_form row" style="margin-top:-100px;">
+                <div class="cf_response"></div>
+                {{ form_start(form) }}
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.username)}}
+                </p> 
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.email)}}
+                </p> 
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.plainPassword)}}
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.plainPassword)}}
+                </p>
+                <p class="col-sm-6 kl-fancy-form">
+                    {{ form_label(form.role)}}
+                </p>
+                <p class="col-sm-6 kl-fancy-form">
+                    {{ form_label(form.register) }}
+                </p>
+                {{ form_end(form) }}
+            </form>
+        </div> 
+    </div>
+    </div>
+</div>
+<style>
+    html {
+        height: 100%;
+        overflow: hidden;
+    }
+    li{
+        list-style: none;
+        color: #cd2122;
+        margin-left: -28px;
+        font-size: 14px;
+        margin-bottom: -15px;
+        font-weight: 600;
+    }
+    .register-form{
+        width: 600px;
+        height: auto;
+        margin: -47.5% 28%;
+    }
+    .width12,.width4 {
+        padding: 3px 14px;
+    }
+    .fancy_register_form {
+        padding: 25px 30px;
+        background: rgba(255, 255, 255, 0.6);
+        color: #272727;
+        position: relative;
+    }
+    html {
+        height: 100%;
+        overflow: hidden;
+    }
+    .contact_form .kl-fancy-form label{
+        opacity: 0;
+    }
+</style>

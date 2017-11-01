@@ -1,0 +1,155 @@
+{% extends "::Layout/base.html.twig" %}
+{% block title %}{{'header.menu.directory'|trans }}{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/css3-panels/css3-panels.css') }}" type="text/css" media="all"/>
+{% endblock %}
+{% block body %}
+    <div class="kl-slideshow kl-slideshow-css3panels" id="service">
+        <div class="fake-loading loading-1s"></div>
+        <div class="css3panels-container css3panels--resize cssp-capt-animated cssp-capt-slideout" data-panels="4" style="height:700px">
+            <div class="css3panel css3panel--1 cp-theme--light">
+                <div class="css3panel-inner" style=" height:700px ">
+                    <div class="css3panel-mainimage-wrapper" style=" height:700px ">
+                        <div style="background-image:url({{ asset('images/sliders/css3panel-011.jpg') }}); " class="css3panel-mainimage">
+                            <div style="background-image:url({{ asset('images/sliders/css3panel-011.jpg') }}); " class="css3panel-mainimage css3panel-mainimage-effect anim--blur"></div>
+                            <div class="css3p-overlay css3p-overlay--gradient"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="css3panel-caption ">
+                    <a href="#" target="_self"><h3 class="css3panel-title ff-alternative captiontitle--dbg title-size-normal">{{ 'header.menu.ph' |trans }}</h3></a>
+                    <div class="css3panel-text">{{ 'patient.service.s1'|trans }}</div>
+                    <div class="css3panel-btn-area">
+                        <a href="{{ path('Patient_ServicePharmacy') }}" class="btn btn-fullcolor btn-skewed" target="_self">{{ 'patient.service.se'|trans }}</a>
+                    </div>
+                </div>  
+            </div>
+            <div class="css3panel css3panel--2 cp-theme--light">
+                <div class="css3panel-inner" style=" height:700px ">
+                    <div class="css3panel-mainimage-wrapper" style=" height:700px ">
+                        <div style="background-image:url({{ asset('images/sliders/css3panel-06.jpg') }}); " class="css3panel-mainimage">
+                            <div style="background-image:url({{ asset('images/sliders/css3panel-06.jpg') }}); " class="css3panel-mainimage css3panel-mainimage-effect anim--blur"></div>
+                            <div class="css3p-overlay css3p-overlay--gradient"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css3panel-caption ">
+                    <a href="#" target="_self">
+                        <h3 class="css3panel-title ff-alternative captiontitle--dbg title-size-normal">{{ 'header.menu.be' |trans }}</h3>
+                    </a>
+                    <div class="css3panel-text">{{ 'patient.service.s2'|trans }}</div>
+                    <div class="css3panel-btn-area">
+                        <a href="{{ path('Patient_ServiceBeauty') }}" class="btn btn-fullcolor btn-skewed" target="_self">{{ 'patient.service.se'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="css3panel css3panel--3 cp-theme--light">
+                <div class="css3panel-inner" style=" height:700px ">
+                    <div class="css3panel-mainimage-wrapper" style=" height:700px ">
+                        <div style="background-image:url({{ asset('images/sliders/css3panel-051.jpg') }});" class="css3panel-mainimage">
+                            <div style="background-image:url({{ asset('images/sliders/css3panel-051.jpg') }}); " class="css3panel-mainimage css3panel-mainimage-effect anim--blur"></div>
+                            <div class="css3p-overlay css3p-overlay--gradient"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css3panel-caption ">
+                    <h3 class="css3panel-title ff-alternative captiontitle--dbg title-size-normal">{{ 'header.menu.se' |trans }}</h3>
+                    <div class="css3panel-text">{{ 'patient.service.s3'|trans }}</div>
+                    <div class="more css3panel-btn-area">
+                        <a class="btn btn-fullcolor btn-skewed" href="{{ path('Patient_ServiceClinical') }}" target="_self">{{ 'patient.slider.s3.i4'|trans }}</a>
+                        <a class="btn btn-fullcolor btn-skewed" href="{{ path('Patient_ServiceHospital') }}" target="_self">{{ 'patient.slider.s3.i5'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="css3panel css3panel--4 cp-theme--light">
+                <div class="css3panel-inner" style=" height:700px ">
+                    <div class="css3panel-mainimage-wrapper" style=" height:700px ">
+                        <div style="background-image:url({{ asset('images/bgHgSocialRegister.jpg') }}); " class="css3panel-mainimage">
+                            <div style="background-image:url({{ asset('images/bgHgSocialRegister.jpg') }}); " class="css3panel-mainimage css3panel-mainimage-effect anim--blur"></div>
+                            <div class="css3p-overlay css3p-overlay--gradient"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css3panel-caption ">
+                    <h3 class="css3panel-title ff-alternative captiontitle--dbg title-size-normal">{{ 'header.menu.m' |trans }}</h3>
+                    <div class="css3panel-text">{{ 'patient.service.s4'|trans }}</div>
+                    <div class="css3panel-btn-area">
+                        <a href="{{ path('Patient_appointment') }}" class="btn btn-fullcolor btn-skewed" target="_self">{{ 'patient.service.se'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="css3panel css3panel--4 cp-theme--light">
+                <div class="css3panel-inner" style=" height:700px ">
+                    <div class="css3panel-mainimage-wrapper" style=" height:700px ">
+                        <div style="background-image:url({{ asset('images/sliders/css3panel-031.jpg') }}); " class="css3panel-mainimage">
+                            <div style="background-image:url({{ asset('images/sliders/css3panel-031.jpg') }}); " class="css3panel-mainimage css3panel-mainimage-effect anim--blur"></div>
+                            <div class="css3p-overlay css3p-overlay--gradient"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css3panel-caption ">
+                    <h3 class="css3panel-title ff-alternative captiontitle--dbg title-size-normal">{{ 'header.menu.lab' |trans }}</h3>
+                    <div class="css3panel-text">{{ 'patient.service.s5'|trans }}</div>
+                    <div class="css3panel-btn-area">
+                        <a href="{{ path('Patient_ServiceLaboratory') }}" class="btn btn-fullcolor btn-skewed" target="_self">{{ 'patient.service.se'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    </div>
+    <section class="hg_section"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix tbk--left tbk-symbol--line tbk-icon-pos--after-title ptop-35 pbottom-65">
+                        <h2 class="tbk__title fs-34 black montserrat"><strong>SERVICES</strong></h2>
+                        <div class="tbk__symbol"><span></span></div>
+                        <h4 class="tbk__subtitle fs-30 fw-thin">{{'patient.service.des'|trans}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listedModernizr.load([{// test for media query support, if not load respond.jstest : Modernizr.mq('only all'),// If not, load the respond.js filenope : '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js'}]);</script>
+    <script>(function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');</script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (
+                        i[r].q = i[r].q || []).push(arguments)
+            },
+                    i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })
+                (window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        $("#service").addClass("activeItem");
+        $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+{% endblock %}

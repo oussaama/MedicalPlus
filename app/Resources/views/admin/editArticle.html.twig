@@ -1,0 +1,116 @@
+{% extends "::admin/layout.html.twig" %}
+{% block title %}Edit Article{% endblock %}
+{% block sheetstyle %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all" />
+{% endblock %}
+{% block body %} 
+    <div class="page-content">
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>
+            </li>   
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+            </li> 
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-comments"></span></a>
+                <div class="informer informer-danger"><b id="m"></b></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-danger"><b id="m"></b>new</span>
+                        </div>
+                    </div>
+                    {% include "::admin/message.html.twig" %}                           
+                </div>                        
+            </li>
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-tasks"></span></a>
+                <div class="informer informer-warning"><i id="n"></i></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-warning"><b id="n"></b> active</span>
+                        </div>
+                    </div>
+                    {% include "::admin/notification.html.twig" %}                         
+                </div>                        
+            </li>
+        </ul> 
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Basic</li>
+        </ul>
+        <div class="page-title">                    
+            <h2><a href="{{ path('admin_article') }}"><span class="fa fa-arrow-circle-o-left"></span> Articles</a></h2>
+        </div>
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Edit Article</h3>                                  
+                        </div>
+                        <div class="panel-body">
+                            <div class="container">
+                                {% for article in article %}
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-sm-3 editArticle">
+                                                Auther
+                                            </div>
+                                            <div class="col-sm-9">
+                                                {{ article.auteur }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 editArticle">
+                                                Title
+                                            </div>
+                                            <div class="col-sm-9">
+                                                {{ article.titre }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 editArticle">
+                                                Descreption
+                                            </div>
+                                            <div class="col-sm-9">
+                                                {{ article.contenuArt }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-sm-12">
+                                            <img src="{{ asset("uploads/article/"~article.photoArt) }}" style="max-width: 475px;" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 col-md-offset-1" style="margin-top:50px;">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-sm-offset-9">
+                                                <a href="{{ path('admin_add_article',{'id':article.id,'etat':'approve'})}}"><button class="btn btn-primary"> Approve</button></a>
+                                                <a href="{{ path('admin_add_article',{'id':article.id,'etat':'refuse'})}}"><button class="btn btn-danger">Refuse </button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>                                 
+                        </div>
+                    </div>
+                </div>         
+            </div> 
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>      
+    <script type='text/javascript' src='{{ asset('admin/js/plugins/icheck/icheck.min.js') }}'></script>
+{% endblock %}

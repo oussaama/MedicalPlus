@@ -1,0 +1,49 @@
+{% extends '::layout/layout.html.twig' %}
+
+{% block body %}
+    <h1>Contact list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Firstnamecont</th>
+                <th>Lastnamecont</th>
+                <th>Emailcont</th>
+                <th>Subjectcont</th>
+                <th>Contenucont</th>
+                <th>Datecont</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.firstnameCont }}</a></td>
+                <td>{{ contact.lastnameCont }}</td>
+                <td>{{ contact.emailCont }}</td>
+                <td>{{ contact.subjectCont }}</td>
+                <td>{{ contact.contenuCont }}</td>
+                <td>{% if contact.dateCont %}{{ contact.dateCont|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ contact.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

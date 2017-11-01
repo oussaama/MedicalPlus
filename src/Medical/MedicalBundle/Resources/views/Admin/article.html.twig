@@ -1,0 +1,123 @@
+{% extends "::admin/layout.html.twig" %}
+{% block title %}Article{% endblock %}
+{% block stylesheet %}{% endblock %}
+{% block body %} 
+    <div class="page-content">
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>
+            </li>   
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+            </li> 
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-comments"></span></a>
+                <div class="informer informer-danger"><b class="mes"></b></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-danger"><b class="mes"></b>new</span>
+                        </div>
+                    </div>
+                    {% include "::admin/message.html.twig" %}                           
+                </div>                        
+            </li>
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-tasks"></span></a>
+                <div class="informer informer-warning"><i class="n"></i></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-warning"><b class="n"></b> active</span>
+                        </div>
+                    </div>
+                    {% include "::admin/notification.html.twig" %}                         
+                </div>                        
+            </li>
+        </ul> 
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Basic</li>
+        </ul>
+        <div class="page-title">                    
+            <h2><span class="fa fa-arrow-circle-o-left"></span> Basic Tables</h2>
+        </div>
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">DataTable Export</h3>
+                            <div class="btn-group pull-right">
+                                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Data</button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'json', escape: 'false'});"><img src='{{ asset('admin/img/icons/json.png') }}' width="24"/> JSON</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'json', escape: 'false', ignoreColumn: '[2,3]'});"><img src='{{ asset('admin/img/icons/json.png') }}' width="24"/> JSON (ignoreColumn)</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'json', escape: 'true'});"><img src='{{ asset('admin/img/icons/json.png') }}' width="24"/> JSON (with Escape)</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'xml', escape: 'false'});"><img src='{{ asset('admin/img/icons/xml.png') }}' width="24"/> XML</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'sql'});"><img src='{{ asset('admin/img/icons/sql.png') }}' width="24"/> SQL</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'csv', escape: 'false'});"><img src='{{ asset('admin/img/icons/csv.png') }}' width="24"/> CSV</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'txt', escape: 'false'});"><img src='{{ asset('admin/img/icons/txt.png') }}' width="24"/> TXT</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'excel', escape: 'false'});"><img src='{{ asset('admin/img/icons/xls.png') }}' width="24"/> XLS</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'doc', escape: 'false'});"><img src='{{ asset('admin/img/icons/word.png') }}' width="24"/> Word</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'powerpoint', escape: 'false'});"><img src='{{ asset('admin/img/icons/ppt.png') }}' width="24"/> PowerPoint</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'png', escape: 'false'});"><img src='{{ asset('admin/img/icons/png.png') }}' width="24"/> PNG</a></li>
+                                    <li><a href="#" onClick ="$('#customers2').tableExport({type: 'pdf', escape: 'false'});"><img src='{{ asset('admin/img/icons/pdf.png') }}' width="24"/> PDF</a></li>
+                                </ul>
+                            </div>                                   
+                        </div>
+                        <div class="panel-body">
+                            <table id="customers2" class="table datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Author</th>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>etat</th>
+                                        <th>detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for article in article %}
+                                        <tr>
+                                            <td>{{ article.id }}</td>
+                                            <td>{{ article.auteur }}</td>
+                                            <td>{{ article.titre }}</td>
+                                            <td>{{ article.dateArt| date('l jS F Y') }}</td>
+                                            <td>{{ article.etatArt}}</td>
+                                            <td><a href="{{ path('admin_edit_article',{'id': article.id}) }}"><span class="glyphicon glyphicon-folder-open"> Edit</span></a></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div> 
+{% endblock %}
+{% block javascript %} 
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/tableExport.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/jquery.base64.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/html2canvas.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/jspdf/libs/sprintf.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/jspdf/jspdf.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/tableexport/jspdf/libs/base64.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>      
+    <script type='text/javascript' src='{{ asset('admin/js/plugins/icheck/icheck.min.js') }}'></script>
+{% endblock %}

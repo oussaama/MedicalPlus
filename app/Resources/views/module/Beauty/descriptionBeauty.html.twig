@@ -1,0 +1,26 @@
+<ul class="services_box__list">
+    <li>
+        <span class="champ-doctor">{{'header.menu.profil.en'|trans}} : </span>
+        <span class="description-doctor">{{ app.user.entrepriseName }}</span>
+    </li>
+    <li>
+        <span class="champ-doctor">{{'header.menu.profil.u'|trans}} : </span>
+        <span class="description-doctor">{{ app.user.username }}</span>
+    </li>
+    <li>
+        <span class="champ-doctor">Email : </span>
+        <span class="description-doctor">{{ app.user.email }}</span>
+    </li>
+    <li>
+        <span class="champ-doctor">{{'header.menu.profil.ad'|trans}} : </span>
+        <span class="description-doctor">{{ app.user.adress }} , {{app.user.city}} {{app.user.code}},{{app.user.state}}</span>
+    </li>
+    <li>
+        <span class="champ-doctor">{{'header.menu.profil.cl'|trans}} : </span>
+        <span class="description-doctor">{{ app.user.class }}</span>
+    </li>
+    <li>
+        <span class="champ-doctor">{{'header.menu.profil.p'|trans}} : </span>
+        <span class="description-doctor">+(216) {{ app.user.tel }} </span>
+    </li>
+</ul>

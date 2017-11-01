@@ -1,0 +1,7 @@
+Cabine_homepage:
+    path:     /home
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuCabine:indexCabine }
+    
+Cabine_depointment:
+    path:     /appointment
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuCabine:appointmentCabine }

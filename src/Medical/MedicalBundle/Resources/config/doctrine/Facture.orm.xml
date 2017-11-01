@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\Facture" table="facture">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="entrepriseFact" type="integer" column="entreprise_fact"/>
+        <field name="classFact" type="string" column="class_fact" nullable="true" />
+        <field name="emailFact" type="string" column="email_fact" length="40"/>
+        <field name="telFact" type="string" column="tel_fact" length="8"/>
+        <field name="dateFact" type="datetime" column="date_fact" />
+        <field name="prixFact" type="float" column="prix_fact" />
+        <field name="nomFact" type="string" column="nom_fact" nullable="true" length="40"/>
+        <field name="prenomFact" type="string" column="prenom_fact" nullable="true" length="40"/>
+        <field name="commandeFact" type="array" column="commande_fact" nullable="true"/>
+        <field name="adressFact" type="string" column="adress_fact" nullable="true" length="255"/>
+        <field name="stateFact" type="string" column="state_fact" nullable="true" length="40"/>
+        <field name="cityFact" type="string" column="city_fact" nullable="true" length="40"/>
+        <field name="codeFact" type="integer" column="code_fact" nullable="true" />
+        <field name="typeFact" type="integer" column="type_fact" nullable="true" />
+    </entity>
+</doctrine-mapping>

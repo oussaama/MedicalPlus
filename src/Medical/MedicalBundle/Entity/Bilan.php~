@@ -1,0 +1,154 @@
+<?php
+
+namespace Medical\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Bilan
+ *
+ * @ORM\Table(name="bilan")
+ * @ORM\Entity(repositoryClass="Medical\MedicalBundle\Repository\BilanRepository")
+ */
+class Bilan {
+
+    public function __construct() {
+        $this->setDateBilan(new \DateTime());
+    }
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference_bilan", type="string", length=255)
+     */
+    private $referenceBilan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_bilan", type="string", length=255)
+     */
+    private $nomBilan;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_bilan", type="datetime")
+     */
+    private $dateBilan;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Medical\MedicalBundle\Entity\User",cascade={"persist"})
+     * @ORM\JoinColumn(name="entreprise_bilan",referencedColumnName="id")
+     */
+    private $entrepriseBilan;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="desc_bilan", type="string", length=255)
+     */
+    private $descBilan;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set referenceBilan
+     *
+     * @param string $referenceBilan
+     * @return Bilan
+     */
+    public function setReferenceBilan($referenceBilan) {
+        $this->referenceBilan = $referenceBilan;
+
+        return $this;
+    }
+
+    /**
+     * Get referenceBilan
+     *
+     * @return string 
+     */
+    public function getReferenceBilan() {
+        return $this->referenceBilan;
+    }
+
+    /**
+     * Set nomBilan
+     *
+     * @param string $nomBilan
+     * @return Bilan
+     */
+    public function setNomBilan($nomBilan) {
+        $this->nomBilan = $nomBilan;
+
+        return $this;
+    }
+
+    /**
+     * Get nomBilan
+     *
+     * @return string 
+     */
+    public function getNomBilan() {
+        return $this->nomBilan;
+    }
+
+    /**
+     * Set dateBilan
+     *
+     * @param \DateTime $dateBilan
+     * @return Bilan
+     */
+    public function setDateBilan($dateBilan) {
+        $this->dateBilan = $dateBilan;
+
+        return $this;
+    }
+
+    /**
+     * Get dateBilan
+     *
+     * @return \DateTime 
+     */
+    public function getDateBilan() {
+        return $this->dateBilan;
+    }
+
+    /**
+     * Set entrepriseBilan
+     *
+     * @param integer $entrepriseBilan
+     * @return Bilan
+     */
+    public function setEntrepriseBilan($entrepriseBilan) {
+        $this->entrepriseBilan = $entrepriseBilan;
+
+        return $this;
+    }
+
+    /**
+     * Get entrepriseBilan
+     *
+     * @return integer 
+     */
+    public function getEntrepriseBilan() {
+        return $this->entrepriseBilan;
+    }
+
+}

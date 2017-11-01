@@ -1,0 +1,553 @@
+index:
+    doctor:
+        d1: les médecins plus compétent au bout du clic
+    pharmacie:
+        t1: pharmacie en ligne
+        d1: des produits de qualité sélectionnés par un pharmacien
+    paramedical:
+        d1: Chaque jours vous prenez soins des autres ... Nous vous proposons dans cet espace une sélection de produits afin de prendre soin de vous !
+    patient:
+        d1: Si tu es déjà membre, connecte-toi en utilisant le menu S’IDENTIFIER .Sinon tu peux t’inscrire en utilisant le menu REGISTRE.Tu peux également RECEVOIR LA NEWSLETTER. Et bien sûr, tu peux profiter de nos services .
+    lab:
+        d1: Retrouvez toutes les informations concernant les différents types de bilans
+    head:
+        log: S'INDENTIFIER
+        reg: REGISTRE
+        sec: SECRETAIRE
+        doct: MEDECIN   
+        upgrade: METTRE À JOUR
+        next: SUIVANTE 
+        prev: PRÉCÉDENTE
+        sd: Médical + est une plate-forme médicale ultime qui comprend toutes les informations et les services que vous voulez
+    form:
+        username: NOM D'UTILISATEUR 
+        password: MOT DE PASSE
+        con-password: CONFIRMER MOT DE PASSE
+        role: RÔLE
+        current: MOT DE PASSE ACTUEL
+        new: NOUVEAU MOT DE PASSE
+        cnew: CONFIRMER LE NOUVEAU MOT DE PASSE
+        remember: Rappelles moi
+        perdu: Mot de passe perdu ?
+        login: s'identifier
+        logm: Vérifier votre username ou mot de passe
+        userp: Veuillez entrer votre Nom d'utilisateur
+        passp: Veuillez entrer votre mot de passe
+        passcp: Veuillez entrer votre mot de passe de confirmation
+        emailp: Veuillez entrer votre email
+        op: Veuillez entrer votre mot de passe actuel
+        np: Veuillez entrer votre nouveau mot de passe
+        cnp: Veuillez entrer votre nouvelle confirmation de mot de passe
+flush:
+    comm:
+        cs: Votre commentaire a été ajouté avec succès
+        cf: votre commentaire en ajoutant a échoué
+    appo:
+        as: Votre rendez-vous a été ajouté avec succès, attendre la reponse
+        af: Votre date choisie est réservé, choisir une autre date 
+        adp: Votre date est passée il faut choisir autre date 
+        av: Vérifier Votre données 
+        pv: Vous avez passer la limite de réservation d'un rendez-vous de cet jour
+    art:
+        ars: Votre article a été ajouté avec succès, attendre la reponse
+        arf: votre article en ajoutant a échoué 
+footer:
+    app: Rendez-Vous
+    n: Actualités
+    a: À Propos
+    p: Pharmacie
+    b: Paramédical
+    l: Laboratoire
+    h: Hôpital
+    c: Clinique
+    newsl:
+        t1: INSCRIPTION À LA NEWSLETTER
+        p1: En vous inscrivant à notre liste de diffusion, vous resterez à jour avec nos dernières nouvelles.
+        plh: votre.adress@email.com
+        b1: REJOIGNEZ-NOUS
+        p2: Nous ne le spam!
+    info:
+        t1: ENTRER EN CONTACT
+        phone: (+216) 71 000 000
+        email: medical@email.com
+        ltd: Medical+ LTD
+        adress: nr 48,Rue Taieb Mhiri ,2080,Ariana,Tunis
+        gm: Ouvrir dans Google Maps
+    coon:
+        right: 2016 Tous les droits sont réservés Medical+
+        so: RÉSEAUX SOCIAUX
+header:
+    help:
+        process-patient: COMMENT RESERVER UN RENDEZ-VOUS
+        step1-patient: Vous devez vous identifier ou créer un nouveau compte
+        step2-patient: Rechercher un médecin
+        step3-patient: Réservez un rendez-cous ON LIGNE
+        mail: Si vous avez encore des problèmes, s'il vous plaît laissez-nous savoir, en envoyant un courriel à support@website.com. Je vous remercie!
+    head:
+        lang: LANGUES
+        langEn: ANGLAIS
+        langFr: FRANCAIS
+        log: DECONNECTION
+        call: 'QUSETION?APPELLE:'
+        sea: Checher
+        top: Haut
+        sub: Total
+        view: Voir le panier
+        check: Supprimer
+    menu:
+        index: Accueil
+        directory: annuaire
+        med: Médicament
+        care: Soins
+        bilan: Bilans
+        ph: pharmacie
+        se: Secteur Hopitaux
+        be: paramédical
+        cl: clinique
+        h: hôpital
+        m: medecin
+        promo: offres
+        lab: laboratoire
+        rendez: rendez-vous
+        news: Article
+        about: À propos
+        notif: Voir votre notifications
+        msg: Voir votre messages
+        appo: Voir votre appointments
+        upgrade: AMELIOREZ VOTRE COMPTE
+        class: CLASSE
+        pay: PAYMENT
+        up: surclassement
+        promos:
+            slider: Découvrir nos offres
+        contact:
+            fn: NOM
+            ln: PRÉNOM
+            s: SUJET
+            env: ENVOYER
+        abouts:
+            s1: NOTRE COMPAGNIE 
+            s2: MIEUX NOUS CONNAÎTRE 
+            intro: Médicale+ qui est un site web polyvalent permettant aux internautes de parcourir un annuaire détaillé " des médecins, des pharmacies, laboratoires et  domaine paramedical " , de prendre des rendez-vous et d’effectuer des achats des produits pharmaceutique. Ce qui nous permet de dire que Médical+  joue le rôle d’un assistant dans le domaine de la santé (médicale, paramédicale et pharmaceutique).
+            ginfo: Informations Générales
+            info1: Gouvernance
+            info1c: Priorités médicales visent à assurer que nos utilisateurs se concentrent imprègne l'ensemble de l'organisation, dans chaque département, à chaque emplacement.
+            info2: Mission Medical+
+            info2c: Nous voulons être votre allié le plus confiance dans votre quête de la santé et le bien-être.
+            indo3: Réseau de soins Medical+
+            info3c: Medical + fournit une expertise et des ressources aux membres des installations médicales grâce à la collaboration formelle et des outils avancés.
+            info4: Outils de gestion facile
+            info4c: Medical + donne à vos applications un robustes et des outils avancés qui vous mettent dans le contrôle de tous les services qui vous sont donnés.
+        newss:
+           slide: LA PASSION POUR ÉCRIRE
+           comm: COMMENTAIRE
+           by: Par
+           pub: PUBLIÉ DANS
+           tag: TAGGED UNDER
+           rm: LIRE LA SUITE
+        profil:
+            fn: PRÉNOM
+            ln: NOM
+            ef: Modifier
+            en: Nom Entreprise
+            ad: Adresse
+            dc: DATE DE CRÉATION
+            cl: Classe
+            i: ASSURANCE
+            p: Tel
+            dn: Nom Docteur
+            cn: Nom Cabine
+            b: Naissance
+            s: Spécialité
+            u: Nom d'utilisateur
+            se: Sexe
+            param: PARAMÈTRE
+            Set: Paramètres
+            Setc:
+            dea: Désactiver
+            deac:
+            bb: ASSURANCE 
+            c: VILLE
+            st: GOUVERNORAT
+            z: CODE POSTAL
+            m: MOIS
+            da: JOUR
+            y: ANNÉE
+            ch: Changer le mot de passe
+            cinp: Veuillez entrer votre cin
+            fnp: Veuillez entrer votre nom
+            lnp: Veuillez entrer votre prénom
+            profp: Veuillez entrer votre profession
+            mp: JANVIER
+            emp: Veuillez entrer votre email
+            pp:  Veuillez entrer votre telephone
+            ap:  Veuillez entrer votre adresse
+            cp: Veuillez entrer votre ville
+            sp: Veuillez entrer votre gouvernorat
+            codp: Veuillez entrer votre code postal
+            entp: Veuillez entrer votre nom d'entreprise
+            userp: Veuillez entrer votre nom d'utilisateur
+            specp: Veuillez entrer votre specialité
+            subp: Veuillez entrer votre sujet
+            msgp: Veuillez entrer votre message 
+            up: METTRE A JOUR
+            book: RESERVER
+            create: CRÉER
+        prod:
+            re: RÉFÉRENCE
+            na: NOM
+            des: DESCRIPTION
+            pr: PRIX
+            cat: CATEGORIE
+            sto: STOCK
+            pho: PHOTO
+            db: DATE DÉBUT
+            df: DATE FIN
+            type: TYPE
+            ad: AJOUTER
+            add: AJOUTER SOIN
+            addp: AJOUTER PROMO
+            ref: Veuillez entrer votre référence
+            name: Veuillez entrer votre nom
+            desc: Veuillez entrer votre descreption
+            price: Veuillez entrer votre prix
+            create: Créer
+            auth: Veuillez entrer votre auteur 
+            title: Veuillez entrer votre titre
+            category: Veuillez entrer votre categorie
+            store: Veuillez entrer votre stock 
+            typep: Veuillez entrer votre type
+            datefp: Veuillez entrer la date fin d'offre
+            datedp: Veuillez entrer la date début d'offre
+            nm: Nom
+            he: Santé
+            bes:
+                b1: Allergie
+                b2: Diabette
+                b3: Santé digestive 
+                b4: Grippe
+                b5: Soins d'oreilles 
+                b7: Soins des yeux
+                b6: Soins bucco-dentaires
+            beu: Beauté
+            heus:
+                b1: Soins des cheveux
+                b2: Soins de la peau
+                b3: Corps de bain 
+                b4: Manucure
+            wi: Diététique et fitness 
+            wis:
+                b1: Perte de poids
+                b2: Sport nutrition
+                b3: Braces & Supports
+            wl: Vitamines
+            wls:
+                b1: Multivitamin
+                b2: Herbs A-Z
+                b3: Vitamins A-K
+            
+            nb: Stock
+patient:
+    card: Ajouter au panier
+    panier:
+        ph: Photo
+        nm: Nom
+        pr: Prix
+        qt: Quantité
+    service:
+        des: un résumé complet de tous les produits et les services offerts par les membres abonnés énumérés ci-dessus est également à votre disposition.
+        se: VOIR PLUS
+        s1: Vérifiez abonnant pharmacies et afficher leur disposition des médicaments et adresses.
+        s2: Vérifier les services offerts et disponibles beauté et de soins products.Also comprend l'adresse et les directions.
+        s3: Comprend l'adresse, les directions et les informations de base sur régionales et nationales.
+        s4: Afficher les médecins et un rendez-vous avec le médecin.
+        s5: Afficher disponibles des tests sanguins et des services avec une brève desciption des adresses et des directions de tous les laboratoires régionaux et nationaux each.Includes.
+    slider:
+        s1:
+            i1: Docteur
+            i2: SOINS DE SANTÉ
+            i2g: SOLUTION
+            i3: SAVOIR PLUS
+            i4: VOIR LES DATES DES RENDEZ-VOUS DISPONIBLE
+        s2:
+            i1: LABORATOIRE
+            i2: EN LIGNE
+            i3: TOUS LES SERVICES
+            i4: VOTRE SANTÉ EST NOTRE PRIORITÉ 
+        s3: 
+            i1: CLINIQUE • HÔPITAL
+            i2: CONFORT COMPLET
+            i3: CHERCHER
+            i4: CLINIQUE
+            i5: HÔPITAL
+        s4: 
+            i1: PHARMACIE
+            i2: EXPLORER TOUS LES MAGASINS DE PHARMACIE ET TROUVER LE MÉDICAMENT QUE VOUS CHERCHEZ
+            i3: VOIR NOS PHARMACIES
+        s5:
+            i1: CENTRE ESTHÉTIQUE
+            i2: PROFITEZ DE NOS ET DE SOINS SPÉCIAUX
+    home:
+        slogan: 
+            p1: MEDICAL+ ,
+            p2: UN PLATEFORM 
+            p3: POUR
+            p4: TOUS VOS BESOINS
+            p5: Le regroupement de tous les services médicaux et de santé disponibles au public, Médical + est un pionnier dans ce domaine
+            b1: REJOIGNEZ NOTRE NEWSLETTER
+            b2: APPRENDRE ENCORE PLUS
+        services:
+            title: POURQUOI MEDICAL+ ?
+            titled: beaucoup de raisons, mais surtout parce que ..
+            serv1:
+                t1: Rendez-Vous
+                t2: En Ligne
+                p3: un moyen facile de prendre rendez-vous sans se soucier de l'emplacement.
+            serv2:
+                t1: Chercher des Médecins
+                p1: Un magasin de médicaments en ligne avec haute disponibilité. tout ce que vous voulez est à votre portée, dans le confort de votre maison!
+            serv3:
+                t1: Voir médicaments
+                p1: Un magasin de médicaments en ligne avec haute disponibilité .everything que vous voulez est à votre portée, dans le confort de votre maison!
+            serv4:
+                t1: Articles de presse
+                p1: manchettes médicales et de santé ont affiché tout au long de la journée.
+        actors:
+            a1: MÉDECIN
+            a2: PHARMACIE
+            a3: CENTRE PARAMÉDICAL
+            a4: LABORATOIRE
+            a5: HÔPITAL
+            a6: CLINIQUE
+        objectifs:
+            t1: Ceci est Medical+ , une intégrale, riche en fonctionnalités
+            t2: PLATFORM.
+            obj1: EASY APPOINTMENTS
+            obj1d: Faciliter le processus de prise de rendez-vous.
+            obj2: SERVICES DE QUALITÉ
+            obj2d: Services de santé professionnels
+            obj3: HIGHLY INFORMATIVE
+            obj3d: Illustré et articles d'information riche
+        desc:
+            t1: ORIENTÉE VERS LES PROFESSIONNELS 
+            t2: LES CLIENT
+            p1: Fournir les professionnels avec une plate-forme pour promouvoir leurs services au public tout en offrant des services premium et recommandations au niveau des experts pour les clients.
+            p2: Professionals can now take advantage of the growing online market to expand their customer base and reach new patients, powered by web technologies.
+            p3: Enables vistitors to access reviews by other patients regarding customer service, health care quality, and Personnel performance.
+        art:
+            l: NOS DERNIERES ARTICLE
+            v: VOIR TOUT
+appointment:
+    etat:
+        rv: Réservé
+        rw: En Attente 
+        ac: Acceptée
+    process:
+        t1: notre processus de travail
+        t2: en 3 étapes
+        desc: Trouvez votre médecin, demander la rendez-vous et la date confirmer
+        p1: Trouver 
+        p1d: Votre médecin facilement Grâce Recherche avancée.
+        p2: Demande
+        p2d: Une date de rendez-vous, en utilisant le calendrier.
+        p3: Confirmer
+        p3d: Votre rendez-vous une fois que la date est approuvé.
+        all: TOUT
+        mo: Plus d'informations
+        res: Aucun résultat trouvé
+    filter:
+        s: Choisissez une specialité
+        st: Choisissez un gouvernorat
+    doctor:
+        spec: Specialité
+        rt: RETOUR
+        sh: PARTAGER
+        comm: Commentaires
+        des: Description
+        loc: Emplacement
+        cal: Calendrier
+        lr: Laisser un commentaire
+        cm: Commentaire
+        nc: Aucun commentaire trouvé
+        pm: Poster un commentaire
+        nm: Nom
+        se: Sexe
+        ad: Adresse
+        ph: Tel
+    cal:
+        mo: Lun
+        tu: Mar
+        we: Mer
+        th: Jeu
+        fr: Ven
+        sa: Sam
+        su: Dim
+        month:
+            ja: Janvier
+            fe: Février
+            ma: Mars
+            av: Avril
+            mai: Mai
+            ju: Juin
+            jui: Juillet
+            au: Août
+            sp: Septembre
+            oc: Octobre
+            nv: Novembre
+            de: Decembre
+    appoi:
+        t1: Un docteur au bout du clic
+        p1: S'il vous plaît sélectionnez une date dans le calendrier.
+        p2: assurez-vous de choisir un intervalle de temps libre.
+    noti:
+        sap: accepter le rendez-vous
+        fap: refuser le rendez-vous
+        sp: Votre demande de rendez-vous accepter à
+        fp: Votre demande de rendez-vous refuser à
+        sp1: avec docteur
+Medication:
+    slider:
+        t1: PHARMACIE
+        t2: une épopée et
+        t3: merveilleuse premium pièce de travail
+        t4: , pour le site web moderne typique.
+        t5: sur exclusive
+    ss: RECHERCHE PAR GOUVERNORAT
+    pc: RECHERCHE DES PRODUITS
+    sc: RECHERCHE PAR CATEGORIE
+    t1: Mettant en vedette tous les médicaments disponibles dans les pharmacies abonnés et leurs adresses respectives.
+    no: Aucun medicament trouvé
+    nof: Aucun pharmacie trouvé
+    am: Ajouter Médicament
+    role:
+        r1: Gréer les medicaments
+        d1: vous pouvez ajouter, modifier ou supprimer facilement les médicaments dans le magasin ainsi que nous fournissons pour vous la possibilité de
+        t1: Montrant la liste complète médicament
+        t2: L'efficacité de la recherche et de médicament
+cabine:
+    table:
+        fn: NOM
+        ln: PRÉNOM
+        ph: TEL
+        cn: ETAT
+        h: HEURE
+    slider:
+        p1: Dans cet espace, vous pouvez
+        p2: Voir, approuver, rejeter ou Replanifier
+        p3: demandes de rendez-vous
+        t1: RENDEZ-VOUS
+        t2: Voir le calendrier de rendez-vous
+    slogan:
+        p1: UN PLATFORM
+        p2: POUR 
+        p3: TOUS VOS BESOINS
+        p4: Le regroupement de tous les services médicaux et de santé disponibles au public, MEDICAL + est un pionnier dans ce domaine 
+        t1: Ceci est + médical, une riche vedette, interface intégrée avec
+        t1g: Privilèges premium
+        t2: , Destiné aux experts et aux patients tout de même.
+        t3: À l'heure actuelle l'un des principaux sites Web sur l'Internet, avec de nombreux commentaires positifs des professionnels et des patients.
+        ft: TROUVER
+        ftg: PLUS
+        l: DERNIER ARTICLES
+    desc:
+        des1:
+            t1: CONSULTER LES RENDEZ-VOUS
+            ds: peut voir les rendez-vous faites avec les patients, consulter les demandes de rendez-vous et de voir les événements à venir.
+            p1: Afficher les rendez-vous
+            p2: Valider les demandes
+            p3: Restez à l'écoute sur les événements à venir
+        des2:
+            t1: POSTER ET VOIR LES ARTICLES
+            ds: Restez à jour avec les derniers articles dans le domaine, et publier des articles sur votre propre pour un public de savoir faim
+            p1: Poster des articles
+            p2: Voir les articles écrits par des collègues
+            p3: Nouvelles RSS
+        des3:
+            t1: GÉRER PROFIL
+            ds: Mettre à jour votre profil avec les récents détails sur vos réalisations et des qualifications pour améliorer votre réputation
+            p1: Gardez votre profil sur la bonne voie
+            p2: Permettre aux visiteurs de suivre avec votre développement personnel
+            p3: Compétences et qualifications souvent mise à jour
+    class:
+        c1: gérer rendez-vous
+        c2: publier des information de profil
+        c3: publier 5 article par mois
+        c4: publier 20 article par mois
+        c5: publier un seul promo par jour
+        c6: publier 5 promo par jour
+        c7: ajouter 5 produits par jour
+        c8: ajouter 10 produits par jour
+        c9: ajouter nombre illimité de produits par jour
+        c10: ajouter un seul bilan médical par jour
+        c11: ajouter 5 bilans médical par jour
+        c12: ajouter 10 bilans médical par jour
+laboratory:
+    slider: 
+        s1:
+            p1: LABORATOIRE
+            p2: TESTS 
+            p2g: ET ANALYSE
+            p3: ET DESCRIPTION
+        s2:
+            p1g: BIEN
+            p1: QUALIFIER PERSONNEL 
+            p2: À VOTRE SERVICE
+        s3:
+            p1: PRÉCIS • FIABLE
+            p2: RÉSULTATS
+            p3g: NO ROOM 
+            p3: FOR MISTAKES!
+            p4: TOUS LES TESTS DE SANG DISPONIBLES
+        s4:
+            p1g: TECHNOLOGIES
+            p1: DÉVELOPPÉE
+            p2g: EFFICACITÉ ET PERFORMANCE 
+            p2: à leur meilleur
+    slogan:
+        p1g: laboratoires régionaux et nationaux d'essai sont à votre service à la notification d'un moment
+        p1:  Fournir tous les tests et l'analyse dont vous avez besoin dans des délais inégalés et une précision sans faille
+beauty:
+    slider:
+        p1: CENTRE ESTHÉTIQUE
+        p2: Emballé AVEC TOUTES Sortes de services de beauté et de soins, le CECI EST Votre "ALLER À" placers
+    slogan:
+        p1:  EXACTEMENT! UNE PLACE POUR TOUS VOS BESOINS
+        p2: Soins capillaires, soins de la peau, et tout le reste!
+    contenu:
+        t1: VOUS ÊTES UN PAS 
+        p1: de recevoir une myriade de soins de haut niveau et des soins de beauté aux mains de experts.beauty qualifiée est à votre portée !.
+        st: STATISTIQUES   
+paiment:
+    cla:
+        st: Gratuit
+        mp: PLUS POPULAIRES
+        pm: par mois
+        pa: par année
+        ord: Commandez maintenant
+    pay:
+        che: PROCESSUS DE VÉRIFICATION
+        sl: Vous êtes certainement sur la bonne voie!
+        title: Détails de la facturation
+        cn: Nom de la compagnie
+        ea: E-mail
+        ph: Tel
+        o: Votre commande
+        cl: Classe
+        p: Payer
+        nm: Nom
+        pn: Prénom
+        mail: Email
+        tel: Tel
+        ad: Adresse
+        ville: Ville
+        st: Gouvernorat
+        code: Code postale
+centre:
+    md: médecines douce 
+    cd: centre dermatologique et laser
+    k: kinésithérapeute
+    i: infirmier
+    orth: orthoptiste
+    op: opticien
+    di: diététicien
+    

@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('css/template.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/base-sizing.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/updates.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/>
+<table>
+    <tbody>
+        {% for soin in soin %}
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.re'|trans }}</th>
+                <td class="day-depointment-patient"><img src="{{ asset('uploads/soin/'~soin.photoSoin ) }}" width="150" height="150"/></td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.nm'|trans }}</th>
+                <td class="day-depointment-patient">{{ soin.nomSoin }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.des'|trans }}</th>
+                <td class="day-depointment-patient">{{ soin.descriptionSoin }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.pr'|trans }}</th>
+                <td class="day-depointment-patient">{{ soin.prixSoin }}</td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">{{ 'header.menu.prod.type'|trans }}</th>
+                <td class="day-depointment-patient">{{ soin.typeSoin }} </td>
+            </tr>
+            <tr style="border:4px solid white;">
+                <th class="depointment-patient">Date</th>
+                <td class="day-depointment-patient">{% if soin.dateSoin %}{{ soin.dateSoin|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

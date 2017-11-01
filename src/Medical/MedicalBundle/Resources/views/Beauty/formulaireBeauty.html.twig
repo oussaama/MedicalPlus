@@ -1,0 +1,12 @@
+{% extends "::Layout/payment.html.twig" %}
+{% block title %}Laboratory | Basket{% endblock %}
+
+{% block help %}
+    {% include '::module/Beauty/helpBeauty.html.twig' %}
+{% endblock %}
+
+{% block menu %}
+        {% include '::module/Beauty/headerBeauty.html.twig' %}
+{% endblock %}
+{% block confirm %} {{ path('Beauty_confirme') }} {% endblock %}
+

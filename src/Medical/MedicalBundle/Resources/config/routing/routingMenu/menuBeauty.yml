@@ -1,0 +1,8 @@
+Beauty_homepage:
+    path:     /home
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:indexBeauty }
+    
+Beauty_cares:
+    path:     /cares
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuBeauty:cares }
+

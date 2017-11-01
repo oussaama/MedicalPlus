@@ -1,0 +1,45 @@
+<div class="col-sm-12">
+    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom form-right shadow">
+        <div class="contactForm">
+            <form action="{{ path('modif_book',{'id':id})}}" method="post" class="contact_form row" style="margin-top: -160px;margin-left: -18px;;" {{ form_enctype(edit_form) }}>
+                <div class="cf_response"></div>
+                {{ form_start(edit_form) }}
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(edit_form.cin_rv)}}
+                    <label class="control-label" style="margin:150px  0 0 -10px;">CIN</label>
+                </p>
+                <p class="col-sm-6 kl-fancy-form">
+                    {{ form_label(edit_form.firstname_rv)}}
+                    <label class="control-label" style="margin:199px 0 0 -10px;">{{'cabine.table.fn'|trans}}</label>
+                </p>
+                <p class="col-sm-6 kl-fancy-form">
+                    {{ form_label(edit_form.lastname_rv)}}
+                    <label class="control-label" style="margin:199px 0 0 -10px;">{{'cabine.table.ln'|trans}}</label>
+                </p>
+                <p class="col-sm-5 kl-fancy-form">
+                    {{ form_label(edit_form.heure_rv)}}
+                    <label class="control-label"style="margin:241px 0 0 -10px;">{{'cabine.table.h'|trans}}</label>
+                    {{ form_label(edit_form.minute_rv)}}
+                    <label class="control-label"style="margin:241px 0 0 270px;">MINUTE</label>
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(edit_form.date_rv)}}
+                    <label class="control-label"style="margin:275px 0 0 -10px;">DATE</label>
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(edit_form.tel_rv)}}
+                    <label class="control-label"style="margin:320px 0 0 -10px;">{{'cabine.table.ph'|trans}}</label>
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(edit_form.email_rv)}}
+                    <label class="control-label"style="margin:300px 0 0 270px;">EMAIL</label>
+                </p>
+                <p class="col-sm-12">
+                    {{ form_label(edit_form.BOOK)}}
+                </p>
+                {{ form_end(edit_form) }}
+            </form>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,244 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}PROFIL{% endblock %}
+{% block stylesheet %}   
+    <link rel="stylesheet" href="{{ asset('css/sliders/icarousel/icarousel.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/jquery.fileupload.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+{% endblock %}
+
+{% block body %}
+    <div class="kl-slideshow kl-icarousel zn_def_header_style maskcontainer--mask3">
+        <div class="fake-loading loading-1s"></div>
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__bgimage">
+                <img src="" class="picture"/>
+            </div>
+            <div class="kl-bg-source__overlay" style="background:rgba(0,46,79,0.3); background: -moz-linear-gradient(left, rgba(0,46,79,0.3) 0%, rgba(55,3,122,0.3) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,46,79,0.3)), color-stop(100%,rgba(55,3,122,0.3))); background: -webkit-linear-gradient(left, rgba(0,46,79,0.3) 0%,rgba(55,3,122,0.3) 100%); background: -o-linear-gradient(left, rgba(0,46,79,0.3) 0%,rgba(55,3,122,0.3) 100%); background: -ms-linear-gradient(left, rgba(0,46,79,0.3) 0%,rgba(55,3,122,0.3) 100%); background: linear-gradient(to right, rgba(0,46,79,0.6) 0%,rgba(55,3,122,0.3) 100%); "></div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--mask3">
+            <svg width="5000px" height="57px" class="svgmask " viewbox="0 0 5000 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterunits="objectBoundingBox" id="filter-mask3">
+                        <feoffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feoffset>
+                        <fegaussianblur stddeviation="2" in="shadowOffsetInner1" result="shadowBlurInner1"></fegaussianblur>
+                        <fecomposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></fecomposite>
+                        <fecolormatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></fecolormatrix>
+                        <femerge>
+                            <femergenode in="SourceGraphic"></femergenode>
+                            <femergenode in="shadowMatrixInner1"></femergenode>
+                        </femerge>
+                    </filter>
+                </defs>
+                <path d="M9.09383679e-13,57.0005249 L9.09383679e-13,34.0075249 L2418,34.0075249 L2434,34.0075249 C2434,34.0075249 2441.89,33.2585249 2448,31.0245249 C2454.11,28.7905249 2479,11.0005249 2479,11.0005249 L2492,2.00052487 C2492,2.00052487 2495.121,-0.0374751261 2500,0.000524873861 C2505.267,-0.0294751261 2508,2.00052487 2508,2.00052487 L2521,11.0005249 C2521,11.0005249 2545.89,28.7905249 2552,31.0245249 C2558.11,33.2585249 2566,34.0075249 2566,34.0075249 L2582,34.0075249 L5000,34.0075249 L5000,57.0005249 L2500,57.0005249 L1148,57.0005249 L9.09383679e-13,57.0005249 Z" class="bmask-bgfill" filter="url(#filter-mask3)" fill="#f5f5f5"></path>
+            </svg>
+            <i class="glyphicon glyphicon-chevron-down"></i>
+        </div>
+    </div>
+    <section class="hg_section" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="box image-boxes imgboxes_style1">
+                        <a class="hoverBorder" href="#" target="_blank">
+                            <span class="hoverBorderWrapper">
+                                <img src="{{ asset('uploads/'~app.user.picture) }}" width="640" height="425" alt="{{ app.user.username }}" title="{{ app.user.username }}"/>    
+                                <span class="theHoverBorder"></span> 
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom" style="background-color:#fff;margin-bottom: 50px;">
+                        <div class="ib2-inner">
+                            <h4 class="ib2-info-message">INFORMATION</h4>
+                            {% if (app.user.role == 4) %}
+                                <a href ="{{ path('direction') }}" class="pull-right">
+                                    <button class="btn btn-primary">
+                                        <i class="glyphicon glyphicon-camera" style="font-size: 16px;"></i>
+                                        <span> {{'header.menu.profil.ef'|trans}}</span>
+                                    </Button>
+                                </a>
+                            {% endif %}
+                            <div class="ib2-content">
+                                <div class="services_box services_box--modern sb--hasicon">
+                                    <div class="services_box__inner clearfix">
+                                        <div class="linee"></div>
+                                        <div class="services_box__content">
+                                            <div class="services_box__list-wrapper">
+                                                <span class="services_box__list-bg"></span>
+                                                {% for role in app.user.roles %}
+                                                    {% if (role == "ROLE_PATIENT") %}
+                                                        {% include "::module/Patient/descriptionPatient.html.twig" %}
+                                                    {% elseif (role == "ROLE_CABINE") %}
+                                                        {% include "::module/Cabine/descriptionCabine.html.twig" %}
+                                                    {% elseif (role == "ROLE_PHARMACY") %}
+                                                        {% include "::module/Pharmacy/descriptionPharmacy.html.twig" %}
+                                                    {% elseif (role == "ROLE_BEAUTY") %}
+                                                        {% include "::module/Beauty/descriptionBeauty.html.twig" %}
+                                                    {% elseif (role == "ROLE_LABORATORY") %}
+                                                        {% include "::module/Laboratory/descriptionLaboratory.html.twig" %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                <div class="col-md-6 col-ms-12">
+                    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom" style="background-color:#fff;">
+                        <div class="ib2-inner">
+                            <h4 class="ib2-info-message">{{ 'header.menu.profil.param'|trans }}</h4>
+                            <div class="grid-ibx grid-ibx--cols-2 grid-ibx--style-lined-gradient grid-ibx--hover-shadow">
+                                <div class="grid-ibx__inner">
+                                    <div class="grid-ibx__row clearfix">
+                                        <div class="grid-ibx__item h-260" id="set">
+                                            <i class="grid-ibx__ghelper"></i>
+                                            <div class="grid-ibx__item-inner">
+                                                <div class="grid-ibx__title-wrp">
+                                                    <h4 class="grid-ibx__title montserrat fs-16">{{ 'header.menu.profil.Set'|trans }}</h4>
+                                                </div>
+                                                <div class="grid-ibx__icon-wrp"><a href="{{ path('Profil_modif',{'id':app.user.id}) }}" class="Edit fancybox.ajax"><span class="grid-ibx__icon glyphicon glyphicon-cog edit" ></a></div>
+                                                <div class="grid-ibx__desc-wrp">
+                                                    <p class="grid-ibx__desc">Documentation include with explanations for most of the options.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-ibx__item h-260">
+                                            <i class="grid-ibx__ghelper"></i>
+                                            <div class="grid-ibx__item-inner">
+                                                <div class="grid-ibx__title-wrp">
+                                                    <h4 class="grid-ibx__title montserrat fs-16">{{ 'header.menu.profil.dea'|trans }}</h4>
+                                                </div>
+                                                <div class="grid-ibx__icon-wrp">
+                                                    <a class="locked fancybox.ajax" href="{{ path('deactive')}}">
+                                                        <span class="grid-ibx__icon glyphicon glyphicon-trash"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="grid-ibx__desc-wrp">
+                                                    <p class="grid-ibx__desc">You can install languages and extend the website's languages.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-ms-12">
+                    <div class="kl-slideshow static-content__slideshow scontent__maps">
+                        {% include "::module/map.html.twig" %}
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+
+    <script type="text/javascript" src="{{ asset('sliders/icarousel/icarousel.packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('sliders/icarousel/jquery.mousewheel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('sliders/icarousel/raphael-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/icarousel/kl-icarousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}" ></script>  
+    <script type="text/javascript" src="{{ asset('fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".various").fancybox({
+                maxWidth: 800,
+                maxHeight: 1000,
+                margin: 50,
+                fitToView: true,
+                width: '80%',
+                height: '70%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: false,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic'
+            });
+            $(".Edit").fancybox({
+                maxWidth: 700,
+                maxHeight: 1000,
+                margin: 50,
+                fitToView: true,
+                width: '50%',
+                height: '70%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: true,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+            });
+            $(".locked").fancybox({
+                maxWidth: 800,
+                maxHeight: 250,
+                margin: 50,
+                fitToView: true,
+                width: '80%',
+                height: '60%',
+                autoCenter: true,
+                autoResize: true,
+                autoSize: true,
+                closeClick: false,
+                playSpeed: 2000,
+                openMethod: 'zoomIn',
+                closeMethod: 'zoomOut',
+                openEffect: 'elastic',
+                closeEffect: 'elastic'
+            });
+        });
+
+    </script>
+    <script>
+        $(".change").fancybox({
+            maxWidth: 700,
+            maxHeight: 1000,
+            margin: 50,
+            fitToView: true,
+            width: '40%',
+            height: '70%',
+            autoCenter: true,
+            autoResize: true,
+            autoSize: false,
+            closeClick: false,
+            playSpeed: 2000,
+            openMethod: 'zoomIn',
+            closeMethod: 'zoomOut',
+            openEffect: 'elastic',
+            closeEffect: 'elastic'
+        });
+    </script>
+    <script>
+        $("#profil").addClass("activeItem");
+        $(".main-menu li#profil").css("background", "#2980b8");
+        $('.edit').click(function () {
+            $('#map').hide();
+            $("#er").load("");
+        });
+    </script>
+{% endblock %}
+

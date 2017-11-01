@@ -1,0 +1,166 @@
+{% extends "::admin/layout.html.twig" %}
+{% block title %}
+    {% if indice==1 %}
+        Inbox
+    {% else %}
+        Send
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <div class="page-content">
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>
+            </li>   
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+            </li> 
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-comments"></span></a>
+                <div class="informer informer-danger"><b class="mes"></b></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-danger"><b class="mes"></b>new</span>
+                        </div>
+                    </div>
+                    {% include "::admin/message.html.twig" %}                           
+                </div>                        
+            </li>
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-tasks"></span></a>
+                <div class="informer informer-warning"><i class="n"></i></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-warning"><b class="n"></b> active</span>
+                        </div>
+                    </div>
+                    {% include "::admin/notification.html.twig" %}                         
+                </div>                        
+            </li>
+        </ul> 
+        <ul class="breadcrumb push-down-0">
+            <li><a href="#">Mailbox</a></li>
+            <li class="active"> {% if indice==1 %}
+                Inbox
+                {% else %}
+                    Send
+                    {% endif %}</li>
+                </ul>
+                <div class="content-frame">                                    
+                    <div class="content-frame-top">                        
+                        <div class="page-title">                    
+                            <h2> {% if indice==1 %}
+                                <span class="fa fa-inbox"></span> Inbox
+                                {% else %}
+                                    <span class="fa fa-send"> Send
+                                        {% endif %}
+                                            {% if nbun>0 %}<small>({{nbun}} unread)</small>{% endif %}</h2>
+                                </div>                                                                                
+
+                                <div class="pull-right">                            
+                                    <button class="btn btn-default"><span class="fa fa-cogs"></span> Settings</button>
+                                    <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
+                                </div>                        
+                            </div>
+                            <div class="content-frame-left">
+                                <div class="block">
+                                    <a href="{{ path('admin_compose') }}" class="btn btn-danger btn-block btn-lg"><span class="fa fa-edit"></span> COMPOSE</a>
+                                </div>
+                                <div class="block">
+                                    <div class="list-group border-bottom">
+                                        <a href="{{ path('admin_inbox')}}" class="list-group-item {% if indice==1%}active{% endif %}"><span class="fa fa-inbox"></span> Inbox {% if nbun>0 %}<span class="badge badge-success">{{nbun}}</span>{% endif %}</a>
+                                        <a href="{{ path('admin_send')}}" class="list-group-item {% if indice==0%}active{% endif %}"><span class="fa fa-rocket"></span> Send</a>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="content-frame-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <label class="check mail-checkall">
+                                            <input type="checkbox" class="icheckbox"/>
+                                        </label>
+                                        <div class="btn-group">
+                                            <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
+                                            <button class="btn btn-default"><span class="fa fa-mail-reply-all"></span></button>
+                                            <button class="btn btn-default"><span class="fa fa-mail-forward"></span></button>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-default"><span class="fa fa-star"></span></button>                                    
+                                            <button class="btn btn-default"><span class="fa fa-flag"></span></button>
+                                        </div>                                
+                                        <button class="btn btn-default"><span class="fa fa-warning"></span></button>
+                                        <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>                                                                    
+                                        <div class="pull-right" style="width: 150px;">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
+                                                <input class="form-control datepicker" type="text" data-orientation="left"/>                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if (messages|length >0)%}
+                                        <div class="panel-body mail">
+                                            {% for message in messages %}
+                                                {% if (message.etatCont =="non lu") %}
+                                                    <a href="{{ path('admin_message',{'id': message.id,'email':message.emailCont}) }}">
+                                                        <div class="mail-item mail-unread mail-danger">                                    
+                                                            <div class="mail-checkbox">
+                                                                <input type="checkbox" class="icheckbox"/>
+                                                            </div>
+                                                            <div class="mail-star">
+                                                                <span class="fa fa-star-o"></span>
+                                                            </div>
+                                                            <div class="mail-user">{{ message.firstnameCont }} {{ message.lastnameCont }}</div>                                  
+                                                            <a href="{{ path('admin_message',{'id': message.id,'email':message.emailCont}) }}" class="mail-text"><span style="margin-left:60px;"></span>{{ message.subjectCont }}</a>                                    
+                                                            <div class="mail-date">{{ message.dateCont | date('g:i a l jS F Y')}}</div>
+                                                        </div>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{{ path('admin_message',{'id': message.id,'email':message.emailCont}) }}">
+                                                        <div class="mail-item mail-success">
+                                                            <div class="mail-checkbox">
+                                                                <input type="checkbox" class="icheckbox"/>
+                                                            </div>
+                                                            <div class="mail-star">
+                                                                <span class="fa fa-star-o"></span>
+                                                            </div>
+                                                            {% if (indice == 1) %}
+                                                                <div class="mail-user">{{ message.firstnameCont }} {{ message.lastnameCont }}</div>   
+                                                            {% else %}
+                                                                <div class="mail-user">{{ message.emailRecu }}</div>   
+                                                            {% endif %}
+                                                            <a href="{{ path('admin_message',{'id': message.id,'email':message.emailCont}) }}" class="mail-text"><span style="margin-left:60px;"></span>{{ message.subjectCont }}</a>                                    
+                                                            <div class="mail-date">{{ message.dateCont | date('g:ia l jS F Y')}}</div>
+                                                        </div>
+                                                    </a>
+                                                {% endif %} 
+                                            {% endfor %}
+                                        </div>
+                                        <div class="panel-footer">                                                               
+                                            <nav>
+                                                <ul class="pager">
+                                                    <li>{{ knp_pagination_render(messages) }}</li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    {% else %}
+                                        <div class="cd-fail-message">No results found</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    {% endblock %}
+                        {% block javascript %} 
+                            <script type="text/javascript" src="{{ asset('admin/js/plugins/icheck/icheck.min.js') }}"></script>
+                            <script type="text/javascript" src="{{ asset('admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+                            <script type="text/javascript" src="{{ asset('admin/js/plugins/bootstrap/bootstrap-datepicker.js') }}"></script>     
+                        {% endblock %}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Medical\MedicalBundle\Entity\Medicament" table="medicament">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomMed" type="string" column="nom_med" length="255" nullable="false"/>
+    <field name="descriptionMed" type="text" column="description_med" nullable="false"/>
+    <field name="prixMed" type="float" column="prix_med" precision="10" scale="0" nullable="false"/>
+    <field name="photoMed" type="string" column="photo_med" nullable="true"/>
+    <field name="stockMed" type="integer" column="stock_med" nullable="false"/>
+    <field name="dateMed" type="datetime" column="date_med" nullable="false"/>
+    <field name="categorieMed" type="string" column="categorie_med" nullable="false"/>
+    <field name="entrepriseMed" type="integer" column="entreprise_med" nullable="true"/>
+  </entity>
+</doctrine-mapping>

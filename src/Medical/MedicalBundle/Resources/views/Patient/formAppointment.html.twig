@@ -1,0 +1,104 @@
+
+<div id="settings" class="animated bounceInRight" >
+    <div class="col-sm-5">
+        <div class="ib2-style2 ib2-text-color-light-theme ib2-custom form-right">
+            <div class="appointment-etat">
+                <p class="depointment-patient-title"style="text-align: center"></p>
+                <table class="table-depointment-patient t">
+                    {% for i in 9..17 %} 
+                        <tr class="day-depointment-patient">
+                            <td class="hour-depointment-patient"> {{i}}h00</td>
+                        </tr>
+                        <tr class="day-depointment-patient">
+                            <td class="hour-depointment-patient"> {{i}}h30</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <table class="t">
+
+                    {% for rendez in rendezVous %} 
+                        {% for i in 9..17 %}
+                            {% if (rendez.heureRv == i and rendez.minuteRv==0  and rendez.etatRv=="accepted") %}
+                                {% for j in 1..i-9 %}
+                                    <tr><td></td></tr>
+                                {% endfor %}
+                                <tr><td class="depointment-patient">{{ 'appointment.etat.rv'|trans }}</td></tr>
+                                {% elseif (rendez.heureRv == i and  rendez.minuteRv== 30 and rendez.etatRv=="accepted") %}
+                                    {% for j in 1..i-8 %}
+                                    <tr><td></td></tr>
+                                {% endfor %}
+                                <tr><td class="depointment-patient">{{ 'appointment.etat.rv'|trans }}</td></tr>
+                                {% elseif (rendez.heureRv == i and rendez.minuteRv==0  and (rendez.etatRv=="waiting"or rendez.etatRv=='reserved')) %}
+                                    {% for j in 1..i-9 %}
+                                    <tr><td></td></tr>
+                                {% endfor %}
+                                <tr><td class="depointment-patient">{{ 'appointment.etat.rw'|trans }}</td></tr>
+                                {% elseif (rendez.heureRv == i and  rendez.minuteRv== 30 and (rendez.etatRv=="waiting"or rendez.etatRv=='reserved')) %}
+                                    {% for j in 1..i-8 %}
+                                    <tr><td></td></tr>
+                                {% endfor %}
+                                <tr><td class="waiting-patient">{{ 'appointment.etat.rw'|trans }}</td></tr>
+                                {% else %}
+                                <tr><td></td></tr>
+                            {% endif %}             
+                        {% endfor %}
+                    {% endfor %}
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7" style=margin-left:-20px;margin-top:70px;">
+        <div class="ib2-style2 ib2-text-color-light-theme ib2-custom form-right shadow">
+            <div class="contactForm" style="margin-left: 30px;">
+                <form action="{{ path('book_appointment',{'id':doctor})}}" method="post" class="contact_form row" style="margin-top:-120px;" {{ form_enctype(form) }}>
+                    <div class="cf_response"></div>
+                    {{ form_start(form) }}
+                    <p class="col-sm-12 kl-fancy-form">
+                        {{ form_label(form.cin_rv)}} 
+                        <label class="control-label" style="margin:160px  0 0 -5px;" id="lg-hide">CIN</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.firstname_rv)}}
+                        <label class="control-label" style="margin:215px 0 0 -5px;" id="lg-hide">FIRSTNAME</label>
+                    </p>
+                    <p class="col-sm-6 kl-fancy-form">
+                        {{ form_label(form.lastname_rv)}}
+                        <label class="control-label" style="margin:215px 0 0 -5px;"id="lg-hide" >LASTNAME</label>
+                    </p>
+                    <p class="col-sm-5 kl-fancy-form">
+                        {{ form_label(form.heure_rv)}}
+                        <label class="control-label"style="margin:270px 0 0 -5px;" id="lg-hide">HOUR</label>
+                        {{ form_label(form.minute_rv)}}
+                        <label class="control-label"style="margin:270px 0 0 170px;" id="lg-hide">MINUTE</label>
+                    </p>
+                    <p class="col-sm-12 kl-fancy-form">
+                        {{ form_label(form.tel_rv)}}
+                        <label class="control-label"style="margin:380px 0 0 -5px;" id="lg-hide">PHONE</label>
+                    </p>
+
+                    <p class="col-sm-12 kl-fancy-form">
+                        {{ form_label(form.email_rv)}}
+                        <label class="control-label"style="margin:360px 0 0 145px;" id="lg-hide">EMAIL</label>
+                    </p>
+                    <p class="col-sm-12">
+                        {{ form_label(form.BOOK)}}
+                    </p>
+                    <input type="hidden" id="dateRv" name="date"/>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var x = $("#date").val();
+    $(".depointment-patient-title").append(x);
+    $("#dateRv").attr("value", x);
+</script>
+<style>
+    .hidden{
+        display:none;
+    }
+</style>

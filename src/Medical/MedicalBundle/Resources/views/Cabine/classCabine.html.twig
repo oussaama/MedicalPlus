@@ -1,0 +1,83 @@
+{% extends '::Layout/class.html.twig' %}
+
+{% block title %}{{'header.menu.class'|trans}}{% endblock %}
+{% block help %}{% endblock %}
+{% block menu %}{% include '::module/Cabine/headerCabine.html.twig' %}{% endblock %}
+{% block body %}
+    <section class="hg_section ptop-80 pbottom-80">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="pricing-table-element blue" data-columns="3">
+                        <div class="plan-column">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell">{{ 'paiment.cla.st'|trans }}</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">0.00<span class="currency">DT</span></span></div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">-</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c1'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-column ">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell">Professional</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">13.99<span class="currency">DT</span></span>{{ 'paiment.cla.pm'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c3'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c1'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell"><a href="{{ path('formulaire_class',{'type':'premium','price':13.99}) }}" class="btn btn-fullcolor">{{ 'paiment.cla.ord'|trans }}</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-column featured">
+                            <ul>
+                                <li class="plan-title">
+                                    <div class="inner-cell" style="font-weight: 600;font-size: 42px;">Ultra</div>
+                                </li>
+                                <li class="subscription-price">
+                                    <div class="inner-cell"><span class="price">119.99<span class="currency">DT</span></span>{{ 'paiment.cla.pm'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c4'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c1'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell">{{'cabine.class.c2'|trans }}</div>
+                                </li>
+                                <li>
+                                    <div class="inner-cell"><a href="{{ path('formulaire_class',{'type':'ultra','price':'119.99'}) }}" class="btn btn-fullcolor">{{ 'paiment.cla.ord'|trans }}</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

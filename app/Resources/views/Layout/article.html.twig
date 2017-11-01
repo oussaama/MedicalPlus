@@ -1,0 +1,162 @@
+{% extends "Layout/base.html.twig" %}
+
+{% block title %} Article {% endblock %}
+{% block stylesheet %} {% endblock %}    
+
+{% block body %}
+    <div id="page_header" class="page-subheader site-subheader-cst min-200">
+        <div class="bgback"></div>
+        <div class="th-sparkles"></div>
+        <div class="ph-content-wrap">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    {% if (app.user.roles != "ROLE_PATIENT") %}
+                                        <li><a href="{{ path('Patient_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                        {% elseif (app.user.roles != "ROLE_CABINE") %}
+                                        <li><a href="{{ path('Cabine_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                        {% elseif (app.user.roles != "ROLE_PHARAMACY") %}
+                                        <li><a href="{{ path('Pharmacy_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                        {% elseif (app.user.roles != "ROLE_BEAUTY") %}
+                                        <li><a href="{{ path('Beauty_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                        {% elseif (app.user.roles != "ROLE_LABORATORY") %}
+                                        <li><a href="{{ path('Laboratory_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                        {% endif %}
+                                    <li><a href="">{{categorie}}<a></li>
+                                                </ul>
+                                                <span id="current-date" class="subheader-currentdate">{{ "now"|date('l jS F Y') }}</span>
+                                                <div class="clearfix"></div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="subheader-titles">
+                                                        <h2 class="subheader-maintitle">{{ article.titre }}</h2>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <section class="hg_section ptop-50">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <div id="th-content-post">
+                                                                    <div>
+                                                                        <h1 class="page-title black">{{ article.titre }}</h1>
+                                                                        <div class="itemView clearfix eBlog">
+                                                                            <div class="itemHeader">
+                                                                                <div class="post_details">
+                                                                                    <span class="itemAuthor">{{ 'header.menu.newss.by'|trans }} <a href="#"><strong>{{ user }}</strong></a></span>
+                                                                                    <span class="infSep"> / </span>
+                                                                                    <span class="itemDateCreated">
+                                                                                        <span class="glyphicon glyphicon-calendar"></span> {{ article.dateArt | date('d-m-Y')}}</span>
+                                                                                    <span class="infSep"> / </span><span class="itemCommentsBlock"></span>
+                                                                                    <span class="itemCategory"><span class="glyphicon glyphicon-folder-close"></span> {{ 'header.menu.newss.pub'|trans }} </span>
+                                                                                    <a href="blog.html"> {{ categorie }}<strong></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="itemBody">
+                                                                                <a data-lightbox="image" href="{{ asset('uploads/article/'~article.photoArt) }}" class="hoverBorder pull-left" style="margin-right: 20px;margin-bottom:4px;">
+                                                                                    <span class="hoverBorderWrapper">
+                                                                                        <img src="{{ asset('uploads/article/'~article.photoArt) }}" alt="">
+                                                                                        <span class="theHoverBorder"></span>
+                                                                                    </span>
+                                                                                </a>
+                                                                                <p>{{ article.contenuArt}}</p>
+                                                                            </div>
+                                                                            <div class="clear"></div>
+                                                                            <div class="related-articles">
+                                                                                {% if(articles|length >0) %}
+                                                                                    <h3 class="rta-title">What you can read next</h3>
+                                                                                {% endif %}
+                                                                                <div class="row">
+                                                                                    {% for article in articles %}
+                                                                                        <div class="col-sm-4">
+                                                                                            <div class="rta-post">
+                                                                                                <a href="{{ path('medical_news_article',{'id':article.id,'user':article.username,'categorie':article.nomCat}) }}">
+                                                                                                    <img src="{{ asset('uploads/article/'~article.photoArt) }}" class="img-responsive" width="370" height="240" alt="">
+                                                                                                </a>
+                                                                                                <h5>
+                                                                                                    <a href="{{ path('medical_news_article',{'id':article.id,'user':article.username,'categorie':article.nomCat}) }}">{{ article.titre }}</a>
+                                                                                                </h5>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    {% endfor %}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="comment-form-wrapper">
+                                                                        <div class="clear"></div>
+                                                                        <div class="zn-separator zn-margin-b line"></div>
+                                                                        <div class="zn_comments sixteen columns">
+                                                                            <h3 id="comments"> {{ commentaires|length}} Responses to “{{article.titre}}”</h3>
+                                                                            <div class="navigation">
+                                                                                <div class="alignleft"></div>
+                                                                                <div class="alignright"></div>
+                                                                            </div>
+                                                                            {% if commentaires|length >0 %}
+                                                                                <ol class="commentlist">
+                                                                                    {% for commentaire in commentaires %}
+                                                                                        <li class="comment byuser comment-author-danut even thread-even depth-1">
+                                                                                            <div id="comment-2">
+                                                                                                <div class="comment-author vcard">
+                                                                                                    <img alt="" src="{{ asset('uploads/'~commentaire.picture) }}" srcset="{{ asset('uploads/'~commentaire.picture) }}" class="avatar avatar-50 photo" height="50" width="50">
+                                                                                                    <cite class="fn">{{ commentaire.username}}</cite> says : <a rel="nofollow" class="comment-reply-link" href="blog.html" onclick="return addComment.moveForm( & quot; comment - 2 & quot; , & quot; 2 & quot; , & quot; respond & quot; , & quot; 253 & quot; )" aria-label="Reply to danut"><span class="glyphicon glyphicon-remove"></span></a></div>
+                                                                                                <div class="comment-meta commentmetadata"><a href="">{{ commentaire.dateCom| date('l jS F Y \a\t g:i a') }} </a><a class="comment-edit-link" href="">(Edit)</a></div>
+                                                                                                <p>{{ commentaire.commentaire }}</p>
+                                                                                                <div class="zn-separator sep_normal zn-margin-d"></div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    {% endfor %}
+                                                                                </ol>
+                                                                            {% else %}
+                                                                                <p style="text-align:center;">{{'appointment.doctor.nc'|trans }}</p>
+                                                                            {% endif %}
+                                                                            <div class="navigation">
+                                                                                <div class="alignleft"></div>
+                                                                                <div class="alignright"></div>
+                                                                            </div>
+                                                                            <div class="clear"></div>
+                                                                            <div id="respond" class="comment-respond">
+                                                                                <h3 id="reply-title" class="comment-reply-title">{{'appointment.doctor.lr'|trans }} <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://hogash-demos.com/demo/kwp/dramatically-integrate-viral-technologies/#respond" style="display:none;">Cancel reply</a></small></h3>
+                                                                                <form action="{{ path('medical_commentaire',{'id':article.id,'user':article.auteurId,'categorie':categorie}) }}" method="post" id="commentform" class="comment-form">
+                                                                                    <div class="row">
+                                                                                        <div class="form-group col-sm-12">
+                                                                                            <p class="comment-form-comment">
+                                                                                                <label for="comment">{{'appointment.doctor.cm'|trans }}</label>
+                                                                                                <textarea class="form-control" placeholder="Message:" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea></p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <p class="form-submit">
+                                                                                        <input name="submit" type="submit" id="submit" class="btn btn-primary" value="{{'appointment.doctor.pm'|trans }}"/>
+                                                                                        <input type="hidden" name="comment_post_ID" value="253" id="comment_post_ID"/>
+                                                                                        <input type="hidden" name="comment_parent" id="comment_parent" value="0"/></p>
+                                                                                    <input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment" value="069422a49e"><script>(function () {
+                                                                                                if (window === window.parent) {
+                                                                                                    document.getElementById('_wp_unfiltered_html_comment_disabled').name = '_wp_unfiltered_html_comment';
+                                                                                                }
+                                                                                            })();</script>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            {% endblock %}
+                                            {% block javascript %}
+                                                <script>
+                                                    $("#news").addClass("activeItem");
+                                                    $(".main-menu li#news").css("background", "#2980b8");
+                                                </script>
+                                            {% endblock %}
+
+

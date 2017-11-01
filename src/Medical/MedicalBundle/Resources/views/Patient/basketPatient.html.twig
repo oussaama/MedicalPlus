@@ -1,0 +1,120 @@
+{% extends '::Layout/base.html.twig' %}
+
+{% block title %}Card{% endblock %}
+{% block stylesheet %}{% endblock %}
+{% block body %}
+    {% set total=0 %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:670px;">
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/basket.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="th-sparkles"></div>
+        <div class="kl-bottommask kl-bottommask--mask3">
+            <svg width="5000px" height="57px" class="svgmask " viewBox="0 0 5000 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-mask3">
+                        <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                        <feGaussianBlur stdDeviation="2" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+                        <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+                        <feMerge>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                            <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path d="M9.09383679e-13,57.0005249 L9.09383679e-13,34.0075249 L2418,34.0075249 L2434,34.0075249 C2434,34.0075249 2441.89,33.2585249 2448,31.0245249 C2454.11,28.7905249 2479,11.0005249 2479,11.0005249 L2492,2.00052487 C2492,2.00052487 2495.121,-0.0374751261 2500,0.000524873861 C2505.267,-0.0294751261 2508,2.00052487 2508,2.00052487 L2521,11.0005249 C2521,11.0005249 2545.89,28.7905249 2552,31.0245249 C2558.11,33.2585249 2566,34.0075249 2566,34.0075249 L2582,34.0075249 L5000,34.0075249 L5000,57.0005249 L2500,57.0005249 L1148,57.0005249 L9.09383679e-13,57.0005249 Z" class="bmask-bgfill" filter="url(#filter-mask3)" fill="#f5f5f5"></path>
+            </svg>
+            <i class="glyphicon glyphicon-chevron-down"></i> 
+        </div>
+    </div>
+    <section id="content" class="hg_section ptop-60">
+        <div class="container">
+            <div class="row">
+                <div class="right_sidebar col-md-9" style="">
+                    <div class="kl-title-block clearfix text-left tbk-symbol--line tbk-icon-pos--after-title">
+                        <h2 class="tbk__title montserrat fs-34 fw-semibold black">YOUR PERSONAL BASKET</h2>
+                        <span class="tbk__symbol "><span></span></span>
+                        <h4 class="tbk__subtitle fs-22 fw-thin">Let's see what we've got inside.</h4>
+                    </div>
+                    <div class="text_box">
+                        <div class="kl-store">
+                            <form action="#" method="post" class="mb-50">
+                                <table class="shop_table cart" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-remove">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th>
+                                            <th class="product-thumbnail">{{'patient.panier.ph'|trans}}</th>
+                                            <th class="product-name">{{'patient.panier.nm'|trans}}</th>
+                                            <th class="product-price">{{'patient.panier.pr'|trans}}</th>
+                                            <th class="product-quantity">{{'patient.panier.qt'|trans}}</th>
+                                            <th class="product-subtotal">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for produit in panierEnt %}
+                                            <tr class="cart_item" ng-app="App">
+                                                <td class="product-remove"><a href="{{ path('remove_basket',{'id':produit.id})}}" class="remove"><span class="glyphicon glyphicon-remove" style="color:#2980b8;"></span></a></td>
+                                                <td class="product-thumbnail"><a href="{{ path('Patient_ph_Description',{'id':produit.entrepriseMed})}}"><img width="180" height="180" src="{{asset('uploads/medicament/' ~ produit.photoMed) }}" class="attachment-shop_thumbnail wp-post-image" alt="image1xxl"></a></td>
+                                                <td class="product-name">
+                                                    <a href="">{{ produit.nomMed }}</a>
+                                                </td>
+                                                <td class="product-price"><span class="amount">{{ produit.prixMed }}DT</span></td>
+                                                <td class="product-quantity">
+                                                    <div class="quantity"><input type="number" value="{{ produit.stockP }}"  step="1" min="0" max="{{ produit.stockMed }}" name="cart" title="Qty" class="input-text qty text" size="4"></div>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">{{ produit.prixMed * produit.stockP }}DT </span></td>
+                                                {% set total=total+produit.prixMed*produit.stockP %}
+                                            </tr>
+                                        {% endfor %}
+                                        <tr>
+                                            <td colspan="6" class="actions">             
+                                                <input type="submit" class="btn btn-fullcolor" name="update_cart" value="Update Cart"/>
+                                                <input type="hidden" id="_wpnonce" name="_wpnonce" value="1b98fc7d5b"/>
+                                                <input type="hidden" name="_wp_http_referer" value="/demo/cart/"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-top: 140px; ">
+                    <div class="cart-collaterals">
+                        <div class="cart_totals">
+                            <h2>Cart Totals</h2>
+                            <table cellspacing="0" class="mb-30">
+                                <tbody>
+                                    <tr class="cart-subtotal">
+                                        <th>Subtotal</th>
+                                        <td><span class="amount">{{ total }}DT</span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Total</th>
+                                        <td><strong><span class="amount">{{ total }}DT</span></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="wc-proceed-to-checkout" style="width:200px;">
+                                <a href="{{path('Patient_payment',{'id':id,'price':total})}}" class="btn btn-fullcolor pull-right">Proceed to Checkout</a></div>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+        var customInterpolationApp = angular.module('App', []);
+
+        customInterpolationApp.config(function ($interpolateProvider) {
+            $interpolateProvider.startSymbol('//');
+            $interpolateProvider.endSymbol('//');
+        });
+
+    </script>
+{% endblock %}

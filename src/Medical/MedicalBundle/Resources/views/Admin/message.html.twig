@@ -1,0 +1,102 @@
+{% extends "::admin/layout.html.twig" %}
+{% block title %}Message{% endblock %}
+{% block body %}
+    <div class="page-content">
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" placeholder="Search..."/>
+                </form>
+            </li>   
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+            </li> 
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-comments"></span></a>
+                <div class="informer informer-danger"><b class="mes"></b></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-danger"><b class="mes"></b>new</span>
+                        </div>
+                    </div>
+                    {% include "::admin/message.html.twig" %}                           
+                </div>                        
+            </li>
+            <li class="xn-icon-button pull-right">
+                <a href="#"><span class="fa fa-tasks"></span></a>
+                <div class="informer informer-warning"><i class="n"></i></div>
+                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                        <div class="pull-right">
+                            <span class="label label-warning"><b class="n"></b> active</span>
+                        </div>
+                    </div>
+                    {% include "::admin/notification.html.twig" %}                         
+                </div>                        
+            </li>
+        </ul> 
+        <ul class="breadcrumb push-down-0">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Mailbox</a></li>
+            <li class="active">Message</li>
+        </ul>
+        <div class="content-frame">                                    
+            <div class="content-frame-top">                        
+                <div class="page-title">                    
+                    <h2><span class="fa fa-file-text"></span> Message</h2>
+                </div>                                                                                
+
+                <div class="pull-right">                                                                                    
+                    <button class="btn btn-default"><span class="fa fa-print"></span> Print</button>
+                    <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
+                </div>                        
+            </div>
+             <div class="content-frame-left">
+                <div class="block">
+                    <div class="list-group border-bottom">
+                        <a href="{{ path('admin_inbox')}}" class="list-group-item active"><span class="fa fa-inbox"></span> Inbox {% if nbun>0 %}<span class="badge badge-success">{{nbun}}</span>{% endif %}</a>
+                        <a href="{{ path('admin_send')}}" class="list-group-item"><span class="fa fa-rocket"></span> Sent</a>
+                    </div>                        
+                </div>
+            </div>
+            <div class="content-frame-body">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            {% for user in user %}
+                                <img src="{{ asset('uploads'~user.picture) }}" class="panel-title-image" alt="John Doe"/>
+                            {% endfor %}
+                            {% for mail in mail %}
+                                <h3 class="panel-title">{{ mail.firstnameCont }} {{ mail.lastnameCont }}<small>  {{ mail.emailCont }}</small></h3>
+                            </div>
+                            <div class="pull-right">
+                                <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
+                                <button class="btn btn-default"><span class="fa fa-warning"></span></button>
+                                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>                                    
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Re: {{ mail.subjectCont }} <small class="pull-right text-muted"><span class="fa fa-clock-o"></span> {{ mail.dateCont | date('g:i a l jS F Y')}}</small></h3>
+                            <p>{{ mail.contenuCont }}</p>  
+                                {% endfor %}
+                        <div class="panel-footer">
+                            <a href="{{ path('admin_compose') }}"><button class="btn btn-success pull-right"><span class="fa fa-mail-reply"></span> Post Reply</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+        </div>
+    {% endblock %}
+    {% block javascript %} 
+        <script type="text/javascript" src="{{ asset('admin/js/plugins/summernote/summernote.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('admin/js/plugins/icheck/icheck.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script> 
+    {% endblock %}

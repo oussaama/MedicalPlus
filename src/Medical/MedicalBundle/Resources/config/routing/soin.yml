@@ -1,0 +1,24 @@
+soin_index:
+    path:     /
+    defaults: { _controller: "MedicalMedicalBundle:Soin:index" }
+    methods:  GET
+
+soin_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalMedicalBundle:Soin:show" }
+    methods:  GET
+
+soin_new:
+    path:     /new/{id}
+    defaults: { _controller: "MedicalMedicalBundle:Soin:new" }
+    methods:  [GET, POST]
+
+soin_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalMedicalBundle:Soin:edit" }
+    methods:  [GET, POST]
+
+soin_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalMedicalBundle:Soin:delete" }
+    methods:  DELETE

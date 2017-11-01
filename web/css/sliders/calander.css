@@ -1,0 +1,19 @@
+.planner {
+    overflow: hidden;
+}
+
+.calendar {
+    padding: 10px;
+    background-color: #fff;
+}
+.calendar-header {
+    color: #2980b8;
+    border-bottom: 1px solid #3e8cbf;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 0px;
+    font-size: 0px;
+    padding-bottom: 10px;
+}
+

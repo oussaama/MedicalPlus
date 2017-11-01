@@ -1,0 +1,129 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}{{'header.menu.ph'|trans}}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/circular-catalogue/circular-catalogue.css') }}" type="text/css" media="all"/>
+{% endblock %}
+
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:600px;">
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/sliders/ios-living.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="ph-content-wrap ptop-170">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row" style="padding:320px 0px ;">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="{{ path('Patient_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                    <li>{{ 'header.menu.ph'|trans }}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle">{{ 'appointment.appoi.t1'|trans }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="th-sparkles"></div>
+    </div>
+    <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    <section class="hg_section"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix tbk--left tbk-symbol--line tbk-icon-pos--after-title ptop-35 pbottom-65">
+                        <h2 class="tbk__title fs-34 black montserrat"><strong>{{'header.menu.ph'|trans}}</strong></h2>
+                        <div class="tbk__symbol"><span></span></div>
+                        <h4 class="tbk__subtitle fs-30 fw-thin">{{ 'Medication.t1'|trans}} </h4>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </section>
+    <section class="hg_section ptop-60" style="margin-top:-100px;">
+        <div class="container">
+            <div class="row">
+                <div class="left_sidebar col-md-9 col-sm-12">
+                    {% if utilisateurs|length != 0 %}
+                        <ul class="products clearfix" style="margin: -15px 0px 0px -23px;">
+                            {% for utilisateur in utilisateurs %}
+                                <li class="product" style="width:245px;float:left; margin: 15px 15px;">
+                                    <div class="product-list-item prod-layout-classic">
+                                        <div class="zn_badge_container"></div>
+                                        <a href="{{ path ('Patient_ph_Description',{'id':utilisateur.id}) }}">
+                                            <span class="image kw-prodimage">
+                                                <img class="kw-prodimage-img" src="{{ asset('uploads/'~ utilisateur.picture)}}" alt="{{ utilisateur.username }}">
+                                            </span>
+                                            <div class="details kw-details fixclear">
+                                                <h3 class="kw-details-title">{{ utilisateur.username }}</h3>
+                                                <p class="desc kw-details-desc">{{ utilisateur.adress }} {{utilisateur.code}},{{utilisateur.city}} {{utilisateur.state}}</p>
+                                                <span class="price"><span class="amount">{{ utilisateur.tel }}</span></span>
+                                            </div>
+                                        </a>
+                                        <div class="actions kw-actions">
+                                            <a class="actions-moreinfo" href="{{ path ('Patient_ph_Description',{'id':utilisateur.id}) }}">{{'appointment.process.mo'| trans}}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>  
+                        <div class="navigation">
+                            {{ knp_pagination_render(utilisateurs) }}
+                        </div>
+
+                    {% else %}
+                        <div class="cd-fail-message">No results found</div>
+                    {% endif %}
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div id="sidebar-widget" class="sidebar">
+                        <div class="widget">
+                            <h3 class="widgettitle title">{{ 'Medication.pc'|trans}}</h3>
+                            <div class="widget_search">
+                                <div class="search gensearch__wrapper">
+                                    <form id="searchform" class="gensearch__form" action="{{ path('patient_search',{'role':3})}}" method="post" onSubmit="Gsitesearch(this)" >
+                                        <input id="s" name="s" maxlength="20" class="inputbox gensearch__input" type="text" size="20" value="{{ 'header.head.sea'|trans}} ..." onblur="if (this.value == '')
+                                                    this.value = '{{ 'header.head.sea'|trans}} ...';" onfocus="if (this.value == '{{ 'header.head.sea'|trans}} ...')
+                                                                this.value = '';"/>
+                                        <button type="submit" id="searchsubmit" value="go" class="gensearch__submit glyphicon glyphicon-search"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="kl-store_product_categories-2" class="widget kl-store widget_product_categories">
+                            <h3 class="widgettitle title" style="margin-top:60px;">{{ 'Medication.ss'|trans}}</h3>
+                            <ul class="product-categories">
+                                {% for state in states %}
+                                    {% if loop.index >1 %}
+                                    <li class="cat-item">
+                                        <a href="{{ path('patient_search_state',{'state':state.state,'role':3})}}">{{ state.state }}</a><span class="count">({{ state.nb }})</span>  
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/caroufredsel/circular-catalogue/kl-circular-catalogue.js') }}"></script>  
+    <script type="text/javascript" src="{{ asset('js/_jquery-ui-1.10.3.custom.min.js') }}"></script>                 
+    <script>
+        $("#service").addClass("activeItem");
+        $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+{% endblock %}
+

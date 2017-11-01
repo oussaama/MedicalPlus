@@ -1,0 +1,185 @@
+{% extends '::Layout/base.html.twig' %}
+
+{% block title %}{{ 'header.menu.index'|trans }}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/portfolio-slider/portfolio-slider.css') }}" type="text/css" media="all"/>                 
+{% endblock %}
+
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div class="kl-slideshow portfolio-slider__sideshow gradient zn_def_header_style maskcontainer--mask5 scrollme">
+        <div class="fake-loading loading-1s"></div>
+        <div class="bgback"></div>
+        <div class="kl-slideshow-inner portfolio-slider-frames psl__wrapper psl--horizontal psl--left psl--height h-760">
+            <div class="kl-bg-source">
+                <div class="kl-bg-source__bgimage" style="background-image:url({{ asset('images/sliders/bg-sliding-frames.jpg') }});background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+            </div>
+            <div class="th-sparkles"></div>
+            <div class="psl__inner">
+                <div class="kl-slideshow-safepadding psl__container animateme" data-when="span" data-from="0" data-to="0.75" data-translatey="300" data-opacity="0.1" data-easing="linear">
+                    <div class="container">
+                        <h3 class="psl__main-title"><span class="fw-normal">{{ 'header.menu.be'|trans }}</span></h3>
+                        <h4 class="psl__main-desc">{{ 'beauty.slider.p2'|trans }}</h4>
+                    </div>
+                    <div class="psl-carousel__wrapper">
+                        <div class="psl-carousel__container" >
+                            <div class="psl-carousel__item psl--item-0">
+                                <div class="psl__img psl-img--right">
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-03.jpg') }})"></div>
+                                </div>
+                                <div class="psl__img psl-img--left">
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-02.jpg') }})"></div>
+                                </div>
+                                <div class="psl__img psl-img--front">
+                                    <span class="psl__project_title"></span><a class="psl__project_url" href="#" target="_self"></a>
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-1-01.jpg') }})"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="psl-carousel__item psl--item-1">
+                                <div class="psl__img psl-img--right">
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-03.jpg') }})"></div>
+                                </div>
+                                <div class="psl__img psl-img--left">
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-02.jpg') }})"></div>
+                                </div>
+                                <div class="psl__img psl-img--front">
+                                    <span class="psl__project_title"></span><a class="psl__project_url" href="#" target="_self"></a>
+                                    <div class="psl__img-bg" style="background-image:url({{ asset('images/sliders/ptf-frames-2-01.jpg') }})"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <a class="psl__prev" href="#"><span class="glyphicon glyphicon-chevron-left icon-white"></span></a><a class="psl__next" href="#"><span class="glyphicon glyphicon-chevron-right icon-white"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--mask5">
+            <svg width="2700px" height="64px" class="svgmask" viewbox="0 0 2700 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+            <filter x="-50%" y="-50%" width="200%" height="200%" filterunits="objectBoundingBox" id="filter-mask5">
+                <feoffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feoffset>
+                <fegaussianblur stddeviation="1.5" in="shadowOffsetInner1" result="shadowBlurInner1"></fegaussianblur>
+                <fecomposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></fecomposite>
+                <fecolormatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></fecolormatrix>
+                <femerge>
+                    <femergenode in="SourceGraphic"></femergenode>
+                    <femergenode in="shadowMatrixInner1"></femergenode>
+                </femerge>
+            </filter>
+            </defs>
+            <path d="M1892,0 L2119,44.993 L2701,45 L2701.133,63.993 L-0.16,63.993 L1.73847048e-12,45 L909,44.993 L1892,0 Z" class="bmask-bgfill" fill="#f5f5f5" filter="url(#filter-mask5')"></path>
+            <path d="M2216,44.993 L2093,55 L1882,6 L995,62 L966,42 L1892,0 L2118,44.993 L2216,44.993 L2216,44.993 Z" fill="#cd2122" class="bmask-customfill" filter="url(#filter-mask5)"></path>
+            </svg>
+        </div>
+    </div>
+    <section class="hg_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix text-center tbk-symbol--icon tbk--colored tbk-icon-pos--before-title"><span class="tbk__symbol "><span class="tbk__icon icon-kallyas fs-60 light-gray"></span></span></div>
+                    <div class="kl-title-block clearfix tbk--text-default tbk--center text-center tbk-symbol-- tbk--colored tbk-icon-pos--before-title eluidb74344c1 ">
+                        <h3 class="tbk__title montserrat fs-26 fw-semibold dark-gray">{{ 'beauty.slogan.p1'|trans }}</h3>
+                        <h4 class="tbk__subtitle fw-thin">{{ 'beauty.slogan.p2'|trans }}</h4>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="text-center">   
+                        <a class="btn-element btn btn-fullcolor btn-skewed btn-md btn-forth zn_dummy_value" href="{{ path('contact_new') }}" target="_blank"><span>{{ 'patient.home.slogan.b1'|trans }}</span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section--relative pbottom-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="el-devimages el-devimages--type-vector el-devimages--center max-600 o-hidden">
+                        <div class="el-devimages__frame el--appear el--appear-sfb el--appeared">
+                            <div class="el-devimages__frame-img" style="background-image:url({{ asset('images/kl-ss.jpg') }});"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--shadow"></div>
+    </section>
+    <section class="hg_section bg-white ptop-75 pbottom-100">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="el-devimages el-devimages--type-vector el-devimages--rtl">
+                        <div class="el-devimages__laptop ">
+                            <div class="el-devimages__laptop-img" style="background-image:url({{ asset('images/devices-01.jpg') }});"></div>
+                        </div>
+                        <div class="el-devimages__smartphone ">
+                            <div class="el-devimages__smartphone-img" style="background-image:url({{ asset('images/devices-02.jpg') }});"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="kl-title-block clearfix tbk--text-default tbk--left text-left tbk-symbol--line tbk-icon-pos--before-title eluid88d9d795 ">
+                        <span class="tbk__symbol "><span></span></span>
+                        <h3 class="tbk__title montserrat fs-36 lh-46 fw-bold tcolor">{{ 'beauty.contenu.t1'|trans }}</h3>
+                        <h4 class="tbk__subtitle fw-vthin lh-34 dark-gray">{{ 'beauty.contenu.p1'|trans }} </h4>
+                    </div>
+                    <div class="kl-iconbox text-left kl-iconbox--theme-default ">
+                        <div class="kl-iconbox__inner">
+
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="latest_posts acc-style">
+                        <h3 class="m_title">{{ 'patient.home.art.l'|trans }}</h3>
+                        <a href="{{ path('medical_news') }}" class="viewall">{{ 'patient.home.art.v'|trans }}</a>
+                        <div class="css3accordion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section" style="margin-top:-40px;">
+        <div class="hg_section_size container">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4 col-sm-4">
+                        <div class="box image-boxes imgboxes_style1">
+                            <a class="hoverBorder" href="{{ path('medical_news_article',{'id':article.id,'user':article.username,'categorie':article.nomCat}) }}" target="_blank">
+                                <span class="hoverBorderWrapper"><img src="{{ asset('uploads/article/'~article.photoArt) }}" width="640" height="425" alt="MULTIPURPOSE TEMPLATE" title="MULTIPURPOSE TEMPLATE"><span class="theHoverBorder"></span></span>
+                                <h6>READ ON +</h6>
+                            </a><br>
+                            <a href="{{ path('medical_news_categorie',{'categorie':article.nomCat})}}"><em>{{article.nomCat}}</em></a>
+                            <h3 class="m_title imgboxes-title">{{ article.titre }}</h3>
+                            {{ article.contenuArt|truncate(60, false, '...')}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/caroufredsel/portfolio-slider/kl-portfolio-slider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-partners-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps-style2.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dp-scripts.js') }}"></script>
+    <script>
+        $("#home").addClass("activeItem");
+        $(".main-menu li#home").css("background", "#2980b8");
+    </script>
+{% endblock %}

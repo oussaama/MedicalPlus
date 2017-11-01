@@ -1,0 +1,19 @@
+<div class="container" style="width:800px;">
+    <div class="row" >
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="posi">
+                    <img src="{{ asset('uploads/'~ app.user.picture) }}" alt="Doctor" width="500" height="500" class="img-depointment" />
+                </div>
+            </div>
+            <div class="col-sd-offset-1 col-sm-6">
+                <p class="champs-18 posi"><span class="glyphicon glyphicon-user" style="font-size:20px; color:#2980b8;"></span><strong> {{ app.user.username }}</strong></p>
+                <p class="champs-14 posi"><span class="glyphicon glyphicon-envelope"  style="font-size:14px; color:#2980b8;"></span><strong> {{ app.user.email }} </strong></p>
+                <p>Are you sure to delete your account ? </br>this will be permenent.</p>
+            </div>
+            <div class="col-sm-2">
+                <a href="{{ path('medical_delete') }}"><button class="btn pull-right btn-fullcolor profil-form" type="submit" style="margin-top: 140px;">Confirm</button></a>
+            </div>
+        </div>
+    </div>
+</div>

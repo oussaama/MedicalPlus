@@ -1,0 +1,55 @@
+admin_homepage:
+    path:     /home
+    defaults: { _controller: MedicalMedicalBundle:Admin:index }
+
+admin_inbox:
+    path:     /inbox
+    defaults: { _controller: MedicalMedicalBundle:Admin:inbox }
+    
+admin_message:
+    path:     /message/{id}{email}
+    defaults: { _controller: MedicalMedicalBundle:Admin:message }
+    
+admin_compose:
+    path:     /compose
+    defaults: { _controller: MedicalMedicalBundle:Admin:compose }
+
+admin_send:
+    path:     /send
+    defaults: { _controller: MedicalMedicalBundle:Admin:send }
+
+admin_send_message:
+    path:     /send/message
+    defaults: { _controller: MedicalMedicalBundle:Admin:sendMessage }
+    
+admin_user:
+    path:     /user
+    defaults: { _controller: MedicalMedicalBundle:Admin:user }
+    
+admin_article:
+    path:     /article
+    defaults: { _controller: MedicalMedicalBundle:Admin:article }
+    
+admin_bill:
+    path:     /bill
+    defaults: { _controller: MedicalMedicalBundle:Admin:bill }
+    
+admin_edit_article:
+    path:     /edit/article/{id}
+    defaults: { _controller: MedicalMedicalBundle:Admin:editArticle }
+    
+admin_add_article:
+    path:     /article/{id}/{etat}
+    defaults: { _controller: MedicalMedicalBundle:Admin:addArticle }   
+    
+admin_filter:
+    path:     /user/{filter}
+    defaults: { _controller: MedicalMedicalBundle:Admin:filter } 
+    
+admin_recherche:
+    path:     /search
+    defaults: { _controller: MedicalMedicalBundle:Admin:recherche }
+    
+admin_articale_not:
+    path:     /article/not
+    defaults: { _controller: MedicalMedicalBundle:Admin:rechercheArticle }

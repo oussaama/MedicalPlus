@@ -1,0 +1,49 @@
+
+Patient_ph_Description:
+    path:     /pharmacy/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:descriptionPh }
+    
+Patient_Be_description:
+    path:     beauty/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:descriptionBeauty }
+    
+Patient_Do_description:
+    path:     doctor/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:descriptionDoctor }
+    
+Patient_Lab_description:
+    path:     laboratory/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:descriptionLaboratory }
+    
+FormAppointment:
+    path:     appointment/book/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:FormAppointment }
+
+book_appointment:
+    path:     appointment/book/date/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:bookAppointment }
+    
+medicament_cart:
+    path:     cart/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:addMedicamentCard }
+
+patient_medicament:
+    path:     categorie/{id}/{cat}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:categorieMedicament }
+    
+patient_Do_commentaire:
+    path:     commentaire/{id}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:commentaireDoctor }
+    
+Patient_payment:
+    path:     payment/{id}/{price}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:payment }
+
+Patient_facture:
+    path:     facture/{id}/{price}
+    defaults: { _controller: MedicalMedicalBundle:Patient/Patient:facture }
+    
+Menu_Patient:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMenu/menuPatient.yml"
+    prefix:   /
+    

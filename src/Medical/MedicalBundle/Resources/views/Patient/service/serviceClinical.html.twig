@@ -1,0 +1,195 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}CLINIC{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css" media="all"/> 
+    <link rel="stylesheet" href="{{ asset('css/sliders/simple-slider/simple-slider.css') }}" type="text/css" media="all"/>    
+{% endblock %}
+{% block body %}
+    <div class="kl-slideshow simpleslider__slideshow maskcontainer--mask5">
+        <div class="fake-loading loading-2s"></div>
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__bgimage" style="background-image:url({{ asset('images/general-bg-7.jpg') }});background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+            <div class="kl-bg-source__overlay" style="background-color:rgba(10,11,130,0.5)"></div>
+        </div>
+        <div class="th-sparkles"></div>
+        <div class="kl-slideshow-inner container kl-slideshow-safepadding">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="zn_simple_slider_container showOnMouseover zn_has_thumbs zn-shadow-lifted kl-flex--classic">
+                        <ul class="zn_general_carousel cfs--default " data-fancy="false" data-transition="slide" data-direction="left" data-autoplay="1" data-timout="5000" data-easing="easeOutExpo" data-thumbs="zn_has_thumbs">
+                            <li class="cfs--item cfs--active-item" data-thumb="{{ asset('images/sliders/Working-Space-150x60.jpg') }}">
+                                <a class="slide__link" href="#" target="_self">
+                                    <div class="zn_simple_slider-itemimg" style="background-image:url({{ asset('images/sliders/Working-Space-1170x470.jpg') }});"></div>
+                                </a>
+                                <div class="flex-caption-wrapper">
+                                    <h2 class="flex-caption">FULLY EQUIPPED <br>EMERGENCY READY</h2>
+                                </div>
+                            </li>
+                            <li class="cfs--item" data-thumb="{{ asset('images/sliders/simpleslide-1-150x60.jpg') }}">
+                                <a class="slide__link" href="#" target="_self">
+                                    <div class="zn_simple_slider-itemimg" style="background-image:url({{ asset('images/sliders/simpleslide-1-1170x470.jpg') }});"></div>
+                                </a>
+                                <div class="flex-caption-wrapper">
+                                    <h2 class="flex-caption">LUXURIOUS RESIDENCE <br>AND ATMOSPHERE FOR PATIENTS</h2>
+                                </div>
+                            </li>
+                            <li class="cfs--item" data-thumb="{{ asset('images/sliders/man-791049_1280-150x60.jpg') }}">
+                                <a class="slide__link" href="#" target="_self">
+                                    <div class="zn_simple_slider-itemimg" style="background-image:url({{ asset('images/sliders/man-791049_1280-1170x470.jpg')}} );"></div>
+                                </a>
+                                <div class="flex-caption-wrapper">
+                                    <h2 class="flex-caption">POWERED BY HIGH TECHNOLOGIES<br>AND LATEST ADVANCEMENTS IN THE FEILD</h2>
+                                </div>
+                            </li>
+                            <li class="cfs--item" data-thumb="{{ asset('images/sliders/ios-alt-03-150x60.jpg') }}">
+                                <a class="slide__link" href="#" target="_self">
+                                    <div class="zn_simple_slider-itemimg" style="background-image:url({{ asset('images/sliders/ios-alt-03-1170x470.jpg') }});"></div>
+                                </a>
+                                <div class="flex-caption-wrapper">
+                                    <h2 class="flex-caption"> FRIENDLY ENVIRONMENT  <br>THERAPEUTIC EXPERIENCE </h2>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="zn_simple_carousel-pagi cfs--pagination zn_has_thumbs">
+                            <a href="#1" style="background-image:url({{ asset('images/sliders/simpleslide-1-150x60.jpg') }});" class=""></a>
+                            <a href="#2" style="background-image:url({{ asset('images/sliders/man-791049_1280-150x60.jpg') }});" class=""></a>
+                            <a href="#3" style="background-image:url({{ asset('images/sliders/ios-alt-03-150x60.jpg') }});" class=""></a>
+                            <a href="#4" style="background-image:url({{ asset('images/sliders/Working-Space-150x60.jpg') }});" class="selected"></a>
+                        </div>
+                        <div class="zn_simple_carousel-nav">
+                            <span class="zn_simple_carousel-arr zn_general_carousel-prev cfs--prev"><span class="glyphicon glyphicon-chevron-left"></span></span>
+                            <span class="zn_simple_carousel-arr zn_general_carousel-next cfs--next"><span class="glyphicon glyphicon-chevron-right"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kl-bottommask kl-bottommask--mask5">
+            <svg width="2700px" height="64px" class="svgmask" viewbox="0 0 2700 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+            <filter x="-50%" y="-50%" width="200%" height="200%" filterunits="objectBoundingBox" id="filter-mask5">
+                <feoffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feoffset>
+                <fegaussianblur stddeviation="1.5" in="shadowOffsetInner1" result="shadowBlurInner1"></fegaussianblur>
+                <fecomposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></fecomposite>
+                <fecolormatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></fecolormatrix>
+                <femerge>
+                    <femergenode in="SourceGraphic"></femergenode>
+                    <femergenode in="shadowMatrixInner1"></femergenode>
+                </femerge>
+            </filter>
+            </defs>
+            <path d="M1892,0 L2119,44.993 L2701,45 L2701.133,63.993 L-0.16,63.993 L1.73847048e-12,45 L909,44.993 L1892,0 Z" class="bmask-bgfill" fill="#f5f5f5" filter="url(#filter-mask5)"></path>
+            <path d="M2216,44.993 L2093,55 L1882,6 L995,62 L966,42 L1892,0 L2118,44.993 L2216,44.993 L2216,44.993 Z" fill="#cd2122" class="bmask-customfill" filter="url(#filter-mask5)"></path>
+            </svg>
+        </div>
+    </div>
+    <section class="hg_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix tbk--left tbk-symbol--line tbk-icon-pos--after-title ptop-35 pbottom-65">
+                        <h2 class="tbk__title fs-34 black montserrat"><strong>CLINICAL</strong></h2>
+                        <div class="tbk__symbol"><span></span></div>
+                        <h4 class="tbk__subtitle fs-30 fw-thin">Top notch services , affordable prices , no compromises.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="cd-main-content">
+        <div class="cd-tab-filter-wrapper">
+            <div class="cd-tab-filter">
+                <ul class="cd-filters" style="padding-left:120px; margin-top: -20px;">
+                    <li class="placeholder"> 
+                        <a data-type="all" href="#0">{{ 'appointment.process.all'|trans }}</a>
+                    </li> 
+                    <li class="filter"><a class="selected" href="#0" data-type="all">{{ 'appointment.process.all'|trans }}</a></li>
+                    <li class="filter" data-filter=".t"><a href="#0" data-type=".t">Tunis</a></li>
+                    <li class="filter" data-filter=".m"><a href="#0" data-type=".m">Manouba</a></li>
+                    <li class="filter" data-filter=".a"><a href="#0" data-type=".a">Ariena</a></li>
+                    <li class="filter" data-filter=".b"><a href="#0" data-type=".b">Ben Arous</a></li>
+                </ul> 
+            </div> 
+        </div>
+
+        <section class="cd-gallery">
+            <ul>
+                <li class="mix item ch t" alt="">
+                    <div class="inner-item" style="border-left:3px solid #2980b8;box-shadow: 0 0 5px rgba(0, 0, 0, .4);">
+                        <div class="doctor-header">
+                            <p>Hopital</p>
+                        </div>
+                        <div class="img-intro">
+                            <img src="{{ asset('uploads/hospital.png') }}" width="800" height="600" alt=""/>
+                        </div>
+                        <h4 class="title">
+                            <div class="descriptions-doctor">
+                                <div class="speciality">  
+                                    <p class="champs-14 pos"><span class="glyphicon glyphicon-tags desc"></span><strong> </strong></p>
+                                    <p class="champs-14 pos"><span class="glyphicon glyphicon-map-marker desc"></span><strong> adress</strong></p>
+                                </div>
+                            </div>
+                        </h4>
+                        <div class="clear"></div>
+                    </div>
+                </li>   
+            </ul>
+        </section> 
+
+        <div class="cd-filter">
+            <form>
+                <div class="cd-filter-block">
+                    <h4>{{ 'appointment.filter.s'|trans }}</h4>
+                    <ul class="cd-filter-content cd-filters list" >
+                        <li>
+                            <input class="filter" data-filter=".chr" type="checkbox" id="chr" >
+                            <label class="checkbox-label" for="chr">les centres hospitaliers régionaux universitaires</label>
+                        </li>
+                        <li>
+                            <input class="filter" data-filter=".ch" type="checkbox" id="ch" >
+                            <label class="checkbox-label" for="ch">les centres hospitaliers</label>
+                        </li>
+                        <li>
+                            <input class="filter" data-filter=".chs" type="checkbox" id="chs" >
+                            <label class="checkbox-label" for="chs">les centres hospitaliers spécialisés en psychiatrie </label>
+                        </li>
+                    </ul> 
+                </div>
+
+                <div class="cd-filter-block">
+                    <h4>{{ 'appointment.filter.st'|trans }}</h4>
+
+                    <div class="cd-filter-content">
+                        <div class="cd-select cd-filters">
+                            <select class="filter" name="selectThis" id="selectThis">
+                                <option value=".t">Tunis</option>
+                                <option value=".m">Manouba</option>
+                                <option value=".b">Ben Arous</option>
+                                <option value=".a">Ariena</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </form>
+            <a href="#0" class="cd-close"><span class="">Close</a>
+        </div>
+
+        <a href="#0" class="cd-filter-trigger">Filters</a>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/caroufredsel/classic-slider/general-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mixitup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-portfolio-sortable.js') }}"></script>
+    <script>
+        $("#service").addClass("activeItem");
+        $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+{% endblock %}

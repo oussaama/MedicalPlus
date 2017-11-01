@@ -1,0 +1,5 @@
+Medical\MedicalBundle\Entity\User:
+    properties:
+        cin:
+           - Length: {min: 8 ,minMessage: "La lettre de motivation ne doit pas faire plus de {{ limit }} caractères" }
+       

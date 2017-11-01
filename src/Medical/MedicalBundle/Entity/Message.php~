@@ -1,0 +1,273 @@
+<?php
+
+namespace Medical\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Message
+ *
+ * @ORM\Table(name="message")
+ * @ORM\Entity(repositoryClass="Medical\MedicalBundle\Repository\MessageRepository")
+ */
+class Message
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_msg", type="string", length=255)
+     */
+    private $emailMsg;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject_msg", type="string", length=255)
+     */
+    private $subjectMsg;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="contenu", type="text")
+     */
+    private $contenu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_msg", type="string", length=15)
+     */
+    private $typeMsg;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_msg", type="date")
+     */
+    private $dateMsg;
+
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="fisrtname_msg" type="string" length=30)
+     */
+    private $firstnameMsg;
+    
+     /**
+     * @var string
+     * 
+     * @ORM\Column(name="lastname_msg" type="string" length=30)
+     */
+    private $lastnameMsg;
+    
+     /**
+     * @var string
+     * 
+     * @ORM\Column(name="entreprise_msg" type="string" length=30)
+     */
+    private $entrepriseMsg;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set emailMsg
+     *
+     * @param string $emailMsg
+     * @return Message
+     */
+    public function setEmailMsg($emailMsg)
+    {
+        $this->emailMsg = $emailMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get emailMsg
+     *
+     * @return string 
+     */
+    public function getEmailMsg()
+    {
+        return $this->emailMsg;
+    }
+
+    /**
+     * Set subjectMsg
+     *
+     * @param string $subjectMsg
+     * @return Message
+     */
+    public function setSubjectMsg($subjectMsg)
+    {
+        $this->subjectMsg = $subjectMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get subjectMsg
+     *
+     * @return string 
+     */
+    public function getSubjectMsg()
+    {
+        return $this->subjectMsg;
+    }
+
+    /**
+     * Set contenu
+     *
+     * @param text $contenu
+     * @return Message
+     */
+    public function setContenu($contenu)
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    /**
+     * Get contenu
+     *
+     * @return text 
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
+    }
+
+    /**
+     * Set typeMsg
+     *
+     * @param string $typeMsg
+     * @return Message
+     */
+    public function setTypeMsg($typeMsg)
+    {
+        $this->typeMsg = $typeMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get typeMsg
+     *
+     * @return string 
+     */
+    public function getTypeMsg()
+    {
+        return $this->typeMsg;
+    }
+
+    /**
+     * Set dateMsg
+     *
+     * @param \DateTime $dateMsg
+     * @return Message
+     */
+    public function setDateMsg($dateMsg)
+    {
+        $this->dateMsg = $dateMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get dateMsg
+     *
+     * @return \DateTime 
+     */
+    public function getDateMsg()
+    {
+        return $this->dateMsg;
+    }
+
+    /**
+     * Set firstnameMsg
+     *
+     * @param string $firstnameMsg
+     * @return Message
+     */
+    public function setFirstnameMsg($firstnameMsg)
+    {
+        $this->firstnameMsg = $firstnameMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get firstnameMsg
+     *
+     * @return string 
+     */
+    public function getFirstnameMsg()
+    {
+        return $this->firstnameMsg;
+    }
+
+    /**
+     * Set lastnameMsg
+     *
+     * @param string $lastnameMsg
+     * @return Message
+     */
+    public function setLastnameMsg($lastnameMsg)
+    {
+        $this->lastnameMsg = $lastnameMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get lastnameMsg
+     *
+     * @return string 
+     */
+    public function getLastnameMsg()
+    {
+        return $this->lastnameMsg;
+    }
+    
+     /**
+     * Set entrepriseMsg
+     *
+     * @param string $entrepriseMsg
+     * @return Message
+     */
+    public function setEntrepriseMsg($entrepriseMsg)
+    {
+        $this->entrepriseMsg = $entrepriseMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get entrepriseMsg
+     *
+     * @return string 
+     */
+    public function getEntrepriseMsg()
+    {
+        return $this->entrepriseMsg;
+    }
+}

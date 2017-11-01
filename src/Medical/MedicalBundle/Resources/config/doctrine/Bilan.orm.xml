@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Medical\MedicalBundle\Entity\Bilan" table="bilan">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="referenceBilan" type="string" column="reference_bilan" nullable="false"/>
+    <field name="nomBilan" type="string" column="nom_bilan" length="255" nullable="false"/>
+    <field name="dateBilan" type="datetime" column="date_bilan" nullable="false"/>
+    <field name="entrepriseBilan" type="integer" column="entreprise_bilan" nullable="false"/>
+    <field name="descBilan" type="string" column="desc_bilan" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,42 @@
+
+    <h1>Bilan list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Referencebilan</th>
+                <th>Nombilan</th>
+                <th>Datebilan</th>
+                <th>Entreprisebilan</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bilan in bilans %}
+            <tr>
+                <td><a href="{{ path('bilan_show', { 'id': bilan.id }) }}">{{ bilan.referenceBilan }}</a></td>
+                <td>{{ bilan.nomBilan }}</td>
+                <td>{% if bilan.dateBilan %}{{ bilan.dateBilan|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ bilan.entrepriseBilan }}</td>
+                <td>{{ bilan.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bilan_show', { 'id': bilan.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bilan_edit', { 'id': bilan.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bilan_new',{'id':app.user.id}) }}">Create a new entry</a>
+        </li>
+    </ul>

@@ -1,0 +1,432 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}{{'header.menu.index'|trans }}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/ios/style.css') }}" type="text/css" media="all"/>
+    <style type="text/css"> 
+        .borderanim2-svg{
+            width: 400px;
+        }
+        .borderanim2-svg .media-container__text{
+            line-height: 70px;
+        }
+        .borderanim2-svg__shape{
+            strFoke-dasharray: 100 1000; stroke-dashoffset: -620; stroke: #2980b9;
+        }
+        .style2:hover .borderanim2-svg__shape{
+            stroke-dasharray: 940;
+        }
+    </style>
+{% endblock %}  
+
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div class="kl-slideshow iosslider-slideshow uh_light_gray maskcontainer--shadow_ud iosslider--custom-height scrollme kl-slider-loaded pb-47">
+        <div class="kl-loader">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewbox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+                <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(98.3774 20 20)">
+                    <animatetransform attributetype="xml" attributename="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatcount="indefinite"></animatetransform>
+                </path>
+            </svg>
+        </div>
+        <div class="bgback"></div>
+        <div class="th-sparkles"></div>
+        <div class="iosSlider kl-slideshow-inner animateme" data-trans="6000" data-autoplay="1" data-infinite="true" data-when="span" data-from="0" data-to="0.75" data-translatey="300" data-easing="linear">
+            <div class="kl-iosslider hideControls">
+                <div class="item iosslider__item">
+                    <div class="slide-item-bg" style="background-image:url({{ asset('images/sliders/ios02-lq.jpg') }});"></div>
+                    <div class="kl-slide-overlay" style="background:rgba(32,55,152,0.4); background: -moz-linear-gradient(left, rgba(32,55,152,0.4) 0%, rgba(17,93,131,0.25) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(32,55,152,0.4)), color-stop(100%,rgba(17,93,131,0.25))); background: -webkit-linear-gradient(left, rgba(32,55,152,0.4) 0%,rgba(17,93,131,0.25) 100%); background: -o-linear-gradient(left, rgba(32,55,152,0.4) 0%,rgba(17,93,131,0.25) 100%); background: -ms-linear-gradient(left, rgba(32,55,152,0.4) 0%,rgba(17,93,131,0.25) 100%); background: linear-gradient(to right, rgba(32,55,152,0.4) 0%,rgba(17,93,131,0.25) 100%); "></div>
+                    <div class="container kl-iosslide-caption kl-ioscaption--style4 s4ext fromleft klios-alignleft kl-caption-posv-middle">
+                        <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                            <h2 class="main_title has_titlebig "><span><strong>{{ 'patient.slider.s1.i1'|trans }} </strong></span></h2>
+                            <h3 class="title_big">{{ 'patient.slider.s1.i2'|trans }} <strong>{{ 'patient.slider.s1.i2g'|trans }}</strong></h3>
+                            <a class="more" href="{{ path('Patient_appointment') }}" target="_self">{{ 'patient.slider.s1.i3'|trans }}</a>
+                            <h4 class="title_small">{{ 'patient.slider.s1.i4'|trans }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item iosslider__item">
+                    <div class="slide-item-bg" style="background-image:url( {{ asset('images/sliders/216h-lq.jpg') }} );"></div>
+                    <div class="kl-slide-overlay" style="background-color:rgba(6,111,217,0.3)"></div>
+                    <div class="container kl-iosslide-caption kl-ioscaption--style4 fromright klios-alignleft kl-caption-posv-middle">
+                        <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                            <h2 class="main_title has_titlebig "><span><strong>{{ 'patient.slider.s2.i1'|trans }}</strong> </span></h2>
+                            <h3 class="title_big"><span style="ff-alternative">{{ 'patient.slider.s2.i2'|trans }}</span></h3>
+                            <a class="more " href="{{ path('Patient_ServiceLaboratory') }}" target="_self">{{ 'patient.slider.s2.i3'|trans }}</a>
+                            <h4 class="title_small">{{ 'patient.slider.s2.i4'|trans }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item iosslider__item">
+                    <div class="kl-video-container">
+                        <div class="kl-video-wrapper video-grid-overlay">
+                            <div class="kl-video valign halign" style="width: 100%; height: 100%;" data-setup="{&quot;position&quot;: &quot;absolute&quot;, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;muted&quot;: true, &quot;mp4&quot;:&quot;videos/856713-lq.mp4&quot;, &quot;fallback_image&quot;:&quot;videos/856713-lq.jpg&quot;, &quot;video_ratio&quot;: &quot;1.7778&quot;}">
+                                <div class="slide-item-bg" style="background-image:url( {{ asset('images/sliders/healtlife-home-page.jpg') }} );"></div>
+                            </div>
+                            <ul class="kl-video--controls" data-position="bottom-left">
+                                <li><a href="#" class="btn-toggleplay"><i class="kl-icon glyphicon glyphicon-play circled-icon"></i></a></li>
+                                <li><a href="#" class="btn-audio"><i class="kl-icon glyphicon glyphicon-volume-up circled-icon ci-xsmall mute"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="kl-slide-overlay" style="background-color:rgba(4,43,135,0.45)"></div>
+                    <div class="container kl-iosslide-caption kl-ioscaption--style5 fromleft klios-alignleft kl-caption-posv-middle">
+                        <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                            <h2 class="main_title has_titlebig "><span>{{ 'patient.slider.s3.i1'|trans }}<br>{{ 'patient.slider.s3.i2'|trans }}</span></h2>
+                            <h3 class="title_big search"><strong>{{ 'patient.slider.s3.i3'|trans }}</strong></h3>
+                            <div class="more">
+                                <a class="btn btn-lined" href="{{ path('Patient_ServiceClinical') }}" target="_self">{{ 'patient.slider.s3.i4'|trans }}</a>
+                                <a class="btn btn-lined" href="{{ path('Patient_ServiceHospital') }}" target="_self" style="margin-left:10px;">{{ 'patient.slider.s3.i5'|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item iosslider__item">
+                    <div class="slide-item-bg" style="background-image:url( {{ asset('images/sliders/ios-living.jpg') }});"></div>
+                    <div class="kl-slide-overlay" style="background:rgba(91,48,0,0.3); background: -moz-linear-gradient(left, rgba(91,48,0,0.3) 0%, rgba(53,53,53,0.25) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(91,48,0,0.3)), color-stop(100%,rgba(53,53,53,0.25))); background: -webkit-linear-gradient(left, rgba(91,48,0,0.3) 0%,rgba(53,53,53,0.25) 100%); background: -o-linear-gradient(left, rgba(91,48,0,0.3) 0%,rgba(53,53,53,0.25) 100%); background: -ms-linear-gradient(left, rgba(91,48,0,0.3) 0%,rgba(53,53,53,0.25) 100%); background: linear-gradient(to right, rgba(91,48,0,0.3) 0%,rgba(53,53,53,0.25) 100%); "></div>
+                    <div class="container kl-iosslide-caption kl-ioscaption--style5 zoomin klios-aligncenter kl-caption-posv-middle">
+                        <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                            <h2 class="main_title has_titlebig kl-ios-has-sqbox "><span class="kl-ios-sqbox"></span><span><strong>{{ 'patient.slider.s4.i1'|trans }}</strong></span></h2>
+                            <h3 class="title_big"><strong>{{ 'patient.slider.s4.i2'|trans }}</strong></h3>
+                            <div class="more">
+                                <a class="btn btn-fullcolor" href="{{ path('Patient_ServicePharmacy') }}" target="_self">{{ 'patient.slider.s4.i3'|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item iosslider__item">
+                    <div class="slide-item-bg" style="background-image:url( {{ asset('images/sliders/beauty.jpg') }} );"></div>
+                    <div class="kl-slide-overlay" style="background:rgba(132,30,193,0.25); background: -moz-linear-gradient(left, rgba(132,30,193,0.25) 0%, rgba(61,15,15,0.3) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(132,30,193,0.25)), color-stop(100%,rgba(61,15,15,0.3))); background: -webkit-linear-gradient(left, rgba(132,30,193,0.25) 0%,rgba(61,15,15,0.3) 100%); background: -o-linear-gradient(left, rgba(132,30,193,0.25) 0%,rgba(61,15,15,0.3) 100%); background: -ms-linear-gradient(left, rgba(132,30,193,0.25) 0%,rgba(61,15,15,0.3) 100%); background: linear-gradient(to right, rgba(132,30,193,0.25) 0%,rgba(61,15,15,0.3) 100%);"></div>
+                    <div class="container kl-iosslide-caption kl-ioscaption--style6 fromleft klios-aligncenter kl-caption-posv-middle">
+                        <div class="animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="0.1" data-easing="linear">
+                            <h2 class="main_title has_titlebig "><span><strong>{{ 'header.menu.be'|trans }}</strong></span></h2>
+                            <h4 class="title_small">{{ 'patient.slider.s5.i2'|trans }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kl-iosslider-prev" style="cursor: pointer;">
+                <span class="thin-arrows ta__prev"></span>
+                <div class="btn-label">{{'index.head.prev'|trans}}</div>       
+            </div>
+            <div class="kl-iosslider-next" style="cursor: pointer;">
+                <span class="thin-arrows ta__next"></span>
+                <div class="btn-label">{{'index.head.next'|trans}}</div>
+            </div>
+        </div>
+        <div class="kl-ios-selectors-block bullets2">
+            <div class="selectors">
+                <div class="item iosslider__bull-item first"></div>
+                <div class="item iosslider__bull-item"></div>
+                <div class="item iosslider__bull-item"></div>
+                <div class="item iosslider__bull-item selected"></div>
+                <div class="item iosslider__bull-item"></div>
+            </div>
+        </div>
+        <div class="scrollbarContainer"></div>
+        <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    </div>
+    <section class="hg_section ptop-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="action_box style3" data-arrowpos="center" style="margin-top:-25px;">
+                        <div class="action_box_inner">
+                            <div class="action_box_content">
+                                <div class="ac-content-text">
+                                    <h4 class="text"><span class="fw-thin">{{ 'patient.home.slogan.p1'|trans }}<span class="fw-semibold">{{ 'patient.home.slogan.p2'|trans }}</span> {{ 'patient.home.slogan.p3'|trans }} <span class="fw-semibold">{{ 'patient.home.slogan.p4'|trans }}</span></h4>
+                                    <h5 class="ac-subtitle">{{ 'patient.home.slogan.p5'|trans }}</h5>
+                                </div>
+                                <div class="ac-buttons">
+                                    <a class="btn btn-fullwhite ac-btn" href="about-us.html" target="_blank">{{ 'patient.home.slogan.b2'|trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section ptop-65">
+        <div class="container"><div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="kl-title-block clearfix text-center tbk-symbol-- tbk-icon-pos--after-title">
+                        <h3 class="tbk__title montserrat fs-44 lh-44 fw-bold light-gray3">{{ 'patient.home.services.title'|trans }}</h3>
+                        <h4 class="tbk__subtitle fs-18 fw-vthin">{{ 'patient.home.services.titled'|trans }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section">
+        <div class="full_width">
+            <div class="row">
+                <div class="col-sm-offset-1 col-md-10 col-sm-10">
+                    <div class="row gutter-md">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="kl-iconbox kl-iconbox--fleft text-left">
+                                <div class="kl-iconbox__inner">
+                                    <div class="kl-iconbox__icon-wrapper ">
+                                        <img class="kl-iconbox__icon" src="{{ asset('images/appointment.png') }}" alt="Stunning Page Builder" width="66" height="66">
+                                    </div>
+                                    <div class="kl-iconbox__content-wrapper">
+                                        <div class="kl-iconbox__el-wrapper kl-iconbox__title-wrapper">
+                                            <h3 class="kl-iconbox__title fs-22 lh-30 fw-normal gray2">{{ 'patient.home.services.serv1.t1'|trans }} </br>{{ 'patient.home.services.serv1.t2'|trans }}</h3>
+                                        </div>
+                                        <div class=" kl-iconbox__el-wrapper kl-iconbox__desc-wrapper">
+                                            <p class="kl-iconbox__desc fs-14 gray">{{ 'patient.home.services.serv1.p3'|trans }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="kl-iconbox kl-iconbox--fleft text-left">
+                                <div class="kl-iconbox__inner">
+                                    <div class="kl-iconbox__icon-wrapper ">
+                                        <img class="kl-iconbox__icon" src="{{ asset('images/doctor.png') }}" alt="Iconic Awarded Design" width="66" height="66"></div>
+                                    <div class="kl-iconbox__content-wrapper">
+                                        <div class="kl-iconbox__el-wrapper kl-iconbox__title-wrapper">
+                                            <h3 class="kl-iconbox__title fs-22 lh-30 fw-normal gray2">{{ 'patient.home.services.serv2.t1'|trans }}</h3>
+                                        </div>
+                                        <div class=" kl-iconbox__el-wrapper kl-iconbox__desc-wrapper">{{ 'patient.home.services.serv2.p1'|trans }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="kl-iconbox kl-iconbox--fleft text-left">
+                                <div class="kl-iconbox__inner">
+                                    <div class="kl-iconbox__icon-wrapper ">
+                                        <img class="kl-iconbox__icon" src="{{ asset('images/medicament.png') }}" alt="Featurewise Complete" width="66" height="66">
+                                    </div>
+                                    <div class="kl-iconbox__content-wrapper">
+                                        <div class="kl-iconbox__el-wrapper kl-iconbox__title-wrapper">
+                                            <h3 class="kl-iconbox__title fs-22 lh-30 fw-normal gray2">{{ 'patient.home.services.serv3.t1'|trans }}</h3>
+                                        </div>
+                                        <div class=" kl-iconbox__el-wrapper kl-iconbox__desc-wrapper">
+                                            <p class="kl-iconbox__desc fs-14 gray">{{ 'patient.home.services.serv3.p1'|trans }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="kl-iconbox kl-iconbox--fleft text-left">
+                                <div class="kl-iconbox__inner">
+                                    <div class="kl-iconbox__icon-wrapper ">
+                                        <img class="kl-iconbox__icon" src="{{ asset('images/article.png') }}" alt="Mature project" width="66" height="66">
+                                    </div>
+                                    <div class="kl-iconbox__content-wrapper">
+                                        <div class="kl-iconbox__el-wrapper kl-iconbox__title-wrapper">
+                                            <h3 class="kl-iconbox__title fs-22 lh-30 fw-normal gray2">{{ 'patient.home.services.serv4.t1'|trans }}</h3>
+                                        </div>
+                                        <div class=" kl-iconbox__el-wrapper kl-iconbox__desc-wrapper">
+                                            <p class="kl-iconbox__desc fs-14 gray">{{ 'patient.home.services.serv4.p1'|trans }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_appointment') }}" target="_blank">
+                            <img src="{{ asset('images/imageboxes-set1-011-460x307.jpg') }}" width="360" height="240" alt="RESCUE SUPPORT" title="RESCUE SUPPORT" class="img-responsive imgbox_image">
+                                <span class="imgboxes-border-helper"></span>
+                                <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a1'|trans }}</h3>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_ServicePharmacy') }}" target="_blank">
+                            <img src="{{ asset('images/imageboxes-set1-021-460x307.jpg') }}" width="360" height="240" alt="E-COMMERCE READY" title="E-COMMERCE READY" class="img-responsive imgbox_image" />
+                            <span class="imgboxes-border-helper"></span>
+                            <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a2'|trans }}</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_ServiceBeauty') }}" target="_blank">
+                            <img src="{{ asset('images/gpg4-640x426.jpg') }}" width="360" height="240" alt="" title="" class="img-responsive imgbox_image" style="height: 216px;"/>
+                            <span class="imgboxes-border-helper"></span>
+                            <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a3'|trans }}</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_ServiceLaboratory') }}" target="_blank">
+                            <img src="{{ asset('images/sliders/labo-460x307.jpg') }}" width="360" height="240" alt="" title="" class="img-responsive imgbox_image">
+                                <span class="imgboxes-border-helper"></span>
+                                <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a4'|trans }}</h3>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_ServiceHospital') }}" target="_blank">
+                            <img src="{{ asset('images/sliders/hospital-460x307.jpg') }}" width="360" height="240" alt="" title="" class="img-responsive imgbox_image" />
+                            <span class="imgboxes-border-helper"></span>
+                            <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a5'|trans }}</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box image-boxes imgboxes_style4 kl-title_style_left">
+                        <a class="imgboxes4_link imgboxes-wrapper" href="{{ path('Patient_ServiceClinical') }}" target="_blank">
+                            <img src="{{ asset('images/sliders/nivoslider-4.jpg') }}" width="360" height="240" alt="MULTI-LANGUAGE READY" title="MULTI-LANGUAGE READY" class="img-responsive imgbox_image" style="height: 240px;"/>
+                            <span class="imgboxes-border-helper"></span>
+                            <h3 class="m_title imgboxes-title">{{ 'patient.home.actors.a6'|trans }}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section pbottom-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="screenshot-box kl-style-2 fixclear">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="left-side">
+                                    <h3 class="title"><span class="fw-thin">{{ 'patient.home.objectifs.t1'|trans }}<span class="fw-semibold"> {{ 'patient.home.objectifs.t2'|trans }}</span></span></h3>
+                                    <ul class="features">
+                                        <li><h4>{{ 'patient.home.objectifs.obj1'|trans }}</h4><span>{{ 'patient.home.objectifs.obj1d'|trans }}</span></li>
+                                        <li><h4>{{ 'patient.home.objectifs.obj2'|trans }}</h4><span>{{ 'patient.home.objectifs.obj2d'|trans }}</span></li>
+                                        <li><h4>{{ 'patient.home.objectifs.obj3'|trans }}</h4><span>{{ 'patient.home.objectifs.obj3d'|trans }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="thescreenshot">
+                                    <div class="controls">
+                                        <a href="#" class="prev"></a>
+                                        <a href="#" class="next"></a>
+                                    </div>
+                                    <ul class="screenshot-carousel" data-carousel-pagination=".sc-pagination">
+                                        <li><img src="{{ asset('images/office-820390_640-580x380.jpg') }}" width="555" height="364" alt=""/></li>
+                                        <li><img src="{{ asset('images/ipad-605439_640-580x380.jpg') }}" width="555" height="364" alt=""/></li>
+                                        <li><img src="{{ asset('images/phone-690091_640-580x380.jpg') }}" width="555" height="364" alt=""/></li>
+                                    </ul>
+                                    <div class="sc-pagination"></div> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section bg-white">
+        <div class="full_width">
+            <div class="row gutter-lg"><div class="col-md-5 col-sm-12">
+                    <div class="media-container style2 h-520">
+                        <div class="kl-bg-source">
+                            <div class="kl-bg-source__bgimage"><img src="{{ asset('images/medical.jpg') }} " class="picture"/></div>
+                        </div>
+                        <div class="media-container__link media-container__link--btn media-container__link--style-borderanim2"  data-lightbox="iframe">
+                            <div class="borderanim2-svg">
+                                <svg height="70" width="400" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="borderanim2-svg__shape" height="70" width="400"></rect>
+                                </svg>
+                                <span class="media-container__text">MEDICAL + </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="row hg_col_eq_last">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="kl-title-block clearfix text-left tbk-symbol--line tbk-icon-pos--after-title pbottom-0">
+                                <h3 class="tbk__title montserrat fs-38 lh-46 fw-bold">{{ 'patient.home.desc.t1'|trans }}<span class="text-custom fw-normal tcolor">&amp;</span>{{ 'patient.home.desc.t2'|trans }}</h3>
+                                <span class="tbk__symbol "><span></span></span>
+                                <h4 class="tbk__subtitle fs-18 lh-32 fw-vthin">{{ 'patient.home.desc.p1'|trans }}</h4>
+                            </div>
+                            <div class="hg_separator style2 clearfix"></div>
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="text_box">
+                                <p>{{ 'patient.home.desc.p2'|trans }}</p>
+                                <p>{{ 'patient.home.desc.p3'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="adbox video">
+                                <img src="{{ asset('images/sleepy1_1x-400x300.jpg') }}" alt="" width="159" height="119">
+                                    <div class="video_trigger_wrapper">
+                                        <div class="adbox_container">
+                                            <a class="playVideo" data-lightbox="iframe" href="https://www.youtube.com/watch?v=Ft2PIgBdXj8"></a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="latest_posts acc-style">
+                        <h3 class="m_title">{{ 'patient.home.art.l'|trans }}</h3>
+                        <a href="#" class="viewall">{{ 'patient.home.art.v'|trans }}</a>
+                        <div class="css3accordion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hg_section" style="margin-top:-40px;">
+        <div class="hg_section_size container">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4 col-sm-4">
+                        <div class="box image-boxes imgboxes_style1">
+                            <a class="hoverBorder" href="{{ path('medical_news_article',{'id':article.id,'user':article.username,'categorie':article.nomCat}) }}" target="_blank">
+                                <span class="hoverBorderWrapper"><img src="{{ asset('uploads/article/'~article.photoArt) }}" width="640" height="425" alt="MULTIPURPOSE TEMPLATE" title="MULTIPURPOSE TEMPLATE"><span class="theHoverBorder"></span></span>
+                                <h6>READ ON +</h6>
+                            </a><br>
+                                <a href="{{ path('medical_news_categorie',{'categorie':article.nomCat})}}"><em>{{article.nomCat}}</em></a>
+                                <h3 class="m_title imgboxes-title">{{ article.titre }}</h3>
+                                {{ article.contenuArt|truncate(60, false, '...')}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %} 
+    <link rel="stylesheet" type="text/css" src="{{ asset('admin/css/animate.css') }}"/>
+    <script type="text/javascript" src="{{ asset('sliders/ios/jquery.iosslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sliders/ios/kl-ios-slider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-screenshot-box.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-partners-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+    <script>
+        $("#home").addClass("activeItem");
+        $(".main-menu li#home").css("background", "#2980b8");
+    </script>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Medical\MedicalBundle\Entity\Notification" table="notification">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="destinateur" type="string" column="destinateur" length="40"/>
+        <field name="expediteur" type="string" column="expediteur" length="40"/>
+        <field name="sujetNot" type="string" column="sujet_not" length="100"/>
+        <field name="contenuNot" type="string" column="contenu_not" length="255"/>
+        <field name="dateNot" type="datetime" column="date_not"/>
+        <field name="etatNot" type="string" column="etat_not" length="10"/>
+    </entity>
+</doctrine-mapping>

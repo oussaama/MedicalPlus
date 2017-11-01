@@ -1,0 +1,64 @@
+medical_medical_medicament:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/medicament.yml"
+    prefix:    /{_locale}/medicament
+    requirements:
+        _locale: fr|en
+    
+medical_medical_bilan:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/bilan.yml"
+    prefix:    /{_locale}/bilan
+    requirements:
+        _locale: fr|en
+
+medical_medical_soin:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/soin.yml"
+    prefix:    /{_locale}/soin
+    requirements:
+        _locale: fr|en
+
+Medical:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingMedical.yml"
+    prefix:    /{_locale}
+    requirements:
+        _locale: fr|en
+    
+Patient:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingPatient.yml"
+    prefix:   /{_locale}/patient
+    requirements:
+        _locale: fr|en
+    
+Secretary:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingCabine.yml"
+    prefix:    /{_locale}/cabine
+    requirements:
+        _locale: fr|en
+    
+Pharmacy:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingPharmacy.yml"
+    prefix:    /{_locale}/pharmacy
+    requirements:
+        _locale: fr|en
+    
+Beauty:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingBeauty.yml"
+    prefix:    /{_locale}/beauty
+    requirements:
+        _locale: fr|en
+    
+Laboratory:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/routingLaboratory.yml"
+    prefix:    /{_locale}/laboratory
+    requirements:
+        _locale: fr|en
+   
+contact:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/contact.yml"
+    prefix:    /{_locale}/contact
+    requirements:
+        _locale: fr|en
+    
+admin:
+    resource: "@MedicalMedicalBundle/Resources/config/routing/admin.yml"
+    prefix:    /admin
+

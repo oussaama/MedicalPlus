@@ -1,0 +1,6 @@
+Laboratory_homepage:
+    path:     /home
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuLaboratory:indexLaboratory }
+Laboratory_balance:
+    path:     /balanceSheet
+    defaults: { _controller: MedicalMedicalBundle:menu/MenuLaboratory:balanceSheet }

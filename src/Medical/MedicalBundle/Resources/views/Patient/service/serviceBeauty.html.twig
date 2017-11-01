@@ -1,0 +1,114 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %}BEAUTY CENTER{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/sliders/circular-catalogue/circular-catalogue.css') }}" type="text/css" media="all"/>
+{% endblock %}
+
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:670px;">
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/sliders/beauty.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="ph-content-wrap ptop-170">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row" style="padding:320px 0px ;">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="{{ path('Patient_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                    <li>{{ 'header.menu.be'|trans }}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="th-sparkles"></div>
+    </div>
+    <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    <section class="hg_section ptop-80 pbottom-80">
+        <div class="container">
+            <section class="hg_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="elm-searchbox elm-searchbox--normal elm-searchbox--eff-typing">
+                                <div class="elm-searchbox__inner">
+                                    <form class="elm-searchbox__form" action="{{ path('patient_search',{'role':4})}}" method="post" >
+                                        <input name="s" maxlength="30" class="elm-searchbox__input" type="text" size="20" value="" placeholder="">
+                                        <span class="elm-searchbox__input-text"></span>
+                                        <button type="submit" id="searchbox_submit" class="elm-searchbox__submit glyphicon glyphicon-search"></button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="hg-portfolio-sortable">
+                        <ul id="portfolio-nav" class="fixclear">
+                            <li class="current"><a href="#" data-filter="*">All</a></li>
+                            <li class=""><a href="#" data-filter=".md">{{'centre.md'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".cd">{{'centre.cd'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".k">{{'centre.k'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".i">{{'centre.i'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".orth">{{'centre.orth'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".op">{{'centre.op'|trans}}</a></li>
+                            <li class=""><a href="#" data-filter=".di">{{'centre.di'|trans}}</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                        {% if utilisateurs|length != 0 %}
+                            <ul id="thumbs" class="fixclear" data-columns="4">  
+                                {% for beauty in utilisateurs %}
+                                    <li class="item kl-has-overlay {{ beauty.state }} even {{beauty.speciality}}" data-date="">
+                                        <div class="inner-item">
+                                            <div class="img-intro">
+                                                <a href="{{ asset('uploads/'~ beauty.picture ) }}" data-type="image" data-lightbox="image" class="hoverLink"></a><img src="{{ asset('uploads/'~ beauty.picture ) }}" width="200" height="200" alt="">
+                                                <div class="overlay">
+                                                    <div class="overlay-inner"><span class="glyphicon glyphicon-picture"></span></div>
+                                                </div>
+                                            </div>
+                                            <h4 class="title"><a href="{{ path('Patient_Be_description',{'id':beauty.id}) }}"><span class="name">{{ beauty.entrepriseName }}</span></a></h4>
+                                            <span class="moduleDesc">{{ beauty.adress }} {{ beauty.code}} ,{{beauty.city}} {{beauty.state}}<br> {{beauty.tel}}</span>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <div class="cd-fail-message">No results found</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{{asset('js/kl-plugins.js') }}"></script>
+    <script type="text/javascript" src="{{asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/sliders/caroufredsel/circular-catalogue/kl-circular-catalogue.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-custom.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.isotope.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-portfolio-sortable.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script> 
+    <script>
+        $("#service").addClass("activeItem");
+        $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+{% endblock %}

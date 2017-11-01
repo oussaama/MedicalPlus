@@ -1,0 +1,26 @@
+<div class="col-sm-12" id="setting">
+    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom form-right shadow">
+        <div class="contactForm">
+            <form action="{{ path('AddBeauty') }}" method="post" class="contact_form row" style="margin-top:-110px;" {{ form_enctype(form) }}>
+                <div class="cf_response"></div>
+                {{ form_start(form) }}
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.NAME)}}
+                    <label class="control-label" style="margin:168px 0 0 -5px;">NAME</label>
+                </p> 
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.STORAGE)}}
+                    <label class="control-label" style="margin:225px 0 0 -5px;">STORAGE</label>
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.PRICE)}}
+                    <label class="control-label" style="margin:280px 0 0 -5px;">PRICE</label>
+                </p>
+                <p class="col-sm-12 kl-fancy-form">
+                    {{ form_label(form.PICTURE)}}
+                </p>
+                {{ form_end(form) }}
+            </form>
+        </div>
+    </div>
+</div>

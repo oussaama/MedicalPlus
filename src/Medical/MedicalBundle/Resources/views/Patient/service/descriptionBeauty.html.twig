@@ -1,0 +1,153 @@
+{% extends "::Layout/base.html.twig" %}
+{% block title %}Beauty{% endblock %}
+{% block stylesheet %} 
+    <link rel="stylesheet" href="{{ asset('css/sliders/circular-catalogue/circular-catalogue.css') }}" type="text/css" media="all"/>
+{% endblock %}
+{% block body %}
+    <div id="dp-js-header-helper" style="height:0 !important; display:none !important;"></div>
+    <div id="page_header" class="page-subheader site-subheader-cst maskcontainer--mask3 min-300" style="width:auto; height:670px;">
+        <div class="bgback"></div>
+        <div class="kl-bg-source">
+            <div class="kl-bg-source__overlay" style="background-image:url({{ asset('images/sliders/beauty.jpg') }}); background-repeat:no-repeat;background-attachment:scroll;background-position-x:center;background-position-y:top;background-size:cover"></div>
+        </div>
+        <div class="ph-content-wrap ptop-170">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row" style="padding:320px 0px ;">
+                            <div class="col-sm-6">
+                                <ul class="breadcrumbs fixclear">
+                                    <li><a href="{{ path('Patient_homepage') }}">{{ 'header.menu.index'|trans }}</a></li>
+                                    <li><a href="{{ path('Patient_ServiceBeauty') }}">{{ 'header.menu.be'|trans }}</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="th-sparkles"></div>
+    </div>
+    <div class="kl-bottommask kl-bottommask--shadow_ud"></div>
+    <section class="hg_section ptop-65 pbottom-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="row hg-portfolio-item">
+                        <div class="col-sm-12 col-md-7">
+                            <div class="portfolio-item-content affixcontent affix-bottom">
+                                <h1 class="page-title portfolio-item-title">{{ beauty.entrepriseName }}</h1>
+                                <ul class="portfolio-item-details clearfix">
+                                    <li class="portfolio-item-details-client clearfix"><span class="portfolio-item-details-label">E-MAIL </span><span class="portfolio-item-details-item">{{ beauty.email }}</span></li>
+                                    <li class="portfolio-item-details-year clearfix"><span class="portfolio-item-details-label">{{ 'header.menu.profil.ad'|trans }} </span><span class="portfolio-item-details-item">{{ beauty.adress }} {{ beauty.code }},{{ beauty.city }} {{beauty.code }}</span></li>
+                                    <li class="portfolio-item-details-services clearfix"><span class="portfolio-item-details-label">{{ 'header.menu.profil.p'|trans }} </span><span class="portfolio-item-details-item">{{ beauty.tel }}</span></li>
+                                    <li class="portfolio-item-details-partners clearfix"><span class="portfolio-item-details-label">{{ 'header.menu.profil.dc'|trans }} </span><span class="portfolio-item-details-item"> &nbsp; &nbsp;{{ beauty.day }} {{beauty.month}} {{beauty.year}}</span></li>
+                                </ul>
+                                <div class="portfolio-item-otherdetails clearfix">
+                                    <div class="portfolio-item-share clearfix" data-share-title="{{'appointment.doctor.sh'|trans}}:"><a href="https://twitter.com/intent/tweet?text=Check+out+-+Progressively+harness&amp;url=http%3A%2F%2Fhogash-demo.com%2Fdemo%2Fkwp%2Fportfolio%2Fprogressively-harness%2F%3Futm_source%3Dsharetw" title="SHARE ON TWITTER" class=" portfolio-item-share-twitter"><span class="icon-twitter"></span></a><a href="https://www.facebook.com/sharer/sharer.php?display=popup&amp;u=http%3A%2F%2Fhogash-demo.com%2Fdemo%2Fkwp%2Fportfolio%2Fprogressively-harness%2F%3Futm_source%3Dsharefb" title="SHARE ON FACEBOOK" class=" portfolio-item-share-facebook"><span class="icon-facebook"></span></a><a href="https://plus.google.com/share?url=http%3A%2F%2Fhogash-demo.com%2Fdemo%2Fkwp%2Fportfolio%2Fprogressively-harness%2F%3Futm_source%3Dsharegp" title="SHARE ON GPLUS" class=" portfolio-item-share-gplus"><span class="icon-gplus"></span></a><a href="http://pinterest.com/pin/create/button?description=Check+out+-+Progressively+harness&amp;url=http%3A%2F%2Fhogash-demo.com%2Fdemo%2Fkwp%2Fportfolio%2Fprogressively-harness%2F%3Futm_source%3Dsharepi" title="SHARE ON PINTEREST" class=" portfolio-item-share-pinterest"><span class="icon-pinterest"></span></a><a href="mailto:?body=You can see it live here http%3A%2F%2Fhogash-demo.com%2Fdemo%2Fkwp%2Fportfolio%2Fprogressively-harness%2F%3Futm_source%3Dsharemail . Made by Kallyas Demo http://hogash-demo.com/demo/kwp&amp;subject=Check out this awesome project: Progressively harness" title="SHARE ON MAIL" class=" portfolio-item-share-mail"><span class="glyphicon glyphicon-envelope"></span></a></div>
+                                    <div class="portfolio-item-livelink"><a class="btn btn-lined lined-custom" href="{{ path('Patient_ServiceBeauty') }}" target="_self"><span class="visible-sm visible-xs visible-lg">{{'appointment.doctor.rt'|trans}}</span><span class="visible-md">PREVIEW</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-5">
+                            <div class="img-full portfolio-item-right mfp-gallery mfp-gallery--misc">
+                                <a href="{{ asset('uploads/'~beauty.picture) }}" data-lightbox="mfp" data-mfp="image" class="hoverBorder pull-right"><span class="hoverBorderWrapper"><img src="{{ asset('uploads/'~beauty.picture) }}" alt="" class="img-responsive" ><span class="theHoverBorder"></span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:50px;"></div>      
+                    <div class="hg_separator clearfix"></div>  
+                    <div class="col-md-9 col-sm-12">
+                        {% if(soins|length >0) %}
+                            <ul class="products clearfix grid" style="margin: 20px 0px 0px -23px;" data-masonry='{ "columnWidth": 0,"percentPosition": true ,"itemSelector": ".product" }'>
+                                {% for soin in soins %}
+                                    <li class="product" style="width:245px;float:left; margin: 15px 15px;">
+                                        <div class="product-list-item prod-layout-classic">
+                                            <div class="zn_badge_container"></div>
+                                            <a href="">
+                                                <span class="image kw-prodimage">
+                                                    <img class="kw-prodimage-img" src="{{ asset('uploads/soin/'~ soin.photoSoin)}}" alt="{{ soin.nomSoin }}">
+                                                </span>
+                                                <div class="details kw-details fixclear">
+                                                    <h3 class="kw-details-title">{{ soin.nomSoin }}</h3>
+                                                    <p class="desc kw-details-desc">{{ soin.descriptionSoin }}</p>
+                                                    <span class="price"><span class="amount">{{ soin.prixSoin }}DT</span></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="row">                                                           
+                                <ul>
+                                    <li>{{ knp_pagination_render(soins) }}</li>
+                                </ul>
+                            </div> 
+                        {% else %}
+                            <div class="cd-fail-message" style="margin-top:50px;text-align: center;">{{ 'Medication.no'|trans }}</div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="kl-slideshow static-content__slideshow scontent__maps">
+        <div class="th-google_map" style="height: 800px; opacity:.6;"> </div>
+    </div>                            
+    <section class="hg_section" style="margin-top:-500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <div class="contactForm">
+                        <form action="" method="post" class="contact_form row">
+                            <div class="cf_response"></div>
+                            <p class="col-sm-6 kl-fancy-form"><input type="text" name="name" id="cf_name" class="form-control" placeholder="{{ 'header.menu.profil.fnp'|trans }}" value="" tabindex="1" maxlength="35" required><label class="control-label">{{ 'header.menu.contact.fn'|trans }}</label></p>
+                            <p class="col-sm-6 kl-fancy-form"><input type="text" name="lastname" id="cf_lastname" class="form-control" placeholder="{{ 'header.menu.profil.fnp'|trans }}" value="" tabindex="1" maxlength="35" required><label class="control-label">{{ 'header.menu.contact.ln'|trans }}</label></p>
+                            <p class="col-sm-12 kl-fancy-form"><input type="text" name="email" id="cf_email" class="form-control" placeholder="{{ 'header.menu.profil.emp'|trans }}" value="" tabindex="1" maxlength="35" required><label class="control-label">EMAIL</label></p>
+                            <p class="col-sm-12 kl-fancy-form"><input type="text" name="subject" id="cf_subject" class="form-control" placeholder="{{ 'header.menu.profil.subp'|trans }}" value="" tabindex="1" maxlength="35" required><label class="control-label">{{ 'header.menu.contact.s'|trans }}</label></p>
+                            <p class="col-sm-12 kl-fancy-form"><textarea name="message" id="cf_message" class="form-control" cols="30" rows="10" placeholder="{{ 'header.menu.profil.msgp'|trans }}" tabindex="4" required></textarea><label class="control-label">MESSAGE</label></p>
+                            <p class="col-sm-12"><button class="btn btn-fullcolor" type="submit">{{ 'header.menu.contact.env'|trans }}</button></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block javascript %}
+
+    <script type="text/javascript" src="{{asset('js/kl-plugins.js') }}"></script>
+    <script type="text/javascript" src="{{asset('sliders/caroufredsel/jquery.carouFredSel-packed.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/sliders/caroufredsel/circular-catalogue/kl-circular-catalogue.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.isotope.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/kl-portfolio-sortable.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{asset('addons/magnific_popup/jquery.magnific-popup.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps-style2.js') }}"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-68601930-1', 'auto');
+        ga('send', 'pageview');</script>
+    <script>
+        $("#service").addClass("activeItem");
+        $(".main-menu li#service").css("background", "#2980b8");
+    </script>
+{% endblock %}

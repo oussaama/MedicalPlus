@@ -1,0 +1,12 @@
+
+    {% if (app.user.role == 1) %}
+        {% include "::module/Patient/editPatient.html.twig" %}
+    {% elseif (app.user.role == 2) %}
+        {% include "::module/Cabine/editCabine.html.twig" %}
+    {% elseif (app.user.role == 3) %}
+        {% include "::module/Pharmacy/editPharmacy.html.twig" %}
+    {% elseif (app.user.role == 4) %}
+        {% include "::module/Beauty/editBeauty.html.twig" %}
+    {% elseif (app.user.role == 5) %}
+        {% include "::module/Laboratory/editLaboratory.html.twig" %}
+    {% endif %}

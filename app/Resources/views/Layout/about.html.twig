@@ -1,0 +1,110 @@
+{% extends "::Layout/base.html.twig" %}
+
+{% block title %} {{ 'header.menu.about'|trans }} {% endblock %}
+{% block stylesheet %} {% endblock %} 
+{% block body %}
+    <div id="page_header" class="page-subheader site-subheader-cst uh_zn_def_header_style maskcontainer--mask6 min-500" >
+        <div class="bgback"></div>
+        <div class="kl-bg-source"> 
+            <div class="kl-video-container kl-bg-source__video"> 
+                <div class="kl-video valign halign" style="width: 100%; height: 100%;" data-setup="{&quot;position&quot;: &quot;absolute&quot;, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;muted&quot;: true, &quot;mp4&quot;:&quot;videos/Working-Space.mp4&quot;, &quot;webm&quot;:&quot;videos/Working-Space.webm&quot;, &quot;fallback_image&quot;:&quot;videos/Working-Space.jpg&quot;, &quot;video_ratio&quot;: &quot;1.7778&quot;}"> 
+                    <img class="picture" style=" position: relative; top: 0px; left: 0px;" src="{{ asset('images/sliders/about.jpg')}}">  
+                </div>
+            </div>
+            <div class="kl-bg-source__overlay effet"></div>
+        </div>
+        <div class="th-sparkles"></div>
+        <div class="ph-content-wrap ptop-250">
+            <div class="ph-content-v-center">
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <div class="subheader-titles">
+                                    <h2 class="subheader-maintitle">{{ 'header.menu.abouts.s1'|trans }}</h2>
+                                    <h4 class="subheader-subtitle">{{ 'header.menu.abouts.s2'|trans }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hg_section ptop-80 pbottom-80">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="ib2-style2 ib2-text-color-light-theme ib2-custom" style="background-color:#fff;margin-top: 600px;">
+                        <div class="ib2-inner">
+                            <h4 class="ib2-info-message">INFORMATION</h4>
+                            <div class="ib2-content">
+                                <div class="ib2-content--text">
+                                    <p>at Medical +  we have created an interface that succeeded in delivering accurate health information on the Internet. We provide credible informations, supportive communities, and in-depth reference material about health subjects that matter to you. We are a source for original and timely health informations and services.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hg_section ptop-60" style="margin-top: -100px;">
+        <div class="hg_section_size container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="hg_accordion_element style3">
+                        <h3>{{ 'header.menu.abouts.ginfo'|trans }}</h3>
+                        <div class="th-accordion">
+                            <div class="acc-group">
+                                <button data-toggle="collapse" data-target="#acc1" class="" aria-expanded="true">Governance<span class="acc-icon" ></span></button>
+                                <div id="acc1" class="collapse in">
+                                    <div class="content">
+                                        <p> at Medical+ our highest priority is to ensure that our Users focus permeates the entrire organization , in every department at evrey level.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acc-group">
+                                <button data-toggle="collapse" data-target="#acc2" class="collapsed" aria-expanded="false">Medical+ Mission<span class="acc-icon"></span></button>
+                                <div id="acc2" class="collapse">
+                                    <div class="content">
+                                        <p>We want to be your most trusted ally in your pursuit of health and well-being.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acc-group">
+                                <button data-toggle="collapse" data-target="#acc3" class="collapsed" aria-expanded="false">Medical+ Care Network<span class="acc-icon"></span></button>
+                                <div id="acc3" class="collapse">
+                                    <div class="content">
+                                        <p>Medical+ provides expertise and resources to member medical facilities through formal collaboration and advanced tools</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acc-group">
+                                <button data-toggle="collapse" data-target="#acc4" class="collapsed" aria-expanded="false">Easy Management Tools<span class="acc-icon"></span></button>
+                                <div id="acc4" class="collapse">
+                                    <div class="content">
+                                        <p> Medical + gives you robust applications  and advanced tools that put you in control of all the services that are at your disposal.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}
+{% block javascript %}  
+    <script type="text/javascript" src="{{ asset('js/jquery.gmap.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('js/kl-google-maps.js') }}"></script>
+    <script type="text/javascript">//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listedModernizr.load([{// test for media query support, if not load respond.jstest : Modernizr.mq('only all'),// If not, load the respond.js filenope : '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js'}]);</script>
+    <script>
+        $("#about").addClass("activeItem");
+        $(".main-menu li#about").css("background", "#2980b8");
+    </script>
+{% endblock %}
+
+

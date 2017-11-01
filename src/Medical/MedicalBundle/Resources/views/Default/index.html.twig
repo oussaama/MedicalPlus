@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Medical+</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" media="all" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.jscrollpane.custom.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/template1.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bookblock.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/customs.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/customs.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+    <body>
+        <div id="container" class="_container" >
+            <header id="header" class="site-header cta_button">
+                {% include '::module/headerAuth.html.twig' %}
+            </header>
+            <div class="bb-custom-wrapper">
+                <div id="bb-bookblock" class="bb-bookblock">
+                    <div class="bb-item" id="item1" style="background-image: url({{ asset('images/sliders/patient.jpg') }}); background-repeat: no-repeat;background-size: cover; background-size:100%,100;">
+                        <div class="content pos">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-6">
+                                    <div class="fancy_form">
+                                        <h2 class="static-title">Patient</h2>
+                                        <div class="static-subtitle">{{'index.patient.d1'|trans }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bb-item" id="item3" style="background-image: url({{ asset('images/sliders/doctor.jpg') }}); background-repeat: no-repeat;background-size: cover; background-size:100%,100;">
+                        <div class="content pos">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-6">
+                                    <div class="fancy_form">
+                                        <h2 class="static-title">{{ 'index.head.doct'|trans }}</h2>
+                                        <div class="static-subtitle"> {{'index.doctor.d1'|trans }}.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bb-item" id="item4" style="background-image: url({{ asset('images/sliders/pharmacy.jpg') }}); background-repeat: no-repeat;background-size: cover; background-size:100%,100;">
+                        <div class="content pos">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-6">
+                                    <div class="fancy_form">
+                                        <h2 class="static-title">{{ 'index.pharmacie.t1'|trans }}</h2>
+                                        <div class="static-subtitle">{{'index.pharmacie.d1'|trans}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bb-item" id="item5" style="background-image: url({{ asset('images/sliders/beauty.jpg') }}); background-repeat: no-repeat;background-size: cover; background-size:100%,100;">
+                        <div class="content pos">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-1">
+                                    <div class="fancy_form">
+                                        <div class="static-subtitle">{{ 'index.paramedical.d1'|trans }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bb-item" id="item6" style="background-image: url({{ asset('images/sliders/laboratory.jpg') }}); background-repeat: no-repeat;background-size: cover; background-size:100%,100;">
+                        <div class="content pos"> 
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-6">
+                                    <div class="fancy_form">
+                                        <div class="static-subtitle">{{'index.lab.d1'|trans}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <span id="bb-nav-prev">&larr;</span>
+                    <span id="bb-nav-next">&rarr;</span>
+                </nav>
+            </div>
+        </div>
+        <script src="{{ asset('js/modernizr.custom.79639.js') }}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="{{ asset('js/jquery.mousewheel.js') }}"></script>
+        <script src="{{ asset('js/jquery.jscrollpane.min.js') }}"></script>
+        <script src="{{ asset('js/jquerypp.custom.js') }}"></script>
+        <script src="{{ asset('js/jquery.bookblock.js') }}"></script>
+        <script src="{{ asset('js/page.js') }}"></script>
+        <script src="{{ asset('js/parsley.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+        <script>
+            $(function () {
+                Page.init();
+            });
+        </script>
+    </body>
+</html>

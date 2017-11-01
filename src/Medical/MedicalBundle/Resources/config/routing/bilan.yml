@@ -1,0 +1,24 @@
+bilan_index:
+    path:     /
+    defaults: { _controller: "MedicalMedicalBundle:Bilan:index" }
+    methods:  GET
+
+bilan_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalMedicalBundle:Bilan:show" }
+    methods:  GET
+
+bilan_new:
+    path:     /new/{id}
+    defaults: { _controller: "MedicalMedicalBundle:Bilan:new" }
+    methods:  [GET, POST]
+
+bilan_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalMedicalBundle:Bilan:edit" }
+    methods:  [GET, POST]
+
+bilan_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalMedicalBundle:Bilan:delete" }
+    methods:  DELETE

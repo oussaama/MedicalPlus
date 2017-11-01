@@ -1,0 +1,22 @@
+<div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+    {% for mail in mails %}
+        {% if (mail.etatCont =="non lu") %}
+            <a href="{{ path('admin_message',{'id': mail.id,'email':mail.emailCont}) }}" class="list-group-item">
+                <div class="list-group-status status-online"></div>
+                <img src="{{ asset('uploads/'~mail.picture) }}" class="pull-left" alt="{{ mail.firstnameCont }} {{ mail.lastnameCont }}"/>
+                <span class="contacts-title">{{ mail.firstnameCont }} {{ mail.lastnameCont }}</span>
+                <p>{{ mail.subjectCont }}</p>
+            </a>
+        {% else %}
+            <a href="{{ path('admin_message',{'id': mail.id,'email':mail.emailCont}) }}" class="list-group-item">
+                <div class="list-group-status status-away"></div>
+                <img src="{{ asset('uploads/'~mail.picture) }}" class="pull-left" alt="Dmitry Ivaniuk"/>
+                <span class="contacts-title">{{ mail.firstnameCont }} {{ mail.lastnameCont }}</span>
+                <p>{{ mail.subjectCont }}</p>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>     
+<div class="panel-footer text-center">
+    <a href="{{ path('admin_inbox') }}">Show all messages</a>
+</div> 
